@@ -6,16 +6,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const deps = require('../package.json').dependencies;
-const OUT_DIR = path.resolve(__dirname, '..', './dist');
+// const OUT_DIR = path.resolve(__dirname, '..', './dist');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
   output: {
-    path: OUT_DIR,
+    path: paths.appBuild,
     publicPath: '/'
   },
   devServer: {
-    contentBase: OUT_DIR
+    contentBase: paths.appBuild
   },
   module: {
     rules: [
