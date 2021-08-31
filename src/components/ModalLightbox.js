@@ -40,10 +40,10 @@ const useStyles = makeStyles(theme => {
           display: 'flex',
           alignItems: 'center'
         },
-        '& li:first-child': {
+        '& li:first-of-type': {
           flexGrow: 1
         },
-        '& li:not(:first-child)': {
+        '& li:not(:first-of-type)': {
           width: theme.spacing(5),
           height: theme.spacing(5),
           justifyContent: 'center',

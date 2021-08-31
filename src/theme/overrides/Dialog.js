@@ -46,7 +46,7 @@ export default function Dialog({ theme }) {
       styleOverrides: {
         spacing: {
           padding: 24,
-          '&> :not(:first-child)': {
+          '&> :not(:first-of-type)': {
             marginLeft: 12
           }
         }

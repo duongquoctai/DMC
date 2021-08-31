@@ -1,6 +1,6 @@
 import NProgress from 'nprogress';
-import AppRoutes from './AppRoutes';
 import { PATH_PAGE } from './paths';
+import AppRoutes from './AppRoutes';
 import HomeRoutes from './HomeRoutes';
 import DocsRoutes from './DocsRoutes';
 import LoadingScreen from '~/components/LoadingScreen';
@@ -146,12 +146,12 @@ const routes = [
   {
     exact: true,
     path: PATH_PAGE.pricing,
-    component: lazy(() => import('src/views/pages/PricingView'))
+    component: lazy(() => import('~/views/pages/PricingView'))
   },
   {
     exact: true,
     path: PATH_PAGE.payment,
-    component: lazy(() => import('src/views/pages/PaymentView'))
+    component: lazy(() => import('~/views/pages/PaymentView'))
   },
   {
     exact: true,

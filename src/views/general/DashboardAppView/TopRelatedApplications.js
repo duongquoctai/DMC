@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
   listItem: {
     display: 'flex',
     alignItems: 'center',
-    '&:not(:first-child)': { marginTop: theme.spacing(3) }
+    '&:not(:first-of-type)': { marginTop: theme.spacing(3) }
   },
   listItemShortcut: {
     flexShrink: 0,

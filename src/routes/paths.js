@@ -39,7 +39,8 @@ export const PATH_APP = {
     root: path(ROOTS.app, '/dashboard'),
     dashboard: path(ROOTS.app, '/dashboard'),
     ecommerce: path(ROOTS.app, '/dashboard/ecommerce'),
-    analytics: path(ROOTS.app, '/dashboard/analytics')
+    analytics: path(ROOTS.app, '/dashboard/analytics'),
+    infra: path(ROOTS.app, '/dashboard/infra')
   },
   app: {
     mail: {
@@ -153,6 +154,7 @@ export const PATH_DOCS = {
   root: ROOTS.docs,
   introduction: path(ROOTS.docs, '/introduction'),
   started: path(ROOTS.docs, '/getting-started'),
+  webpack: path(ROOTS.docs, '/webpack-migration'),
   // Theme UI
   color: path(ROOTS.docs, '/color'),
   typography: path(ROOTS.docs, '/typography'),

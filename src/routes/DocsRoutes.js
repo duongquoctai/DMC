@@ -25,6 +25,13 @@ const DocsRoutes = {
         import('src/views/docs/getting-started/QuickStartView')
       )
     },
+    {
+      exact: true,
+      path: PATH_DOCS.webpack,
+      component: lazy(() =>
+        import('src/views/docs/getting-started/WebpackMigrate')
+      )
+    },
 
     // THEME UI
     {

@@ -37,7 +37,7 @@ import { MFab } from '~/@material-extend';
 const useStyles = makeStyles(theme => ({
   root: {},
   calendar: {
-    '& tr:first-child > td > .fc-day-grid-event, .fc-day-grid-event': {
+    '& tr:first-of-type > td > .fc-day-grid-event, .fc-day-grid-event': {
       margin: 0,
       padding: 0
     },

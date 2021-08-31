@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => {
       marginTop: 4,
       marginBottom: 4,
       borderRadius: theme.shape.borderRadius,
-      '& > :first-child': { paddingTop: 4, paddingBottom: 4 },
+      '& > :first-of-type': { paddingTop: 4, paddingBottom: 4 },
       '&:hover': {
         opacity: 0.48,
         '& > *': { backgroundColor: 'transparent' }

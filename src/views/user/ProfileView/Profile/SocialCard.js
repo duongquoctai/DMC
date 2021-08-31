@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   root: {},
   line: {
     display: 'flex',
-    '&:not(:first-child)': {
+    '&:not(:first-of-type)': {
       marginTop: theme.spacing(2)
     }
   },

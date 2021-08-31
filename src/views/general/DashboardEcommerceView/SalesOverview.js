@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   root: {},
   progressItem: {
     marginTop: theme.spacing(4),
-    '&:first-child': { marginTop: theme.spacing(1) }
+    '&:first-of-type': { marginTop: theme.spacing(1) }
   }
 }));
 

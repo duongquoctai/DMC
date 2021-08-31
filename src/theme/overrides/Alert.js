@@ -47,7 +47,7 @@ export default function Alert({ theme }) {
           '& .MuiAlertTitle-root': { marginBottom: 4 }
         },
         action: {
-          '& button:not(:first-child)': { marginLeft: 8 }
+          '& button:not(:first-of-type)': { marginLeft: 8 }
         },
         // Standard
         standardInfo: standardStyle('info'),

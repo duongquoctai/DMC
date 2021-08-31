@@ -16,7 +16,7 @@ const AppRoutes = {
     {
       exact: true,
       path: PATH_APP.main.dashboard,
-      component: lazy(() => import('src/views/general/DashboardAppView'))
+      component: lazy(() => import('~/views/general/DashboardAppView'))
     },
     {
       exact: true,
@@ -27,6 +27,11 @@ const AppRoutes = {
       exact: true,
       path: PATH_APP.main.analytics,
       component: lazy(() => import('src/views/general/DashboardAnalyticsView'))
+    },
+    {
+      exact: true,
+      path: PATH_APP.main.infra,
+      component: lazy(() => import('src/views/external/infra'))
     },
     {
       exact: true,

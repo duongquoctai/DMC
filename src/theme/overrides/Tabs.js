@@ -37,7 +37,7 @@ export default function Tabs({ theme }) {
           minHeight: 48,
           paddingTop: 0,
           '& $wrapper': {
-            '& > *:first-child': { marginBottom: 0, marginRight: 8 }
+            '& > *:first-of-type': { marginBottom: 0, marginRight: 8 }
           }
         }
       }

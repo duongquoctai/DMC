@@ -4,24 +4,13 @@
     "es6": true,
     "browser": true
   },
-  "extends": [
-    "airbnb/hooks",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "eslint-plugin-prettier"
-  ],
+  "extends": ["airbnb/hooks", "prettier", "prettier/react"],
+  "plugins": ["eslint-plugin-prettier"],
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": [
-          "src"
-        ],
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
       }
     }
   },
@@ -40,7 +29,10 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
     "prettier/prettier": [
-      "error"
+      "error",
+      {
+        "endOfLine": "auto"
+      }
     ]
   }
 }

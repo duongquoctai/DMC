@@ -40,11 +40,15 @@ export default [
         href: PATH_APP.main.root,
         items: [
           {
-            title: 'app',
+            title: 'insight',
             href: PATH_APP.main.root
           },
           {
-            title: 'e-commerce',
+            title: 'infra',
+            href: PATH_APP.main.infra
+          },
+          {
+            title: 'ecommerce',
             href: PATH_APP.main.ecommerce
           },
           {

@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     overflow: 'auto',
     minHeight: '100%',
+    position: 'relative',
     paddingTop: APP_BAR_MOBILE + 40,
     paddingBottom: theme.spacing(10),
     [theme.breakpoints.up('lg')]: {

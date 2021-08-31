@@ -23,7 +23,7 @@ export default function Table({ theme }) {
         head: {
           color: theme.palette.text.secondary,
           backgroundColor: theme.palette.background.neutral,
-          '&:first-child': {
+          '&:first-of-type': {
             paddingLeft: 24,
             borderTopLeftRadius: theme.shape.borderRadius,
             borderBottomLeftRadius: theme.shape.borderRadius,
@@ -41,7 +41,7 @@ export default function Table({ theme }) {
           backgroundColor: theme.palette.background.paper
         },
         body: {
-          '&:first-child': { paddingLeft: 24 },
+          '&:first-of-type': { paddingLeft: 24 },
           '&:last-child': { paddingRight: 24 }
         }
       }

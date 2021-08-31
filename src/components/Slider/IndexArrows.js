@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     padding: 6,
     opacity: 0.48,
     color: theme.palette.common.white,
-    '&:not(:first-child)': { marginLeft: theme.spacing(1) },
+    '&:not(:first-of-type)': { marginLeft: theme.spacing(1) },
     '&:hover': { opacity: 1 }
   }
 }));

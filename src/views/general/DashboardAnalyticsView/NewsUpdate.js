@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   listItem: {
     display: 'flex',
     alignItems: 'center',
-    '&:not(:first-child)': {
+    '&:not(:first-of-type)': {
       marginTop: theme.spacing(3)
     }
   }

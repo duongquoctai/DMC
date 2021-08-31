@@ -62,15 +62,15 @@ const useStyles = makeStyles(theme => ({
   listItem: {
     display: 'flex',
     alignItems: 'center',
-    '&:not(:first-child)': { marginTop: theme.spacing(3) }
+    '&:not(:first-of-type)': { marginTop: theme.spacing(3) }
   },
   listItemBlock: {
     flex: '1 1',
     minWidth: 72,
     display: 'flex',
     alignItems: 'center',
-    '&:not(:first-child)': { marginLeft: theme.spacing(2) },
-    '&:first-child': { minWidth: 120 }
+    '&:not(:first-of-type)': { marginLeft: theme.spacing(2) },
+    '&:first-of-type': { minWidth: 120 }
   },
   listItemIcon: {
     width: 16,
