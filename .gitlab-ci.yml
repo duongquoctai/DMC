@@ -1,0 +1,131 @@
+stages:
+  - build
+  - publish
+  - deploy
+variables:
+  HTTP_PROXY: "http://proxy.hcm.fpt.vn:80"
+  HTTPS_PROXY: "http://proxy.hcm.fpt.vn:80"
+  NO_PROXY: "127.0.0.1,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,bigdata-registry.local,.cluster.local,*.local,172.27.11.210,172.27.11.211,172.27.11.230,172.27.11.231,172.24.178.0/24"
+  DOCKER_REGISTRY: "bigdata-registry.local:5043"
+  APP_NAME: ${CI_PROJECT_NAME}
+
+compile:dev:
+  stage: build
+  environment:
+    name: dev
+  image:
+    name: bigdata-registry.local:5043/node-14-alpine:1.0
+    entrypoint: [""]
+  script:
+    - echo $APP_NAME
+    - yarn install --frozen-lockfile
+    - yarn run build
+  only:
+    refs:
+      - staging
+  cache:
+    # if you want to have a separate cache per branch, uncomment the next line
+    # key: "$CI_BUILD_REF_NAME"
+    untracked: true
+    paths:
+      - "node_modules/"
+  artifacts:
+    name: ${APP_NAME}-${CI_COMMIT_SHORT_SHA}
+    expire_in: 3 days
+    paths:
+      - build/
+
+compile:production:
+  stage: build
+  environment:
+    name: prod
+  image:
+    name: bigdata-registry.local:5043/node-14-alpine:1.0
+    entrypoint: [""]
+  script:
+    - echo $APP_NAME
+    - yarn install --frozen-lockfile
+    - yarn run build
+  only:
+    refs:
+      - master
+  cache:
+    # if you want to have a separate cache per branch, uncomment the next line
+    # key: "$CI_BUILD_REF_NAME"
+    untracked: true
+    paths:
+      - "node_modules/"
+  artifacts:
+    name: ${APP_NAME}-${CI_COMMIT_SHORT_SHA}
+    expire_in: 3 days
+    paths:
+      - build/
+
+dockerize:dev:
+  stage: publish
+  environment:
+    name: dev
+  dependencies:
+    - compile:dev
+  script:
+    - export APP_VER=${CI_PIPELINE_ID}-${CI_COMMIT_SHORT_SHA}
+    - export IMAGE_TAG=${DOCKER_REGISTRY}/${CI_ENVIRONMENT_NAME}/${APP_NAME}:${APP_VER}
+    - docker build -t ${IMAGE_TAG} -f Dockerfile .
+    - docker push ${IMAGE_TAG}
+  only:
+    refs:
+      - staging
+
+dockerize:production:
+  stage: publish
+  environment:
+    name: prod
+  dependencies:
+    - compile:production
+  script:
+    - export APP_VER=${CI_PIPELINE_ID}-${CI_COMMIT_SHORT_SHA}
+    - export IMAGE_TAG=${DOCKER_REGISTRY}/${CI_ENVIRONMENT_NAME}/${APP_NAME}:${APP_VER}
+    - docker build -t ${IMAGE_TAG} -f Dockerfile .
+    - docker push ${IMAGE_TAG}
+  only:
+    refs:
+      - master
+
+deploy:dev:
+  image:
+    name: bigdata-registry.local:5043/kubectl-helm:3.54
+    entrypoint: [""]
+  stage: deploy
+  environment:
+    name: dev
+  script:
+    - export APP_VER=${CI_PIPELINE_ID}-${CI_COMMIT_SHORT_SHA}
+    - export IMAGE_TAG=${DOCKER_REGISTRY}/${CI_ENVIRONMENT_NAME}/${APP_NAME}:${APP_VER}
+    - export HOST_APP=dmc.dev.bigdata.local
+    - export K8S_CLUSTER=${K8S_CLUSTER_DEV}
+    - export K8S_TOKEN=${K8S_TOKEN_DEV}
+    - envsubst < k8s_deploy_template.yaml > k8s_deploy.yaml
+    - kubectl apply -f k8s_deploy.yaml --insecure-skip-tls-verify=true --server=${K8S_CLUSTER} --token=${K8S_TOKEN} --namespace=${CI_ENVIRONMENT_NAME}
+  only:
+    refs:
+      - staging
+
+deploy:production:
+  image:
+    name: bigdata-registry.local:5043/kubectl-helm:3.54
+    entrypoint: [""]
+  stage: deploy
+  environment:
+    name: prod
+  script:
+    - export APP_VER=${CI_PIPELINE_ID}-${CI_COMMIT_SHORT_SHA}
+    - export IMAGE_TAG=${DOCKER_REGISTRY}/${CI_ENVIRONMENT_NAME}/${APP_NAME}:${APP_VER}
+    - export HOST_APP=insight-be.bigdata.local
+    - export K8S_CLUSTER=${K8S_CLUSTER_PROD}
+    - export K8S_TOKEN=${K8S_TOKEN_PROD}
+    - envsubst < k8s_deploy_template.yaml > k8s_deploy.yaml
+    - kubectl apply -f k8s_deploy.yaml --insecure-skip-tls-verify=true --server=${K8S_CLUSTER} --token=${K8S_TOKEN} --namespace=${CI_ENVIRONMENT_NAME}
+  only:
+    refs:
+      - master
+  when: manual
