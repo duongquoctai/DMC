@@ -101,7 +101,7 @@ deploy:dev:
   script:
     - export APP_VER=${CI_PIPELINE_ID}-${CI_COMMIT_SHORT_SHA}
     - export IMAGE_TAG=${DOCKER_REGISTRY}/${CI_ENVIRONMENT_NAME}/${APP_NAME}:${APP_VER}
-    - export HOST_APP=insight.dev.bigdata.local
+    - export HOST_APP=dmc.dev.bigdata.local
     - export K8S_CLUSTER=${K8S_CLUSTER_DEV}
     - export K8S_TOKEN=${K8S_TOKEN_DEV}
     - envsubst < k8s_deploy_template.yaml > k8s_deploy.yaml
