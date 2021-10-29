@@ -42,16 +42,16 @@ deploy:dev:
   extends:
     - .deploy-dev
   before_script:
-    - export HOST_APP=insight.dev.bigdata.local
+    - export HOST_APP=dmc.dev.bigdata.local
 
 deploy:staging:
   extends:
     - .deploy-staging
   before_script:
-    - export HOST_APP=insight.staging.bigdata.local
+    - export HOST_APP=dmc.staging.bigdata.local
 
 deploy:production:
   extends:
     - .deploy-production
   before_script:
-    - export HOST_APP=insight.dev.bigdata.local
+    - export HOST_APP=dmc.dev.bigdata.local

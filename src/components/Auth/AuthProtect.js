@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { PATH_PAGE } from '~/routes/paths';
 import LoadingScreen from '~/components/LoadingScreen';
+import { getToken } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -13,6 +14,11 @@ AuthProtect.propTypes = {
 
 function AuthProtect({ children }) {
   const { accessToken, loginLoading } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getToken());
+  }, []);
 
   if (loginLoading) {
     return <LoadingScreen />;

@@ -21,6 +21,7 @@ export const cloudinaryConfig = {
 };
 
 export const apiConfig = {
+  baseUrl: process.env.REACT_APP_URL,
   apiUrl: process.env.REACT_APP_API_URL
 };
 
