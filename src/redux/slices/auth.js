@@ -7,7 +7,8 @@ import { authService } from '~/api/auth';
 const initialState = {
   error: false,
   loginLoading: false,
-  accessToken: null
+  accessToken: null,
+  username: null
 };
 
 const slice = createSlice({
@@ -29,8 +30,10 @@ const slice = createSlice({
 
     // LOGIN SUCCESS
     loginSuccess(state, action) {
-      state.accessToken = action.payload.data;
-      storage.setItem('accessToken', action.payload.data);
+      const { access_token, exp, username } = action.payload.data;
+      state.accessToken = access_token;
+      state.username = username;
+      storage.setItem('accessToken', access_token);
     },
 
     // LOGIN SUCCESS
@@ -76,6 +79,99 @@ export function login(data) {
         return;
       }
       throw response;
+    } catch (error) {
+      dispatch(slice.actions.hasError({ keyLoading: 'loginLoading', error }));
+    }
+  };
+}
+
+export function validateToken({ token }) {
+  return async dispatch => {
+    dispatch(
+      slice.actions.toggleLoading({
+        keyLoading: 'loginLoading',
+        status: true
+      })
+    );
+    try {
+      const response = await authService._validateToken({ token });
+      console.log('validateToken', response);
+      if (response) {
+        // dispatch(
+        //   slice.actions.loginSuccess({
+        //     data: response.data.data
+        //   })
+        // );
+
+        dispatch(
+          slice.actions.toggleLoading({
+            keyLoading: 'loginLoading',
+            status: false
+          })
+        );
+        return;
+      }
+      throw response;
+    } catch (error) {
+      dispatch(slice.actions.hasError({ keyLoading: 'loginLoading', error }));
+    }
+  };
+}
+
+export function getToken() {
+  return async dispatch => {
+    dispatch(
+      slice.actions.toggleLoading({
+        keyLoading: 'loginLoading',
+        status: true
+      })
+    );
+    try {
+      const response = await authService._getToken();
+      if (response && response.access_token !== 'N/A') {
+        const { access_token } = response;
+        const responseTokenValidation = await authService._validateToken({
+          token: access_token
+        });
+        if (responseTokenValidation) {
+          const { code, message } = responseTokenValidation;
+          if (code === 200) {
+            dispatch(
+              slice.actions.loginSuccess({
+                data: response
+              })
+            );
+
+            dispatch(
+              slice.actions.toggleLoading({
+                keyLoading: 'loginLoading',
+                status: false
+              })
+            );
+            return;
+          }
+
+          throw message;
+        }
+        dispatch(
+          slice.actions.toggleLoading({
+            keyLoading: 'loginLoading',
+            status: false
+          })
+        );
+      } else {
+        if (response && response.access_token === 'N/A') {
+          dispatch(
+            slice.actions.toggleLoading({
+              keyLoading: 'loginLoading',
+              status: false
+            })
+          );
+          dispatch(slice.actions.logout());
+          return;
+        }
+        throw response;
+      }
     } catch (error) {
       dispatch(slice.actions.hasError({ keyLoading: 'loginLoading', error }));
     }
