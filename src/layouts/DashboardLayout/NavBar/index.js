@@ -8,7 +8,8 @@ import MyAvatar from '~/components/MyAvatar';
 import Scrollbars from '~/components/Scrollbars';
 import { PATH_APP, PATH_DOCS } from '~/routes/paths';
 import { Link as RouterLink, useLocation, matchPath } from 'react-router-dom';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -18,21 +19,21 @@ import {
   Hidden,
   Typography,
   ListSubheader
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-const DRAWER_WIDTH = 280;
+const DRAWER_WIDTH = 220;
 
 const useStyles = makeStyles(theme => {
   const isLight = theme.palette.mode === 'light';
 
   return {
     drawer: {
-      [theme.breakpoints.up('lg')]: {
-        flexShrink: 0,
-        width: DRAWER_WIDTH
-      }
+      // [theme.breakpoints.up('lg')]: {
+      //   flexShrink: 0,
+      //   width: DRAWER_WIDTH
+      // }
     },
     drawerPaper: {
       width: DRAWER_WIDTH,
@@ -146,7 +147,7 @@ function NavBar({ isOpenNav, onCloseNav }) {
         </RouterLink>
       </Box>
 
-      <Link
+      {/* <Link
         underline="none"
         component={RouterLink}
         to={PATH_APP.management.user.account}
@@ -162,7 +163,7 @@ function NavBar({ isOpenNav, onCloseNav }) {
             </Typography>
           </Box>
         </div>
-      </Link>
+      </Link> */}
 
       {MenuLinks.map(list => (
         <List
@@ -185,7 +186,7 @@ function NavBar({ isOpenNav, onCloseNav }) {
         </List>
       ))}
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
+      {/* <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
         <div className={classes.doc}>
           <Box
             component="img"
@@ -213,24 +214,24 @@ function NavBar({ isOpenNav, onCloseNav }) {
             Documentation
           </Button>
         </div>
-      </Box>
+      </Box> */}
     </Scrollbars>
   );
 
   return (
     <nav className={classes.drawer}>
-      <Hidden lgUp>
-        <Drawer
-          anchor="left"
-          open={isOpenNav}
-          variant="temporary"
-          onClose={onCloseNav}
-          classes={{ paper: classes.drawerPaper }}
-        >
-          {renderContent}
-        </Drawer>
-      </Hidden>
-      <Hidden lgDown>
+      {/* <Hidden lgUp> */}
+      <Drawer
+        anchor="left"
+        open={isOpenNav}
+        variant="temporary"
+        onClose={onCloseNav}
+        classes={{ paper: classes.drawerPaper }}
+      >
+        {renderContent}
+      </Drawer>
+      {/* </Hidden> */}
+      {/* <Hidden lgDown>
         <Drawer
           open
           anchor="left"
@@ -239,7 +240,7 @@ function NavBar({ isOpenNav, onCloseNav }) {
         >
           {renderContent}
         </Drawer>
-      </Hidden>
+      </Hidden> */}
     </nav>
   );
 }

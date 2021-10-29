@@ -7,8 +7,8 @@ import Scrollbars from '~/components/Scrollbars';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeSidebar, openCompose } from '~/redux/slices/mail';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, List, Drawer, Hidden, Button, Divider } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, List, Drawer, Hidden, Button, Divider } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -6,8 +6,8 @@ import pinFill from '@iconify-icons/eva/pin-fill';
 import phoneFill from '@iconify-icons/eva/phone-fill';
 import emailFill from '@iconify-icons/eva/email-fill';
 import { DialogAnimate } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, Typography, DialogContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Avatar, Typography, DialogContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

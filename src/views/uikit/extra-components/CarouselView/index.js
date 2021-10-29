@@ -11,14 +11,14 @@ import Page from '~/components/Page';
 import { PATH_APP } from '~/routes/paths';
 import { getImgFeed } from '~/utils/getImages';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Grid,
   Card,
   Container,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

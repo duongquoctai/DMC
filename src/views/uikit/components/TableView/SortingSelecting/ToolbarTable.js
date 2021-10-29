@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import trash2Fill from '@iconify-icons/eva/trash-2-fill';
 import roundFilterList from '@iconify-icons/ic/round-filter-list';
-import { makeStyles } from '@material-ui/core/styles';
-import { Toolbar, Tooltip, Typography, IconButton } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Toolbar, Tooltip, Typography, IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

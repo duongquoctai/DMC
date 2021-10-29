@@ -1,8 +1,10 @@
 #### Introduction
 
+# Minimal UI Kit
+
 ![img](https://res.cloudinary.com/trinhmai/image/upload/v1611583490/upload_minimal/docs/cover.png)
 
-Our team is currently using Minimal UI Kit is built with [Material UI v5.0.0-alpha](https://next.material-ui.com/) and [Create React App](https://create-react-app.dev/)
+Minimal UI Kit is built with [Material UI v5.0.0-alpha](https://next.material-ui.com/) and [Create React App](https://create-react-app.dev/) (Typescript is not yet supported).
 
 Includes a complete design component Sketch file to extend your project development.
 

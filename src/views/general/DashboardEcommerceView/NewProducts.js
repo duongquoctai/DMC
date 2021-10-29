@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import { getImgProduct } from '~/utils/getImages';
 import { CustomPaging } from '~/components/Slider';
 import { Link as RouterLink } from 'react-router-dom';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Button } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Button } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

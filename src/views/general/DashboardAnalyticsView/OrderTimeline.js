@@ -4,15 +4,15 @@ import React from 'react';
 import faker from 'faker';
 import PropTypes from 'prop-types';
 import { fDateTime } from '~/utils/formatTime';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Typography, CardHeader, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Typography, CardHeader, CardContent } from '@mui/material';
 import {
   Timeline,
   TimelineItem,
   TimelineContent,
   TimelineConnector,
   TimelineSeparator
-} from '@material-ui/lab';
+} from '@mui/lab';
 import { MTimelineDot } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

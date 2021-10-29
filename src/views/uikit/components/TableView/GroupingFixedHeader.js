@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Scrollbars from '~/components/Scrollbars';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Table,
@@ -10,7 +10,7 @@ import {
   TableCell,
   TableContainer,
   TablePagination
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

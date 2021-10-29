@@ -3,10 +3,10 @@ import React from 'react';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import fakeRequest from '~/utils/fakeRequest';
 import { Form, FormikProvider } from 'formik';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Button,
@@ -14,8 +14,8 @@ import {
   TextField,
   Typography,
   FormHelperText
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ ReviewForm.propTypes = {
 
 function ReviewForm({ onClose, className, ...other }) {
   const classes = useStyles();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const ReviewSchema = Yup.object().shape({
     rating: Yup.mixed().required('Rating is required'),
@@ -65,7 +65,7 @@ function ReviewForm({ onClose, className, ...other }) {
       onClose();
       resetForm();
       setSubmitting(false);
-      enqueueSnackbar('Verify success', { variant: 'success' });
+      // enqueueSnackbar('Verify success', { variant: 'success' });
     }
   });
 

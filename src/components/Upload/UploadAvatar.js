@@ -8,13 +8,14 @@ import { fData } from '~/utils/formatNumber';
 import React, { useCallback, useState } from 'react';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import roundAddAPhoto from '@iconify-icons/ic/round-add-a-photo';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Typography,
   FormHelperText,
   CircularProgress
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -7,7 +7,7 @@ import LoadingScreen from '~/components/LoadingScreen';
 import GuestProtect from '~/components/Auth/GuestProtect';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import React, { Suspense, Fragment, lazy, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

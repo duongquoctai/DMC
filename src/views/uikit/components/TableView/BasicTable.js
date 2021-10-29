@@ -1,6 +1,6 @@
 import React from 'react';
 import Scrollbars from '~/components/Scrollbars';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Table,
@@ -9,7 +9,7 @@ import {
   TableBody,
   TableCell,
   TableContainer
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

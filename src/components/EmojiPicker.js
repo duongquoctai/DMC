@@ -5,8 +5,9 @@ import { Picker } from 'emoji-mart';
 import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import smilingFaceFill from '@iconify-icons/eva/smiling-face-fill';
-import { alpha, useTheme, makeStyles } from '@material-ui/core/styles';
-import { IconButton, ClickAwayListener } from '@material-ui/core';
+import { alpha, useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { IconButton, ClickAwayListener } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

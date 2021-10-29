@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { capitalCase } from 'change-case';
@@ -9,8 +9,8 @@ import phoneFill from '@iconify-icons/eva/phone-fill';
 import BadgeStatus from '~/components/BadgeStatus';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Link, Avatar, Typography, AvatarGroup } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Link, Avatar, Typography, AvatarGroup } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

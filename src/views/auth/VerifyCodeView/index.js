@@ -4,15 +4,15 @@ import { useFormik } from 'formik';
 import Page from '~/components/Page';
 import Logo from '~/components/Logo';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_APP } from '~/routes/paths';
 import { PATH_PAGE } from '~/routes/paths';
 import VerifyCodeForm from './VerifyCodeForm';
 import fakeRequest from '~/utils/fakeRequest';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Button, Link, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Button, Link, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
 function VerifyCodeView() {
   const classes = useStyles();
   const history = useHistory();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const VerifyCodeSchema = Yup.object().shape({
     code1: Yup.number().required('Code is required'),
@@ -63,7 +63,7 @@ function VerifyCodeView() {
     validationSchema: VerifyCodeSchema,
     onSubmit: async values => {
       await fakeRequest(500);
-      enqueueSnackbar('Verify success', { variant: 'success' });
+      // enqueueSnackbar('Verify success', { variant: 'success' });
       history.push(PATH_APP.root);
     }
   });

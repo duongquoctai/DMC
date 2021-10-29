@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import { Form, FormikProvider } from 'formik';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -15,8 +15,8 @@ import {
   TextField,
   IconButton,
   Typography
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

@@ -1,11 +1,11 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import countries from './countries';
 import { DialogAnimate } from '~/components/Animate';
 import { useFormik, Form, FormikProvider } from 'formik';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Radio,
@@ -19,8 +19,8 @@ import {
   DialogActions,
   FormControlLabel,
   Grid
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

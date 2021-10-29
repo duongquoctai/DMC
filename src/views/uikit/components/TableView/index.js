@@ -6,8 +6,8 @@ import CollapsibleTable from './CollapsibleTable';
 import SortingSelecting from './SortingSelecting';
 import GroupingFixedHeader from './GroupingFixedHeader';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Card, Container, CardHeader } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Grid, Card, Container, CardHeader } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '~/components/Page';
 import { PATH_APP } from '~/routes/paths';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Card,
   Alert,
@@ -11,7 +11,7 @@ import {
   AlertTitle,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

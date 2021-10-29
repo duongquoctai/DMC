@@ -9,14 +9,8 @@ import roundViewAgenda from '@iconify-icons/ic/round-view-agenda';
 import roundViewModule from '@iconify-icons/ic/round-view-module';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Hidden,
-  Tooltip,
-  IconButton,
-  ToggleButton
-} from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Hidden, Tooltip, IconButton, ToggleButton } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

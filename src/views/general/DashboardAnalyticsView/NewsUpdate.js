@@ -8,7 +8,7 @@ import { getImgCover } from '~/utils/getImages';
 import Scrollbars from '~/components/Scrollbars';
 import { Link as RouterLink } from 'react-router-dom';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -18,7 +18,7 @@ import {
   Typography,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

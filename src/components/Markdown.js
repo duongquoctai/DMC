@@ -3,8 +3,8 @@ import hljs from 'highlight.js';
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Link } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

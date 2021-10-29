@@ -6,14 +6,14 @@ import heartFill from '@iconify-icons/eva/heart-fill';
 import shareFill from '@iconify-icons/eva/share-fill';
 import { fShortenNumber } from '~/utils/formatNumber';
 import messageSquareFill from '@iconify-icons/eva/message-square-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Avatar,
   IconButton,
   AvatarGroup,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MCheckbox } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

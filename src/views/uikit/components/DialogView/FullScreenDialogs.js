@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react';
-import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles } from '@material-ui/core/styles';
+import CloseIcon from '@mui/icons-material/Close';
+import { makeStyles } from '@mui/styles';
 import {
   List,
   Slide,
@@ -13,7 +13,7 @@ import {
   IconButton,
   Typography,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

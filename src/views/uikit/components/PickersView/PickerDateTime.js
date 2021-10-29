@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import Block from '~/components/Block';
-import { TextField } from '@material-ui/core';
+import { TextField } from '@mui/material';
 import {
   DateTimePicker,
   MobileDateTimePicker,
   DesktopDateTimePicker
-} from '@material-ui/lab';
+} from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

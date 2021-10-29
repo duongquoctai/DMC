@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Slider, Typography, Box } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Slider, Typography, Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

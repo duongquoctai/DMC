@@ -20,4 +20,8 @@ export const cloudinaryConfig = {
   cloudinaryUrl: process.env.REACT_APP_CLOUDINARY_URL
 };
 
+export const apiConfig = {
+  apiUrl: process.env.REACT_APP_API_URL
+};
+
 export const googleAnalyticsConfig = process.env.REACT_APP_GA_MEASUREMENT_ID;

@@ -1,8 +1,8 @@
 import React from 'react';
 import Block from '~/components/Block';
-import FaceIcon from '@material-ui/icons/Face';
-import DoneIcon from '@material-ui/icons/Done';
-import { Grid, Avatar, Chip } from '@material-ui/core';
+import FaceIcon from '@mui/icons-material/Face';
+import DoneIcon from '@mui/icons-material/Done';
+import { Grid, Avatar, Chip } from '@mui/material';
 import { MChip } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

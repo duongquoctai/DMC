@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import Block from '~/components/Block';
-import Favorite from '@material-ui/icons/Favorite';
+import Favorite from '@mui/icons-material/Favorite';
 import awardFill from '@iconify-icons/eva/award-fill';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import {
   Grid,
   FormGroup,
   Checkbox,
   FormControl,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MCheckbox } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

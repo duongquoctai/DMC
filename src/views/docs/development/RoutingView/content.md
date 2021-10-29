@@ -83,7 +83,7 @@ const routes = [
 ```js
 import { PATH_APP } from '~/routes/paths';
 import { Link as RouterLink } from 'react-router-dom';
-import { Link } from '@material-ui/core';
+import { Link } from '@mui/material';
 
 <Link
   underline="none"

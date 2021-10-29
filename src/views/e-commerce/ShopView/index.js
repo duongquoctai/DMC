@@ -16,14 +16,14 @@ import {
   sortByProducts,
   filterProducts
 } from '~/redux/slices/product';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Backdrop,
   Container,
   Typography,
   CircularProgress
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

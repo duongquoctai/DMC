@@ -4,9 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const deps = require('../package.json').dependencies;
-// const OUT_DIR = path.resolve(__dirname, '..', './dist');
+// const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+// const deps = require('../package.json').dependencies;
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
@@ -70,7 +69,15 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', './src/index.html')
+      template: path.resolve(__dirname, '..', './src/index.html'),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -91,36 +98,27 @@ module.exports = {
           to: 'locales'
         }
       ]
-    }),
-    new ModuleFederationPlugin({
-      name: 'dmc-portal',
-      remotes: {
-        infra: 'infra@http://localhost:3030/remoteEntry.js'
-      },
-      shared: {
-        react: {
-          singleton: true,
-          requiredVersion: deps.react
-        },
-        'react-dom': {
-          singleton: true,
-          requiredVersion: deps['react-dom']
-        },
-        'react-router-dom': {
-          singleton: true,
-          requiredVersion: deps['react-router-dom']
-        },
-        'react-router-dom': {
-          singleton: true,
-          requiredVersion: deps['react-router-dom']
-        },
-        '@emotion/core': {
-          singleton: true
-        },
-        '@emotion/styled': {
-          singleton: true
-        }
-      }
     })
+    // new ModuleFederationPlugin({
+    //   name: 'dmc',
+    //   filename: 'remoteEntry.js',
+    //   exposes: {
+    //     './Routes': './src/routes'
+    //   },
+    //   shared: {
+    //     react: {
+    //       singleton: true,
+    //       requiredVersion: deps.react
+    //     },
+    //     'react-dom': {
+    //       singleton: true,
+    //       requiredVersion: deps['react-dom']
+    //     },
+    //     'react-router-dom': {
+    //       singleton: true,
+    //       requiredVersion: deps['react-router-dom']
+    //     }
+    //   }
+    // })
   ]
 };

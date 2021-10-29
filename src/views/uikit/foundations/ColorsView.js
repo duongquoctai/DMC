@@ -1,12 +1,13 @@
 import { Icon } from '@iconify/react';
 import Page from '~/components/Page';
 import React, { useState } from 'react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_APP } from '~/routes/paths';
 import copyFill from '@iconify-icons/eva/copy-fill';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { useTheme, makeStyles, hexToRgb } from '@material-ui/core/styles';
+import { useTheme, hexToRgb } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -14,7 +15,7 @@ import {
   IconButton,
   Container,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -114,13 +115,13 @@ function ColorCard({ hexColor, variation, onCopy }) {
 function ColorsView() {
   const classes = useStyles();
   const theme = useTheme();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const [, setState] = useState(null);
 
   const onCopy = color => {
     setState(color);
     if (color) {
-      enqueueSnackbar(`Copied ${color}`, { variant: 'success' });
+      // enqueueSnackbar(`Copied ${color}`, { variant: 'success' });
     }
   };
 

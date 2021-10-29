@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import { sentenceCase } from 'change-case';
 import { fCurrency } from '~/utils/formatNumber';
 import Scrollbars from '~/components/Scrollbars';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -18,7 +19,7 @@ import {
   CardHeader,
   Typography,
   TableContainer
-} from '@material-ui/core';
+} from '@mui/material';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

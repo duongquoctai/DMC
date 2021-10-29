@@ -2,8 +2,8 @@ import HeadTable from './HeadTable';
 import React, { useState } from 'react';
 import ToolbarTable from './ToolbarTable';
 import Scrollbars from '~/components/Scrollbars';
-import { visuallyHidden } from '@material-ui/utils';
-import { makeStyles } from '@material-ui/core/styles';
+import { visuallyHidden } from '@mui/utils';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Table,
@@ -15,7 +15,7 @@ import {
   TableContainer,
   TablePagination,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

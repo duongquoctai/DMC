@@ -4,7 +4,7 @@ import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
 import arrowheadLeftFill from '@iconify-icons/eva/arrowhead-left-fill';
 import arrowheadRightFill from '@iconify-icons/eva/arrowhead-right-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Grid,
   List,
@@ -14,7 +14,7 @@ import {
   Checkbox,
   ListItemIcon,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

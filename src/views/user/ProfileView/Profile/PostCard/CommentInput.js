@@ -6,8 +6,8 @@ import MyAvatar from '~/components/MyAvatar';
 import EmojiPicker from '~/components/EmojiPicker';
 import roundSend from '@iconify-icons/ic/round-send';
 import roundAddPhotoAlternate from '@iconify-icons/ic/round-add-photo-alternate';
-import { makeStyles } from '@material-ui/core/styles';
-import { TextField, IconButton, InputAdornment } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { TextField, IconButton, InputAdornment } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

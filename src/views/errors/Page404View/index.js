@@ -4,8 +4,8 @@ import Page from '~/components/Page';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { MotionContainer, varBounce, varBounceIn } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Button, Typography, Container } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Button, Typography, Container } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

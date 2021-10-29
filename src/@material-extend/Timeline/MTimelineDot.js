@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import { TimelineDot } from '@material-ui/lab';
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '~/utils/formatText';
+import { TimelineDot } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

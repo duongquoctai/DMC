@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { sentenceCase } from 'change-case';
 import roundClearAll from '@iconify-icons/ic/round-clear-all';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { Chip, Typography } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Chip, Typography } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

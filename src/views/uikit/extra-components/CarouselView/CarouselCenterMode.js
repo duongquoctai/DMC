@@ -6,8 +6,8 @@ import { Icon } from '@iconify/react';
 import { BasicArrows2 } from '~/components/Slider';
 import { Link as RouterLink } from 'react-router-dom';
 import arrowForwardFill from '@iconify-icons/eva/arrow-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, Typography, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Link, Typography, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

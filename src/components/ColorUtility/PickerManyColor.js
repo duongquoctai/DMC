@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import checkmarkFill from '@iconify-icons/eva/checkmark-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Checkbox } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import Checkbox from '@mui/material/Checkbox';
 
 // ----------------------------------------------------------------------
 

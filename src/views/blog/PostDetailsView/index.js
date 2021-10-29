@@ -1,22 +1,22 @@
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Hero from './Hero';
 import Tags from './Tags';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import Page from '~/components/Page';
 import CommentForm from './CommentForm';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import CommentList from './CommentList';
 import RecentPosts from './RecentPosts';
-import React, { useEffect } from 'react';
 import { PATH_APP } from '~/routes/paths';
 import { sentenceCase } from 'change-case';
 import fakeRequest from '~/utils/fakeRequest';
-import { useParams } from 'react-router-dom';
 import Markdown from '~/components/Markdown';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import { getPost, getRecentPosts } from '~/redux/slices/blog';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -25,7 +25,7 @@ import {
   Container,
   Typography,
   Pagination
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ const SkeletonLoad = (
 function PostDetailsView() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const { title } = useParams();
   const { post, error, recentPosts } = useSelector(state => state.blog);
 
@@ -93,7 +93,7 @@ function PostDetailsView() {
         await fakeRequest(500);
         resetForm();
         setSubmitting(false);
-        enqueueSnackbar('Post success', { variant: 'success' });
+        // enqueueSnackbar('Post success', { variant: 'success' });
       } catch (error) {
         console.log(error);
         setSubmitting(false);

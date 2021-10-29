@@ -3,13 +3,13 @@ import React from 'react';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import countries from './countries';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { useSelector } from 'react-redux';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { UploadAvatar } from '~/components/Upload';
 import { useFirebase, useFirestore } from 'react-redux-firebase';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -18,8 +18,8 @@ import {
   TextField,
   CardContent,
   FormControlLabel
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ function General({ className }) {
   const firebase = useFirebase();
   const firestore = useFirestore();
   const isMountedRef = useIsMountedRef();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const { auth, profile } = useSelector(state => state.firebase);
 
   const UpdateUserSchema = Yup.object().shape({
@@ -83,7 +83,7 @@ function General({ className }) {
               { merge: true }
             );
         });
-        enqueueSnackbar('Update success', { variant: 'success' });
+        // enqueueSnackbar('Update success', { variant: 'success' });
         if (isMountedRef.current) {
           setSubmitting(false);
         }

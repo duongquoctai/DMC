@@ -8,7 +8,8 @@ import { fCurrency } from '~/utils/formatNumber';
 import Scrollbars from '~/components/Scrollbars';
 import MoreButton from '~/components/MoreButton';
 import { Link as RouterLink } from 'react-router-dom';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import {
   Box,
@@ -22,7 +23,7 @@ import {
   TableHead,
   CardHeader,
   TableContainer
-} from '@material-ui/core';
+} from '@mui/material';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

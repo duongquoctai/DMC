@@ -31,7 +31,7 @@ import roundFormatIndentDecrease from '@iconify-icons/ic/round-format-indent-dec
 import roundFormatIndentIncrease from '@iconify-icons/ic/round-format-indent-increase';
 import roundFormatTextdirectionLToR from '@iconify-icons/ic/round-format-textdirection-l-to-r';
 import roundFormatTextdirectionRToL from '@iconify-icons/ic/round-format-textdirection-r-to-l';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

@@ -6,7 +6,7 @@ import { fCurrency } from '~/utils/formatNumber';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import minusFill from '@iconify-icons/eva/minus-fill';
 import trash2Fill from '@iconify-icons/eva/trash-2-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Table,
@@ -16,7 +16,7 @@ import {
   TableHead,
   Typography,
   TableContainer
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

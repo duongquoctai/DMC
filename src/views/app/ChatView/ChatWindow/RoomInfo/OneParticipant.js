@@ -7,7 +7,7 @@ import phoneFill from '@iconify-icons/eva/phone-fill';
 import emailFill from '@iconify-icons/eva/email-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import arrowIosDownwardFill from '@iconify-icons/eva/arrow-ios-downward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Avatar,
@@ -15,7 +15,7 @@ import {
   Divider,
   Collapse,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

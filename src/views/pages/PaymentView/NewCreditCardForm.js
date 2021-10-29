@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import infoFill from '@iconify-icons/eva/info-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Grid,
   Button,
@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------
@@ -95,7 +95,7 @@ function NewCreditCard({ formik, onCancel, className }) {
             {...getFieldProps('newCardCvv')}
             InputProps={{
               endAdornment: (
-                <InputAdornment>
+                <InputAdornment position="end">
                   <MIconButton
                     size="small"
                     edge="end"

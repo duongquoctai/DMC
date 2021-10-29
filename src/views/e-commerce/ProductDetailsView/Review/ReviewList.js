@@ -7,7 +7,7 @@ import { fShortenNumber } from '~/utils/formatNumber';
 import roundThumbUp from '@iconify-icons/ic/round-thumb-up';
 import roundVerified from '@iconify-icons/ic/round-verified';
 import checkmarkFill from '@iconify-icons/eva/checkmark-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -17,7 +17,7 @@ import {
   ListItem,
   Pagination,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

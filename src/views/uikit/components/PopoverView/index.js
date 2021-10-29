@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -14,7 +14,7 @@ import {
   CardHeader,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -1,9 +1,10 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import { Checkbox } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '~/utils/formatText';
+import { Checkbox } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

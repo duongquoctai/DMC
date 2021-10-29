@@ -11,7 +11,7 @@ import collapseFill from '@iconify-icons/eva/collapse-fill';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Hidden,
@@ -21,7 +21,7 @@ import {
   FormControl,
   OutlinedInput,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

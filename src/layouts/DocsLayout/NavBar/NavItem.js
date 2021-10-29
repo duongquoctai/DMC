@@ -2,8 +2,9 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { ListItem, ListItemText } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { ListItem, ListItemText } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

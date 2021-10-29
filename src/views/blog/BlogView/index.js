@@ -1,3 +1,5 @@
+import React, { useEffect, useCallback, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { orderBy } from 'lodash';
 import PostList from './PostList';
 import SortPosts from './SortPosts';
@@ -6,22 +8,13 @@ import SearchPost from './SearchPost';
 import { Icon } from '@iconify/react';
 import { PATH_APP } from '~/routes/paths';
 import plusFill from '@iconify-icons/eva/plus-fill';
-import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import roundPostAdd from '@iconify-icons/ic/round-post-add';
 import InfinitScroll from 'react-infinite-scroll-component';
-import React, { useEffect, useCallback, useState } from 'react';
 import { getPostsInitial, getMorePosts } from '~/redux/slices/blog';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Grid,
-  Button,
-  Skeleton,
-  Container,
-  Hidden
-} from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Grid, Button, Skeleton, Container, Hidden } from '@mui/material';
 import { MFab } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

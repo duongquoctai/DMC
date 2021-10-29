@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Popover } from '@material-ui/core';
-import { makeStyles, alpha } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { Popover, Box } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

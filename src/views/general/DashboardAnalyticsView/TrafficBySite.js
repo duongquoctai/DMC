@@ -8,14 +8,14 @@ import googleFill from '@iconify-icons/eva/google-fill';
 import twitterFill from '@iconify-icons/eva/twitter-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
 import linkedinFill from '@iconify-icons/eva/linkedin-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Grid,
   Card,
   Typography,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

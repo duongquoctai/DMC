@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
 import { Form, FormikProvider } from 'formik';
 import eyeFill from '@iconify-icons/eva/eye-fill';
 import eyeOffFill from '@iconify-icons/eva/eye-off-fill';
@@ -11,8 +11,8 @@ import {
   TextField,
   IconButton,
   InputAdornment
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ function RegisterForm({ formik }) {
           {...getFieldProps('password')}
           InputProps={{
             endAdornment: (
-              <InputAdornment>
+              <InputAdornment position="end">
                 <IconButton
                   edge="end"
                   onClick={() => setShowPassword(prev => !prev)}

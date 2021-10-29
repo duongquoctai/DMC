@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PostItem from './PostItem';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Grid } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

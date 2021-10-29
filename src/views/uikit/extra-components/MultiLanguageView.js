@@ -4,7 +4,7 @@ import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
 import { useTranslation } from 'react-i18next';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -14,7 +14,7 @@ import {
   RadioGroup,
   CardContent,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { varFadeInUp } from '~/components/Animate';
 import { motion, AnimatePresence } from 'framer-motion';
-import { makeStyles } from '@material-ui/core/styles';
-import { Dialog } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Dialog } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

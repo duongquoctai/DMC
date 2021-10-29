@@ -1,11 +1,11 @@
+import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { findIndex } from 'lodash';
 import MessageItem from './MessageItem';
 import Lightbox from '~/components/ModalLightbox';
-import React, { useEffect, useState, useRef } from 'react';
 import Scrollbars from '~/components/Scrollbars';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

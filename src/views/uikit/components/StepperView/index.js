@@ -7,8 +7,8 @@ import VerticalLinearStepper from './VerticalLinearStepper';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import LinearAlternativeLabel from './LinearAlternativeLabel';
 import HorizontalLinearStepper from './HorizontalLinearStepper';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Container, CardContent, CardHeader } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Container, CardContent, CardHeader } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -1,10 +1,10 @@
-import clsx from 'clsx';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { sentenceCase } from 'change-case';
 import { PATH_APP } from '~/routes/paths';
-import { useHistory } from 'react-router-dom';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import minusFill from '@iconify-icons/eva/minus-fill';
 import twitterFill from '@iconify-icons/eva/twitter-fill';
@@ -15,7 +15,8 @@ import { fShortenNumber, fCurrency } from '~/utils/formatNumber';
 import { useFormik, Form, FormikProvider, useField } from 'formik';
 import instagramFilled from '@iconify-icons/ant-design/instagram-filled';
 import roundAddShoppingCart from '@iconify-icons/ic/round-add-shopping-cart';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -27,7 +28,7 @@ import {
   TextField,
   Typography,
   FormHelperText
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton, MLabel, MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

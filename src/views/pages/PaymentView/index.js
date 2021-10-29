@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import Page from '~/components/Page';
 import Logo from '~/components/Logo';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import PaymentMethods from './PaymentMethods';
 import PaymentSummary from './PaymentSummary';
 import fakeRequest from '~/utils/fakeRequest';
@@ -10,8 +10,8 @@ import useBreakpoints from '~/hooks/useBreakpoints';
 import { Link as RouterLink } from 'react-router-dom';
 import PaymentInformation from './PaymentInformation';
 import { useFormik, Form, FormikProvider } from 'formik';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Card, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Grid, Card, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
 
 function PaymentView() {
   const classes = useStyles();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const upMd = useBreakpoints('up', 'md');
 
   const PaymentSchema = Yup.object().shape({
@@ -143,7 +143,7 @@ function PaymentView() {
         );
       }
       resetForm();
-      enqueueSnackbar('Payment success', { variant: 'success' });
+      // enqueueSnackbar('Payment success', { variant: 'success' });
     }
   });
 

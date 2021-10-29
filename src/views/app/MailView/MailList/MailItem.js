@@ -12,8 +12,8 @@ import linkFill from '@iconify-icons/eva/link-fill';
 import { Link as RouterLink } from 'react-router-dom';
 import starOutline from '@iconify-icons/eva/star-outline';
 import roundLabelImportant from '@iconify-icons/ic/round-label-important';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Link, Hidden, Tooltip, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Link, Hidden, Tooltip, Typography } from '@mui/material';
 import { MAvatar, MLabel, MCheckbox } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

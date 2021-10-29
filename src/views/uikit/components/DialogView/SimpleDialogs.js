@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import AddIcon from '@material-ui/icons/Add';
-import PersonIcon from '@material-ui/icons/Person';
-import { makeStyles } from '@material-ui/core/styles';
+import AddIcon from '@mui/icons-material/Add';
+import PersonIcon from '@mui/icons-material/Person';
+import { makeStyles } from '@mui/styles';
 import {
   List,
   Avatar,
@@ -12,7 +12,7 @@ import {
   DialogTitle,
   ListItemText,
   ListItemAvatar
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

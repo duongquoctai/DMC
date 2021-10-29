@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 import { fDate } from '~/utils/formatTime';
 import Lightbox from '~/components/ModalLightbox';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -15,7 +16,7 @@ import {
   IconButton,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

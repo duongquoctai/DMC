@@ -7,7 +7,8 @@ import twitterFill from '@iconify-icons/eva/twitter-fill';
 import linkedinFill from '@iconify-icons/eva/linkedin-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
 import instagramFilled from '@iconify-icons/ant-design/instagram-filled';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -19,7 +20,7 @@ import {
   Typography,
   IconButton,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIcon } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

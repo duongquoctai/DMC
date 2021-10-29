@@ -7,8 +7,8 @@ import { PATH_APP } from '~/routes/paths';
 import { getImgComponent } from '~/utils/getImages';
 import { Link as RouterLink } from 'react-router-dom';
 import { varFadeInUp, varWrapEnter } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, Hidden, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Link, Hidden, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

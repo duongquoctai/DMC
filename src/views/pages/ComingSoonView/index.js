@@ -9,7 +9,7 @@ import twitterFill from '@iconify-icons/eva/twitter-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
 import linkedinFill from '@iconify-icons/eva/linkedin-fill';
 import instagramFilled from '@iconify-icons/ant-design/instagram-filled';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Button,
@@ -18,7 +18,7 @@ import {
   Typography,
   InputAdornment,
   OutlinedInput
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

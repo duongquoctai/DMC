@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogActions,
   DialogContentText
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

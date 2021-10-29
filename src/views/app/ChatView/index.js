@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux';
 import { PATH_APP } from '~/routes/paths';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import { getConversations, getContacts } from '~/redux/slices/chat';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Container } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Container } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

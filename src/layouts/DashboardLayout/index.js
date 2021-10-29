@@ -2,7 +2,7 @@ import NavBar from './NavBar';
 import TopBar from './TopBar';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 
@@ -22,10 +22,12 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     paddingTop: APP_BAR_MOBILE + 40,
     paddingBottom: theme.spacing(10),
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1)
+    },
     [theme.breakpoints.up('lg')]: {
-      paddingTop: APP_BAR_DESKTOP + 40,
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2)
+      paddingTop: APP_BAR_DESKTOP
     }
   }
 }));

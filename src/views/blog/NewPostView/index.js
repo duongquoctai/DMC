@@ -4,13 +4,13 @@ import Page from '~/components/Page';
 import PreviewPost from './PreviewPost';
 import React, { useState } from 'react';
 import NewPostForm from './NewPostForm';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_APP } from '~/routes/paths';
 import { fData } from '~/utils/formatNumber';
 import fakeRequest from '~/utils/fakeRequest';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Card, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Container, Card, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 function NewPostView() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const handleOpenPreview = () => {
     setOpen(true);
@@ -70,7 +70,7 @@ function NewPostView() {
         resetForm();
         handleClosePreview();
         setSubmitting(false);
-        enqueueSnackbar('Post success', { variant: 'success' });
+        // enqueueSnackbar('Post success', { variant: 'success' });
       } catch (error) {
         console.log(error);
         setSubmitting(false);

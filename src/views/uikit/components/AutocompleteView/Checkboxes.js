@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox, TextField, Autocomplete } from '@material-ui/core';
+import { Checkbox, TextField, Autocomplete } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

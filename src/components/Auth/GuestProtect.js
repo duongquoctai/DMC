@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { PATH_APP } from '~/routes/paths';
 import { Redirect } from 'react-router-dom';
 import LoadingScreen from '~/components/LoadingScreen';
-import { isEmpty, isLoaded } from 'react-redux-firebase';
 
 // ----------------------------------------------------------------------
 
@@ -13,13 +12,13 @@ GuestProtect.propTypes = {
 };
 
 function GuestProtect({ children }) {
-  const { auth } = useSelector(state => state.firebase);
+  const { accessToken, loginLoading } = useSelector(state => state.auth);
 
-  if (!isLoaded(auth)) {
+  if (loginLoading) {
     return <LoadingScreen />;
   }
 
-  if (!isEmpty(auth)) {
+  if (accessToken) {
     return <Redirect to={PATH_APP.root} />;
   }
 

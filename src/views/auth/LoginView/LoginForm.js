@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { Form, FormikProvider } from 'formik';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import React, { useState } from 'react';
 import { PATH_PAGE } from '~/routes/paths';
-import { Form, FormikProvider } from 'formik';
 import eyeFill from '@iconify-icons/eva/eye-fill';
-import { Link as RouterLink } from 'react-router-dom';
 import eyeOffFill from '@iconify-icons/eva/eye-off-fill';
 import { passwordError, emailError } from '~/utils/firebaseShowError';
 import {
@@ -15,8 +15,8 @@ import {
   IconButton,
   InputAdornment,
   FormControlLabel
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -24,16 +24,9 @@ LoginForm.propTypes = {
   formik: PropTypes.object.isRequired
 };
 
-function LoginForm({ formik }) {
+function LoginForm({ formik, loading }) {
   const [showPassword, setShowPassword] = useState(false);
-  const {
-    errors,
-    touched,
-    values,
-    isSubmitting,
-    handleSubmit,
-    getFieldProps
-  } = formik;
+  const { errors, touched, values, handleSubmit, getFieldProps } = formik;
 
   const handleShowPassword = () => {
     setShowPassword(prev => !prev);
@@ -64,7 +57,7 @@ function LoginForm({ formik }) {
           {...getFieldProps('password')}
           InputProps={{
             endAdornment: (
-              <InputAdornment>
+              <InputAdornment position="end">
                 <IconButton onClick={handleShowPassword} edge="end">
                   <Icon icon={showPassword ? eyeFill : eyeOffFill} />
                 </IconButton>
@@ -112,7 +105,7 @@ function LoginForm({ formik }) {
           size="large"
           type="submit"
           variant="contained"
-          pending={isSubmitting}
+          loading={loading}
         >
           Login
         </LoadingButton>

@@ -5,8 +5,9 @@ import React, { useRef } from 'react';
 import { Icon } from '@iconify/react';
 import { BasicArrows2 } from '~/components/Slider';
 import moreHorizontalFill from '@iconify-icons/eva/more-horizontal-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Typography, CardContent } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Typography, CardContent } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

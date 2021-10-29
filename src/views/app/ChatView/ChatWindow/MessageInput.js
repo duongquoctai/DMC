@@ -1,21 +1,15 @@
+import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import faker from 'faker';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import React, { useRef, useState } from 'react';
 import micFill from '@iconify-icons/eva/mic-fill';
 import roundSend from '@iconify-icons/ic/round-send';
 import EmojiPicker from '~/components/EmojiPicker';
 import attach2Fill from '@iconify-icons/eva/attach-2-fill';
 import roundAddPhotoAlternate from '@iconify-icons/ic/round-add-photo-alternate';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Input,
-  Divider,
-  IconButton,
-  InputAdornment
-} from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Input, Divider, IconButton, InputAdornment } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -2,10 +2,10 @@ import React from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Fab,
@@ -18,7 +18,7 @@ import {
   Container,
   IconButton,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MButton, MIconButton, MFab } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

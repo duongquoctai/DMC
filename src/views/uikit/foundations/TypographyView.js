@@ -5,7 +5,8 @@ import { PATH_APP } from '~/routes/paths';
 import { remToPx } from '~/utils/formatFontSize';
 import useBreakpoints from '~/hooks/useBreakpoints';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -13,7 +14,7 @@ import {
   Typography,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

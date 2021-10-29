@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormikProvider } from 'formik';
 import { emailError } from '~/utils/firebaseShowError';
-import { Box, TextField } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import { Box, TextField } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

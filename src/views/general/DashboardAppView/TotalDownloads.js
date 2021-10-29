@@ -6,8 +6,9 @@ import ReactApexChart from 'react-apexcharts';
 import { fNumber, fPercent } from '~/utils/formatNumber';
 import trendingUpFill from '@iconify-icons/eva/trending-up-fill';
 import trendingDownFill from '@iconify-icons/eva/trending-down-fill';
-import { useTheme, alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Typography } from '@material-ui/core';
+import { alpha, useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

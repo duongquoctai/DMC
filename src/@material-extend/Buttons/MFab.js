@@ -2,10 +2,9 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 import { ButtonAnimate } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import Fab from '@material-ui/core/Fab';
-
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '~/utils/formatText';
+import Fab from '@mui/material/Fab';
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles(theme => {

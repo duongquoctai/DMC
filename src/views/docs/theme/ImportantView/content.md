@@ -12,9 +12,10 @@ we need to strictly adhere to the following when importing:
 🟢 OK
 
 ```js
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import { Button, AppBar, Hidden, Toolbar, IconButton } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '~/utils/formatText';
+import { Button, AppBar, Hidden, Toolbar, IconButton } from '@mui/material';
 ```
 
 🔴 NOT OK (Would include all of `@material-ui/core`)
@@ -29,7 +30,7 @@ import {
   capitalize
   makeStyles,
   IconButton,
-} from '@material-ui/core';
+} from '@mui/material';
 ```
 
 #### Similar to Lodash

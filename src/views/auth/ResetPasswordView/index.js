@@ -1,15 +1,15 @@
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import Logo from '~/components/Logo';
 import Page from '~/components/Page';
-import React, { useState } from 'react';
 import { PATH_PAGE } from '~/routes/paths';
 import { useFirebase } from 'react-redux-firebase';
-import { Link as RouterLink } from 'react-router-dom';
 import ResetPasswordForm from './ResetPasswordForm';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Button, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Button, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -4,13 +4,8 @@ import React, { useState } from 'react';
 import Markdown from '~/components/Markdown';
 import codeFill from '@iconify-icons/eva/code-fill';
 import { DialogAnimate } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  Tooltip,
-  IconButton,
-  DialogTitle,
-  DialogContent
-} from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Tooltip, IconButton, DialogTitle, DialogContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

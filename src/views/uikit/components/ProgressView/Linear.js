@@ -1,6 +1,6 @@
 import React from 'react';
 import Block from '~/components/Block';
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid } from '@mui/material';
 import { MLinearProgress } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

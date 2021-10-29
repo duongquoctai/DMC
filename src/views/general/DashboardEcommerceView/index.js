@@ -11,8 +11,8 @@ import SaleByGender from './SaleByGender';
 import SalesOverview from './SalesOverview';
 import LatestProducts from './LatestProducts';
 import CurrentBalance from './CurrentBalance';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Container, Grid } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -2,19 +2,20 @@ import React from 'react';
 import * as Yup from 'yup';
 import Section from './Section';
 import { useFormik } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './LoginForm';
 import Page from '~/components/Page';
 import Logo from '~/components/Logo';
 import { Icon } from '@iconify/react';
 import SocialLogin from './SocialLogin';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_PAGE } from '~/routes/paths';
-import { useFirebase } from 'react-redux-firebase';
 import closeFill from '@iconify-icons/eva/close-fill';
 import { Link as RouterLink } from 'react-router-dom';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import { otherError } from '~/utils/firebaseShowError';
-import { makeStyles } from '@material-ui/core/styles';
+import { login } from '~/redux/slices/auth';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -23,7 +24,7 @@ import {
   Divider,
   Container,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------
@@ -67,9 +68,11 @@ const useStyles = makeStyles(theme => ({
 
 function LoginView() {
   const classes = useStyles();
-  const firebase = useFirebase();
   const isMountedRef = useIsMountedRef();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
+  const { loginLoading } = useSelector(state => state.auth);
+
+  // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -80,25 +83,20 @@ function LoginView() {
 
   const formik = useFormik({
     initialValues: {
-      email: 'demo@minimals.cc',
-      password: 'demo1234',
+      email: '',
+      password: '',
       remember: true
     },
     validationSchema: LoginSchema,
     onSubmit: async (values, { setErrors, setSubmitting }) => {
       try {
-        await firebase.login({
-          email: values.email,
-          password: values.password
-        });
-        enqueueSnackbar('Login success', {
-          variant: 'success',
-          action: key => (
-            <MIconButton size="small" onClick={() => closeSnackbar(key)}>
-              <Icon icon={closeFill} />
-            </MIconButton>
-          )
-        });
+        dispatch(
+          login({
+            username: '',
+            email: values.email,
+            password: values.password
+          })
+        );
         if (isMountedRef.current) {
           setSubmitting(false);
         }
@@ -108,21 +106,21 @@ function LoginView() {
           setErrors({ afterSubmit: err.code });
         }
         if (otherError(err.code).error) {
-          enqueueSnackbar(otherError(err.code).helperText, {
-            variant: 'error'
-          });
+          // enqueueSnackbar(otherError(err.code).helperText, {
+          //   variant: 'error'
+          // });
         }
       }
     }
   });
 
   return (
-    <Page title="Minimal | Login" className={classes.root}>
+    <Page title="Insight | Login" className={classes.root}>
       <header className={classes.header}>
         <RouterLink to="/">
           <Logo />
         </RouterLink>
-        <Hidden smDown>
+        {/* <Hidden smDown>
           <Box sx={{ mt: { md: -2 }, typography: 'body2' }}>
             Don’t have an account? &nbsp;
             <Link
@@ -134,7 +132,7 @@ function LoginView() {
               Get started
             </Link>
           </Box>
-        </Hidden>
+        </Hidden> */}
       </header>
 
       <Hidden mdDown>
@@ -145,29 +143,29 @@ function LoginView() {
         <div className={classes.content}>
           <Box sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Sign in to Minimal
+              Sign in to Insight
             </Typography>
             <Typography color="textSecondary">
               Enter your details below.
             </Typography>
           </Box>
 
-          <SocialLogin firebase={firebase} />
+          {/* <SocialLogin firebase={firebase} />
 
           <Divider className={classes.divider}>
             <Typography variant="body2" color="textSecondary">
               OR
             </Typography>
-          </Divider>
+          </Divider> */}
 
-          <Box sx={{ mb: 5 }}>
+          {/* <Box sx={{ mb: 5 }}>
             <Alert severity="info">
-              Use email : <strong>demo@minimals.cc</strong> / password :
-              <strong>&nbsp;demo1234</strong>
+              Use email : <strong>demo@fpt.com.vn</strong> / password :
+              <strong>&nbsp;123456</strong>
             </Alert>
-          </Box>
+          </Box> */}
 
-          <LoginForm formik={formik} />
+          <LoginForm formik={formik} loading={loginLoading} />
 
           <Hidden smUp>
             <Box sx={{ mt: 3, typography: 'body2', textAlign: 'center' }}>

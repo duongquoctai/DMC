@@ -14,14 +14,14 @@ import ColumnStackedRechart from './ColumnStackedRechart';
 import ColumnMultipleRechart from './ColumnMultipleRechart';
 import ColumnNegativeRechart from './ColumnNegativeRechart';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Card,
   Grid,
   Container,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

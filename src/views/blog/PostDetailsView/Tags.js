@@ -1,17 +1,17 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import heartFill from '@iconify-icons/eva/heart-fill';
 import { fShortenNumber } from '~/utils/formatNumber';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Chip,
   Avatar,
   AvatarGroup,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MCheckbox } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

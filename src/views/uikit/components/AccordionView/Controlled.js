@@ -1,13 +1,13 @@
 import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import arrowIosDownwardFill from '@iconify-icons/eva/arrow-ios-downward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Accordion,
   Typography,
   AccordionSummary,
   AccordionDetails
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

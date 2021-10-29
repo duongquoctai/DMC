@@ -6,7 +6,7 @@ import {
   TooltipRecharts,
   CartesianGridRecharts
 } from '~/components/Charts/Recharts';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

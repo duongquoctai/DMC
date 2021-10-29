@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResponsiveContainer, Pie, PieChart, Cell } from 'recharts';
 import { LegendRecharts } from '~/components/Charts/Recharts';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

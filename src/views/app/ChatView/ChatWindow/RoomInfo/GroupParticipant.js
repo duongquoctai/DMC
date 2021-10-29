@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import PopupInfo from './PopupInfo';
 import { Icon } from '@iconify/react';
@@ -7,7 +7,7 @@ import Scrollbars from '~/components/Scrollbars';
 import BadgeStatus from '~/components/BadgeStatus';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import arrowIosDownwardFill from '@iconify-icons/eva/arrow-ios-downward-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -17,7 +17,7 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

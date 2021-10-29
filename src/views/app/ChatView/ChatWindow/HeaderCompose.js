@@ -1,19 +1,20 @@
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import React, { useState } from 'react';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import SearchNotFound from '~/components/SearchNotFound';
 import checkmarkFill from '@iconify-icons/eva/checkmark-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Avatar,
   TextField,
   Typography,
   Autocomplete
-} from '@material-ui/core';
+} from '@mui/material';
 import { MChip } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

@@ -7,8 +7,9 @@ import ReactApexChart from 'react-apexcharts';
 import { fNumber } from '~/utils/formatNumber';
 import emailFill from '@iconify-icons/eva/email-fill';
 import { ApexChartsOption } from '~/components/Charts/Apexcharts';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
-import { Card, Box, Typography } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Card, Box, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

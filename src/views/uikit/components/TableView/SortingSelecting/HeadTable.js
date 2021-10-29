@@ -6,7 +6,7 @@ import {
   TableCell,
   TableHead,
   TableSortLabel
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

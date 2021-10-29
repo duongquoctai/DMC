@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import ReviewForm from './ReviewForm';
 import ReviewList from './ReviewList';
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Collapse } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Divider, Collapse } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

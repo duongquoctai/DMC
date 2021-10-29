@@ -3,7 +3,7 @@ import React from 'react';
 import { orderBy } from 'lodash';
 import PropTypes from 'prop-types';
 import { Link as ScrollLink } from 'react-scroll';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

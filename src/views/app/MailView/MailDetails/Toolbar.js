@@ -3,14 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import createAvatar from '~/utils/createAvatar';
-import { Link, Typography } from '@material-ui/core';
+import { Link, Typography } from '@mui/material';
 import { fDateTimeSuffix } from '~/utils/formatTime';
 import roundReply from '@iconify-icons/ic/round-reply';
 import { useHistory, useParams } from 'react-router-dom';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Hidden, Tooltip, IconButton } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Hidden, Tooltip, IconButton } from '@mui/material';
 import { MAvatar } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

@@ -1,4 +1,4 @@
-import { alpha } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
@@ -13,11 +13,11 @@ const PRIMARY = {
   // main: '#00AB55',
   // dark: '#007B55',
   // darker: '#005249'
-  lighter: '#FFE9C9',
-  light: '#FFAC4A',
+  lighter: '#FFEDCC',
+  light: '#FFBA66',
   main: '#FF7000',
-  dark: '#E2703A',
-  darker: '#E16428'
+  dark: '#B73C00',
+  darker: '#7A1A00'
 };
 const SECONDARY = {
   lighter: '#D6E4FF',
@@ -34,11 +34,11 @@ const INFO = {
   darker: '#04297A'
 };
 const SUCCESS = {
-  lighter: '#E9FCD4',
-  light: '#AAF27F',
-  main: '#54D62C',
-  dark: '#229A16',
-  darker: '#08660D'
+  lighter: '#C8FAD3',
+  light: '#5AE395',
+  main: '#00A266',
+  dark: '#007460',
+  darker: '#004B4D'
 };
 const WARNING = {
   lighter: '#FFF7CD',

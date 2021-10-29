@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Button,
   Dialog,
@@ -13,7 +13,7 @@ import {
   DialogContent,
   FormControlLabel,
   DialogContentText
-} from '@material-ui/core';
+} from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

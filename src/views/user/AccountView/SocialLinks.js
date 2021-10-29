@@ -2,16 +2,16 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import fakeRequest from '~/utils/fakeRequest';
 import { useFormik, Form, FormikProvider } from 'formik';
 import twitterFill from '@iconify-icons/eva/twitter-fill';
 import linkedinFill from '@iconify-icons/eva/linkedin-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
 import instagramFilled from '@iconify-icons/ant-design/instagram-filled';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card, TextField, InputAdornment } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, TextField, InputAdornment } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ SocialLinks.propTypes = {
 
 function SocialLinks({ myProfile, className }) {
   const classes = useStyles();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -62,7 +62,7 @@ function SocialLinks({ myProfile, className }) {
       await fakeRequest(500);
       setSubmitting(false);
       alert(JSON.stringify(values, null, 2));
-      enqueueSnackbar('Save success', { variant: 'success' });
+      // enqueueSnackbar('Save success', { variant: 'success' });
     }
   });
 

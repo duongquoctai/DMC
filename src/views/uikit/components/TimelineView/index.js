@@ -3,12 +3,12 @@ import { last, slice } from 'lodash';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import HotelIcon from '@material-ui/icons/Hotel';
-import RepeatIcon from '@material-ui/icons/Repeat';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+import HotelIcon from '@mui/icons-material/Hotel';
+import RepeatIcon from '@mui/icons-material/Repeat';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -16,7 +16,7 @@ import {
   Container,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   Timeline,
   TimelineDot,
@@ -25,7 +25,7 @@ import {
   TimelineSeparator,
   TimelineConnector,
   TimelineOppositeContent
-} from '@material-ui/lab';
+} from '@mui/lab';
 import { MTimelineDot } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

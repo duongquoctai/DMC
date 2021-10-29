@@ -1,12 +1,12 @@
+import React, { useEffect } from 'react';
+import { useHistory, useParams, useLocation } from 'react-router-dom';
 import RoomInfo from './RoomInfo';
 import MessageList from './MessageList';
-import React, { useEffect } from 'react';
 import { PATH_APP } from '~/routes/paths';
 import HeaderDetail from './HeaderDetail';
 import MessageInput from './MessageInput';
 import HeaderCompose from './HeaderCompose';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams, useLocation } from 'react-router-dom';
 import {
   addRecipient,
   onSendMessage,
@@ -15,8 +15,8 @@ import {
   markConversationAsRead,
   resetActiveConversation
 } from '~/redux/slices/chat';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Divider } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Divider } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
+import PhoneIcon from '@mui/icons-material/Phone';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Tab,
@@ -16,8 +16,8 @@ import {
   Container,
   CardContent,
   CardHeader
-} from '@material-ui/core';
-import { TabContext, TabList, TabPanel } from '@material-ui/lab';
+} from '@mui/material';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

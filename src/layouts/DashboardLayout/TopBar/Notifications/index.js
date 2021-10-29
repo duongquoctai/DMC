@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useRef, useState, useEffect } from 'react';
 import doneAllFill from '@iconify-icons/eva/done-all-fill';
 import { markAllAsRead, getNotifications } from '~/redux/slices/notifications';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -18,7 +18,7 @@ import {
   Divider,
   Typography,
   ListSubheader
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

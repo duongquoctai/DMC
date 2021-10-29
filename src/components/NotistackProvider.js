@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import { SnackbarProvider } from 'notistack';
+// import { SnackbarProvider } from 'notistack';
 import infoFill from '@iconify-icons/eva/info-fill';
 import alertCircleFill from '@iconify-icons/eva/alert-circle-fill';
 import alertTriangleFill from '@iconify-icons/eva/alert-triangle-fill';
 import checkmarkCircle2Fill from '@iconify-icons/eva/checkmark-circle-2-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 
@@ -71,48 +72,50 @@ NotistackProvider.propTypes = {
 function NotistackProvider({ children }) {
   const classes = useStyles();
 
-  return (
-    <SnackbarProvider
-      dense
-      maxSnack={5}
-      preventDuplicate
-      autoHideDuration={3000}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      iconVariant={{
-        success: (
-          <span className={classes.icon}>
-            <Icon icon={checkmarkCircle2Fill} />
-          </span>
-        ),
-        error: (
-          <span className={classes.icon}>
-            <Icon icon={infoFill} />
-          </span>
-        ),
-        warning: (
-          <span className={classes.icon}>
-            <Icon icon={alertTriangleFill} />
-          </span>
-        ),
-        info: (
-          <span className={classes.icon}>
-            <Icon icon={alertCircleFill} />
-          </span>
-        )
-      }}
-      classes={{
-        contentRoot: classes.root,
-        message: classes.message,
-        action: classes.action,
-        variantInfo: classes.info,
-        variantSuccess: classes.success,
-        variantWarning: classes.warning,
-        variantError: classes.error
-      }}
-    >
-      {children}
-    </SnackbarProvider>
-  );
+  return null;
+
+  // return (
+  //   <SnackbarProvider
+  //     dense
+  //     maxSnack={5}
+  //     preventDuplicate
+  //     autoHideDuration={3000}
+  //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+  //     iconVariant={{
+  //       success: (
+  //         <span className={classes.icon}>
+  //           <Icon icon={checkmarkCircle2Fill} />
+  //         </span>
+  //       ),
+  //       error: (
+  //         <span className={classes.icon}>
+  //           <Icon icon={infoFill} />
+  //         </span>
+  //       ),
+  //       warning: (
+  //         <span className={classes.icon}>
+  //           <Icon icon={alertTriangleFill} />
+  //         </span>
+  //       ),
+  //       info: (
+  //         <span className={classes.icon}>
+  //           <Icon icon={alertCircleFill} />
+  //         </span>
+  //       )
+  //     }}
+  //     classes={{
+  //       contentRoot: classes.root,
+  //       message: classes.message,
+  //       action: classes.action,
+  //       variantInfo: classes.info,
+  //       variantSuccess: classes.success,
+  //       variantWarning: classes.warning,
+  //       variantError: classes.error
+  //     }}
+  //   >
+  //     {children}
+  //   </SnackbarProvider>
+  // );
 }
 
 export default NotistackProvider;

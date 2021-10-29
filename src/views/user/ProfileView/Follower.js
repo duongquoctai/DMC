@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import pinFill from '@iconify-icons/eva/pin-fill';
 import checkmarkFill from '@iconify-icons/eva/checkmark-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Card, Button, Avatar, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Grid, Card, Button, Avatar, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

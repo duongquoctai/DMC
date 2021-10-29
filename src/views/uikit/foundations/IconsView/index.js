@@ -3,26 +3,26 @@ import { Icon } from '@iconify/react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import AdbIcon from '@material-ui/icons/Adb';
-import AddIcon from '@material-ui/icons/Add';
-import AppleIcon from '@material-ui/icons/Apple';
+import AdbIcon from '@mui/icons-material/Adb';
+import AddIcon from '@mui/icons-material/Add';
+import AppleIcon from '@mui/icons-material/Apple';
 import clockFill from '@iconify-icons/eva/clock-fill';
 import CodeSnippets from '~/components/CodeSnippets';
 import chargingFill from '@iconify-icons/eva/charging-fill';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import alertCircleFill from '@iconify-icons/eva/alert-circle-fill';
 import colorPaletteFill from '@iconify-icons/eva/color-palette-fill';
-import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import arrowCircleDownFill from '@iconify-icons/eva/arrow-circle-down-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Card,
   SvgIcon,
   Container,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIcon } from '~/@material-extend';
 import { material, iconify, local } from './data';
 

@@ -1,20 +1,22 @@
+import React, { useRef, useState } from 'react';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
-import { useSelector } from 'react-redux';
+// import { useSnackbar } from 'notistack';
+import { useDispatch } from 'react-redux';
 import { PATH_APP } from '~/routes/paths';
 import MyAvatar from '~/components/MyAvatar';
-import React, { useRef, useState } from 'react';
 import { useFirebase } from 'react-redux-firebase';
 import PopoverMenu from '~/components/PopoverMenu';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import homeFill from '@iconify-icons/eva/home-fill';
 import personFill from '@iconify-icons/eva/person-fill';
 import settingsFill from '@iconify-icons/eva/settings-fill';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Button, Box, Divider, MenuItem, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Button, Box, Divider, MenuItem, Typography } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
+import { logout } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -24,16 +26,16 @@ const MENU_OPTIONS = [
     icon: homeFill,
     linkTo: '/'
   },
-  {
-    label: 'Profile',
-    icon: personFill,
-    linkTo: PATH_APP.management.user.profile
-  },
-  {
-    label: 'Settings',
-    icon: settingsFill,
-    linkTo: PATH_APP.management.user.account
-  }
+  // {
+  //   label: 'Profile',
+  //   icon: personFill,
+  //   linkTo: PATH_APP.management.user.profile
+  // },
+  // {
+  //   label: 'Settings',
+  //   icon: settingsFill,
+  //   linkTo: PATH_APP.management.user.account
+  // }
 ];
 
 const useStyles = makeStyles(theme => ({
@@ -68,12 +70,13 @@ function Account() {
   const classes = useStyles();
   const history = useHistory();
   const anchorRef = useRef(null);
-  const firebase = useFirebase();
+  const dispatch = useDispatch();
+  // const firebase = useFirebase();
   const isMountedRef = useIsMountedRef();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const [isOpen, setOpen] = useState(false);
-  const { auth, profile } = useSelector(state => state.firebase);
-  const displayName = auth.displayName || profile.displayName || '';
+  // const { auth, profile } = useSelector(state => state.firebase);
+  const displayName = 'Administrator';
 
   const handleOpen = () => {
     setOpen(true);
@@ -84,14 +87,14 @@ function Account() {
 
   const handleLogout = async () => {
     try {
-      await firebase.logout();
+      dispatch(logout());
       if (isMountedRef.current) {
         history.push('/');
         handleClose();
       }
     } catch (err) {
       console.error(err);
-      enqueueSnackbar('Unable to logout', { variant: 'error' });
+      // enqueueSnackbar('Unable to logout', { variant: 'error' });
     }
   };
 
@@ -115,9 +118,9 @@ function Account() {
           <Typography variant="subtitle1" color="textPrimary" noWrap>
             {displayName}
           </Typography>
-          <Typography variant="body2" color="textSecondary" noWrap>
-            {auth.email}
-          </Typography>
+          {/* <Typography variant="body2" color="textSecondary" noWrap>
+            {'demo@fpt.com.vn'}
+          </Typography> */}
         </Box>
 
         <Divider className={classes.divider} />

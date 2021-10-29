@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import Check from '@material-ui/icons/Check';
-import SettingsIcon from '@material-ui/icons/Settings';
-import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import VideoLabelIcon from '@material-ui/icons/VideoLabel';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Check from '@mui/icons-material/Check';
+import SettingsIcon from '@mui/icons-material/Settings';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import VideoLabelIcon from '@mui/icons-material/VideoLabel';
+import { withStyles, makeStyles } from '@mui/styles';
 import {
   Box,
   Step,
@@ -14,7 +14,7 @@ import {
   StepLabel,
   Typography,
   StepConnector
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

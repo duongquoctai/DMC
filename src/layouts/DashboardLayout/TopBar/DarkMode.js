@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/react';
 import React, { useCallback } from 'react';
+import { Icon } from '@iconify/react';
 import sunFill from '@iconify-icons/eva/sun-fill';
 import moonFill from '@iconify-icons/eva/moon-fill';
 import { useDispatch, useSelector } from 'react-redux';

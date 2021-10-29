@@ -1,19 +1,20 @@
+import React, { useState, useEffect } from 'react';
+import { Icon } from '@iconify/react';
 import { filter } from 'lodash';
 import HeadTable from './HeadTable';
 import Page from '~/components/Page';
-import { Icon } from '@iconify/react';
 import ToolbarTable from './ToolbarTable';
 import { PATH_APP } from '~/routes/paths';
 import { sentenceCase } from 'change-case';
 import Scrollbars from '~/components/Scrollbars';
 import { getUserList } from '~/redux/slices/user';
-import React, { useState, useEffect } from 'react';
-import { visuallyHidden } from '@material-ui/utils';
+import { visuallyHidden } from '@mui/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import SearchNotFound from '~/components/SearchNotFound';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -28,7 +29,7 @@ import {
   Typography,
   TableContainer,
   TablePagination
-} from '@material-ui/core';
+} from '@mui/material';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

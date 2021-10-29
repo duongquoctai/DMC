@@ -1,6 +1,6 @@
-import { PATH_APP } from './paths';
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
+import { PATH_APP } from './paths';
 import AuthProtect from '~/components/Auth/AuthProtect';
 import DashboardLayout from '~/layouts/DashboardLayout';
 
@@ -27,11 +27,6 @@ const AppRoutes = {
       exact: true,
       path: PATH_APP.main.analytics,
       component: lazy(() => import('src/views/general/DashboardAnalyticsView'))
-    },
-    {
-      exact: true,
-      path: PATH_APP.main.infra,
-      component: lazy(() => import('src/views/external/infra'))
     },
     {
       exact: true,
