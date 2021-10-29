@@ -13,6 +13,7 @@ compile:dev:
     - echo "$VAULT_IP  $VAULT_DOMAIN" >> /etc/hosts
     - bash entrypoint.sh
     - cat .env | grep PIPELINE_DEBUG
+    - cat .env
     - yarn install --frozen-lockfile
     - yarn run build
 
