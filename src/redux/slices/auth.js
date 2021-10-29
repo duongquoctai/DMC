@@ -7,6 +7,7 @@ import { authService } from '~/api/auth';
 const initialState = {
   error: false,
   loginLoading: false,
+  logoutLoading: false,
   accessToken: null,
   username: null
 };
@@ -24,7 +25,9 @@ const slice = createSlice({
     // HAS ERROR
     hasError(state, action) {
       const { error, keyLoading } = action.payload;
-      state[keyLoading] = false;
+      if (keyLoading) {
+        state[keyLoading] = false;
+      }
       state.error = error;
     },
 
@@ -81,6 +84,27 @@ export function login(data) {
       throw response;
     } catch (error) {
       dispatch(slice.actions.hasError({ keyLoading: 'loginLoading', error }));
+    }
+  };
+}
+
+export function centralLogout() {
+  return async dispatch => {
+    dispatch(
+      slice.actions.toggleLoading({
+        keyLoading: 'logoutLoading',
+        status: true
+      })
+    );
+    try {
+      const response = await authService._centralLogout();
+      if (response) {
+        dispatch(slice.actions.logout());
+        return;
+      }
+      throw response;
+    } catch (error) {
+      dispatch(slice.actions.hasError({ keyLoading: 'logoutLoading', error }));
     }
   };
 }

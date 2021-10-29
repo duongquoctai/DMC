@@ -34,7 +34,7 @@ const authPersistConfig = {
   key: 'auth',
   storage: storage,
   keyPrefix: 'redux-',
-  blacklist: ['loginLoading', 'error']
+  blacklist: ['loginLoading', 'username', 'error']
 };
 
 const rootReducer = combineReducers({

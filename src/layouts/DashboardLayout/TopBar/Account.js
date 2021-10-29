@@ -16,7 +16,7 @@ import { alpha } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Button, Box, Divider, MenuItem, Typography } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
-import { logout } from '~/redux/slices/auth';
+import { centralLogout } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -87,7 +87,7 @@ function Account() {
 
   const handleLogout = async () => {
     try {
-      dispatch(logout());
+      dispatch(centralLogout());
       if (isMountedRef.current) {
         history.push('/');
         handleClose();
