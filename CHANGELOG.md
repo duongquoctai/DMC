@@ -7,3 +7,4 @@
 - Update new authentication method to project with keycloak in `src/components/Auth/AuthProtect.js`
 - Update .env file
 - Add logout keycloak function 
+- Remove force https `nginx.conf` 
