@@ -17,13 +17,8 @@ function AuthProtect({ children }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!accessToken) {
-      dispatch(getToken());
-    }
-    if (accessToken) {
-      console.log('validate');
-    }
-  }, [accessToken]);
+    dispatch(getToken());
+  }, []);
 
   if (loginLoading) {
     return <LoadingScreen />;

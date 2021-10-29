@@ -6,5 +6,4 @@
 - Upgrade project to @mui version 5
 - Update new authentication method to project with keycloak in `src/components/Auth/AuthProtect.js`
 - Update .env file
-- Add logout keycloak function 
-- Remove force https `nginx.conf` 
+- Add logout keycloak function
