@@ -1,10 +1,10 @@
+import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
-import { Chip } from '@material-ui/core';
-import { capitalize } from '@material-ui/core/utils';
-import { alpha, makeStyles, emphasize } from '@material-ui/core/styles';
-
+import { Chip } from '@mui/material';
+import { capitalize } from '~/utils/formatText';
+import { alpha, emphasize } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles(theme => {

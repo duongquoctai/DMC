@@ -8,7 +8,7 @@ import Scrollbars from '~/components/Scrollbars';
 import { getImgProduct } from '~/utils/getImages';
 import { Link as RouterLink } from 'react-router-dom';
 import { PreviewColor } from '~/components/ColorUtility';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -16,7 +16,7 @@ import {
   CardHeader,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

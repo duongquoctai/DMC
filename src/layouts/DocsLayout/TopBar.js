@@ -1,17 +1,18 @@
+import React, { useCallback } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Logo from '~/components/Logo';
 import { Icon } from '@iconify/react';
 import { PATH_APP } from '~/routes/paths';
-import React, { useCallback } from 'react';
 import sunFill from '@iconify-icons/eva/sun-fill';
 import moonFill from '@iconify-icons/eva/moon-fill';
-import { Link as RouterLink } from 'react-router-dom';
 import { toggleTheme } from '~/redux/slices/dark-mode';
 import { useDispatch, useSelector } from 'react-redux';
 import menu2Fill from '@iconify-icons/eva/menu-2-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Button,
@@ -19,7 +20,7 @@ import {
   Hidden,
   Toolbar,
   IconButton
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

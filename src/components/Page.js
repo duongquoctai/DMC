@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import track from '~/utils/analytics';
-import { useLocation } from 'react-router-dom';
 import React, { forwardRef, useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
+import track from '~/utils/analytics';
 
 // ----------------------------------------------------------------------
 

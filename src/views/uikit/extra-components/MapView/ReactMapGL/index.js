@@ -6,7 +6,7 @@ import { cities as CITIES } from './data/cities';
 import { stations as STATIONS } from './data/stations';
 import { countries as COUNTRIES } from './data/countries';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -15,7 +15,7 @@ import {
   Container,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

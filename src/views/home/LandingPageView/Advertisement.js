@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { BASE_IMG } from '~/utils/getImages';
 import { PATH_HOME } from '~/routes/paths';
 import { varFadeInDown, varFadeInUp, MotionInView } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, Box, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Link, Box, Container, Typography } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

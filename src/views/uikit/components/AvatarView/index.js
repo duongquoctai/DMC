@@ -2,11 +2,12 @@ import React from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import FolderIcon from '@material-ui/icons/Folder';
-import PageviewIcon from '@material-ui/icons/Pageview';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import FolderIcon from '@mui/icons-material/Folder';
+import PageviewIcon from '@mui/icons-material/Pageview';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Card,
   Grid,
@@ -15,7 +16,7 @@ import {
   Container,
   CardContent,
   AvatarGroup
-} from '@material-ui/core';
+} from '@mui/material';
 import { MAvatar } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

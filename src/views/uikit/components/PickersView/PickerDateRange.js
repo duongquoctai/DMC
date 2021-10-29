@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import Block from '~/components/Block';
-import DateRangePicker from '@material-ui/lab/DateRangePicker';
-import MobileDateRangePicker from '@material-ui/lab/MobileDateRangePicker';
-import DesktopDateRangePicker from '@material-ui/lab/DesktopDateRangePicker';
-import StaticDateRangePicker from '@material-ui/lab/StaticDateRangePicker';
-import { Box, TextField, Typography } from '@material-ui/core';
+import DateRangePicker from '@mui/lab/DateRangePicker';
+import MobileDateRangePicker from '@mui/lab/MobileDateRangePicker';
+import DesktopDateRangePicker from '@mui/lab/DesktopDateRangePicker';
+import StaticDateRangePicker from '@mui/lab/StaticDateRangePicker';
+import { Box, TextField, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

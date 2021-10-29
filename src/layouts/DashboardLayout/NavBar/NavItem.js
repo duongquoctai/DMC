@@ -1,18 +1,19 @@
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import { Icon } from '@iconify/react';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import arrowIosDownwardFill from '@iconify-icons/eva/arrow-ios-downward-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Collapse,
   ListItem,
   ListItemIcon,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -20,9 +21,9 @@ const useStyles = makeStyles(theme => ({
   root: {},
   listItem: {
     ...theme.typography.body2,
-    height: 48,
+    height: 36,
     textTransform: 'capitalize',
-    paddingLeft: theme.spacing(5),
+    paddingLeft: theme.spacing(2.5),
     paddingRight: theme.spacing(2.5),
     color: theme.palette.text.secondary
   },

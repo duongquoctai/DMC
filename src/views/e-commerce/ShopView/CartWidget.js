@@ -5,8 +5,8 @@ import { Icon } from '@iconify/react';
 import { PATH_APP } from '~/routes/paths';
 import { Link as RouterLink } from 'react-router-dom';
 import shoppingCartFill from '@iconify-icons/eva/shopping-cart-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Badge, Box } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Badge, Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

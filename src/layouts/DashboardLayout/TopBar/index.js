@@ -4,27 +4,28 @@ import Search from './Search';
 import Account from './Account';
 import DarkMode from './DarkMode';
 import PropTypes from 'prop-types';
-import Languages from './Languages';
+// import Languages from './Languages';
 import { Icon } from '@iconify/react';
-import Notifications from './Notifications';
+// import Notifications from './Notifications';
 import menu2Fill from '@iconify-icons/eva/menu-2-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, AppBar, Hidden, Toolbar, IconButton } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, AppBar, Toolbar, IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-const DRAWER_WIDTH = 280;
+const DRAWER_WIDTH = 220;
 const APPBAR_MOBILE = 64;
-const APPBAR_DESKTOP = 92;
+const APPBAR_DESKTOP = 64;
 
 const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none',
     backdropFilter: 'blur(8px)',
-    backgroundColor: alpha(theme.palette.background.default, 0.72),
-    [theme.breakpoints.up('lg')]: {
-      width: `calc(100% - ${DRAWER_WIDTH}px)`
-    }
+    backgroundColor: alpha(theme.palette.background.default, 0.72)
+    // [theme.breakpoints.up('lg')]: {
+    //   width: `calc(100% - ${DRAWER_WIDTH}px)`
+    // }
   },
   toolbar: {
     minHeight: APPBAR_MOBILE,
@@ -54,11 +55,9 @@ function TopBar({ onOpenNav, className }) {
   return (
     <AppBar className={clsx(classes.root, className)}>
       <Toolbar className={classes.toolbar}>
-        <Hidden lgUp>
-          <IconButton onClick={onOpenNav} className={classes.btnMenu}>
-            <Icon icon={menu2Fill} />
-          </IconButton>
-        </Hidden>
+        <IconButton onClick={onOpenNav} className={classes.btnMenu}>
+          <Icon icon={menu2Fill} />
+        </IconButton>
 
         <Search />
         <Box sx={{ flexGrow: 1 }} />
@@ -76,8 +75,8 @@ function TopBar({ onOpenNav, className }) {
             }
           }}
         >
-          <Languages />
-          <Notifications />
+          {/* <Languages />
+          <Notifications /> */}
           <DarkMode />
           <Account />
         </Box>

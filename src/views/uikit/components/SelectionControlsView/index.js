@@ -5,8 +5,8 @@ import Page from '~/components/Page';
 import RadioButtons from './RadioButtons';
 import { PATH_APP } from '~/routes/paths';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Container, CardHeader, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Container, CardHeader, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

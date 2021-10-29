@@ -3,8 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { differenceInDays } from 'date-fns';
 import { fDate } from '~/utils/formatTime';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Slider, Switch, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Slider, Switch, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

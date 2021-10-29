@@ -3,8 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useBreakpoints from '~/hooks/useBreakpoints';
 import { varFadeInUp, varFadeInDown, MotionInView } from '~/components/Animate';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Grid, Card, Container, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Grid, Card, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

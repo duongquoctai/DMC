@@ -8,14 +8,14 @@ import { fShortenNumber } from '~/utils/formatNumber';
 import appleFilled from '@iconify-icons/ant-design/apple-filled';
 import windowsFilled from '@iconify-icons/ant-design/windows-filled';
 import androidFilled from '@iconify-icons/ant-design/android-filled';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
   CardHeader,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

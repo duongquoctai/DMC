@@ -8,8 +8,8 @@ import {
   ReactCompareSliderImage
 } from 'react-compare-slider';
 import { varFadeInUp, MotionInView } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Hidden } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Hidden } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

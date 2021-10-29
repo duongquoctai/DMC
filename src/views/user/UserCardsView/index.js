@@ -5,8 +5,8 @@ import { PATH_APP } from '~/routes/paths';
 import { getUsers } from '~/redux/slices/user';
 import { useDispatch, useSelector } from 'react-redux';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Container } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

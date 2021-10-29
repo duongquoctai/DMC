@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import MapGL from 'react-map-gl';
 import ControlPanel from './ControlPanel';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   ControlScale,
   ControlGeolocate,

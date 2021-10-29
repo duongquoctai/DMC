@@ -1,25 +1,24 @@
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
+import { useHistory, Link as RouterLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Search from './Search';
 import Account from './Account';
-import axios from '~/utils/axios';
+import axios from 'axios';
 import { Icon } from '@iconify/react';
 import SearchResults from './SearchResults';
-import { useHistory } from 'react-router-dom';
 import ConversationList from './ConversationList';
-import React, { useState, useEffect } from 'react';
 import Scrollbars from '~/components/Scrollbars';
 import editFill from '@iconify-icons/eva/edit-fill';
 import useBreakpoints from '~/hooks/useBreakpoints';
-import { Link as RouterLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import {
   onOpenSidebarConversation,
   onCloseSidebarConversation
 } from '~/redux/slices/chat';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

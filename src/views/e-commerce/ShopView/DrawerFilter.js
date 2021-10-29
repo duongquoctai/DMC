@@ -8,7 +8,8 @@ import roundClearAll from '@iconify-icons/ic/round-clear-all';
 import { PickerManyColor } from '~/components/ColorUtility';
 import roundFilterList from '@iconify-icons/ic/round-filter-list';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Radio,
@@ -22,7 +23,7 @@ import {
   Typography,
   RadioGroup,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

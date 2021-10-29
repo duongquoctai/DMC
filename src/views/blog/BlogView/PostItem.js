@@ -10,7 +10,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import shareFill from '@iconify-icons/eva/share-fill';
 import { fShortenNumber } from '~/utils/formatNumber';
 import messageCircleFill from '@iconify-icons/eva/message-circle-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -20,7 +21,7 @@ import {
   CardMedia,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIcon } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

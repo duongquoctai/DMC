@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Block from '~/components/Block';
-import Visibility from '@material-ui/icons/Visibility';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
   Grid,
   MenuItem,
@@ -12,7 +12,7 @@ import {
   OutlinedInput,
   FormHelperText,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

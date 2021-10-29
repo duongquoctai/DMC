@@ -2,9 +2,9 @@ import React from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import MailIcon from '@material-ui/icons/Mail';
+import MailIcon from '@mui/icons-material/Mail';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -12,7 +12,7 @@ import {
   Container,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MBadge } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

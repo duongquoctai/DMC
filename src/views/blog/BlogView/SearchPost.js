@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import axios from '~/utils/axios';
+import axios from 'axios';
 import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import { paramCase } from 'change-case';
@@ -10,7 +10,7 @@ import match from 'autosuggest-highlight/match';
 import { Link as RouterLink } from 'react-router-dom';
 import searchFill from '@iconify-icons/eva/search-fill';
 import SearchNotFound from '~/components/SearchNotFound';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -18,7 +18,7 @@ import {
   Typography,
   Autocomplete,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

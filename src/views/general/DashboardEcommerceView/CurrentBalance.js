@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { fCurrency } from '~/utils/formatNumber';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, Box, Card, Typography, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Button, Box, Card, Typography, CardContent } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

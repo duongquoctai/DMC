@@ -1,16 +1,16 @@
-import clsx from 'clsx';
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { paramCase } from 'change-case';
 import { PATH_APP } from '~/routes/paths';
 import { fDate } from '~/utils/formatTime';
 import eyeFill from '@iconify-icons/eva/eye-fill';
-import { Link as RouterLink } from 'react-router-dom';
 import shareFill from '@iconify-icons/eva/share-fill';
 import { fShortenNumber } from '~/utils/formatNumber';
 import messageCircleFill from '@iconify-icons/eva/message-circle-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -20,7 +20,7 @@ import {
   CardMedia,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIcon } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

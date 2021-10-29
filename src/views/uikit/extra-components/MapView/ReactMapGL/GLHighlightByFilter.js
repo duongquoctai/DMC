@@ -9,8 +9,9 @@ import {
   ControlNavigation,
   ControlFullscreen
 } from './controls';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Typography, Box } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Typography, Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -11,7 +11,7 @@ import linkedinFill from '@iconify-icons/eva/linkedin-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
 import instagramFilled from '@iconify-icons/ant-design/instagram-filled';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -23,7 +23,7 @@ import {
   Typography,
   OutlinedInput,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

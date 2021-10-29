@@ -1,0 +1,57 @@
+include:
+  - project: "ci-templates/ci-templates"
+    file: "base/react.gitlab-ci.yml"
+
+variables:
+  APP_NAME: ${CI_PROJECT_NAME}
+
+compile:dev:
+  extends:
+    - .compile-dev
+  script:
+    - export NODE_OPTIONS=--max-old-space-size=8192
+    - echo "$VAULT_IP  $VAULT_DOMAIN" >> /etc/hosts
+    - bash entrypoint.sh
+    - cat .env | grep PIPELINE_DEBUG
+    - yarn install --frozen-lockfile
+    - yarn run build
+
+compile:staging:
+  extends:
+    - .compile-staging
+  script:
+    - export NODE_OPTIONS=--max-old-space-size=8192
+    - echo "$VAULT_IP  $VAULT_DOMAIN" >> /etc/hosts
+    - bash entrypoint.sh
+    - cat .env | grep PIPELINE_DEBUG
+    - yarn install --frozen-lockfile
+    - yarn run build
+
+compile:production:
+  extends:
+    - .compile-production
+  script:
+    - export NODE_OPTIONS=--max-old-space-size=8192
+    - echo "$VAULT_IP  $VAULT_DOMAIN" >> /etc/hosts
+    - bash entrypoint.sh
+    - cat .env | grep PIPELINE_DEBUG
+    - yarn install --frozen-lockfile
+    - yarn run build
+
+deploy:dev:
+  extends:
+    - .deploy-dev
+  before_script:
+    - export HOST_APP=dmc.dev.bigdata.local
+
+deploy:staging:
+  extends:
+    - .deploy-staging
+  before_script:
+    - export HOST_APP=dmc.staging.bigdata.local
+
+deploy:production:
+  extends:
+    - .deploy-production
+  before_script:
+    - export HOST_APP=dmc.dev.bigdata.local

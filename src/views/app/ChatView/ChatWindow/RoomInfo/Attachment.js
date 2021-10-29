@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { uniq, flatten } from 'lodash';
@@ -8,8 +8,8 @@ import Scrollbars from '~/components/Scrollbars';
 import { getFileFullName, getFileThumb } from '~/utils/getFileFormat';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
 import arrowIosDownwardFill from '@iconify-icons/eva/arrow-ios-downward-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Button, Divider, Collapse, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Button, Divider, Collapse, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

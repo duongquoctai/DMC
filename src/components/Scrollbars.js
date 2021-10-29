@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import SimpleBarReact from 'simplebar-react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

@@ -1,17 +1,17 @@
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Attachment from './Attachment';
 import { Icon } from '@iconify/react';
 import OneParticipant from './OneParticipant';
 import GroupParticipant from './GroupParticipant';
-import React, { useState, useEffect } from 'react';
 import useBreakpoints from '~/hooks/useBreakpoints';
 import { useDispatch, useSelector } from 'react-redux';
 import { onCloseSidebarInfo, onOpenSidebarInfo } from '~/redux/slices/chat';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
 import arrowIosForwardFill from '@iconify-icons/eva/arrow-ios-forward-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Divider, IconButton } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Divider, IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

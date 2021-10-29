@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import fakeRequest from '~/utils/fakeRequest';
 import { useFormik, Form, FormikProvider } from 'formik';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -12,8 +12,8 @@ import {
   FormGroup,
   Typography,
   FormControlLabel
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ Notifications.propTypes = {
 
 function Notifications({ notifications, className }) {
   const classes = useStyles();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -64,7 +64,7 @@ function Notifications({ notifications, className }) {
       await fakeRequest(500);
       setSubmitting(false);
       alert(JSON.stringify(values, null, 2));
-      enqueueSnackbar('Save success', { variant: 'success' });
+      // enqueueSnackbar('Save success', { variant: 'success' });
     }
   });
 

@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
-import React, { useState } from 'react';
 import searchFill from '@iconify-icons/eva/search-fill';
-import { makeStyles, alpha } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Input,
@@ -11,7 +12,7 @@ import {
   Button,
   InputAdornment,
   ClickAwayListener
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

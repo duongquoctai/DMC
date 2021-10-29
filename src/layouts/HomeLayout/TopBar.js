@@ -1,7 +1,8 @@
+import React, { useState, useRef } from 'react';
+import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import Logo from '~/components/Logo';
 import { Icon } from '@iconify/react';
-import React, { useState, useRef } from 'react';
 import useOffSetTop from '~/hooks/useOffSetTop';
 import PopoverMenu from '~/components/PopoverMenu';
 import homeFill from '@iconify-icons/eva/home-fill';
@@ -10,8 +11,8 @@ import roundSpeed from '@iconify-icons/ic/round-speed';
 import menu2Fill from '@iconify-icons/eva/menu-2-fill';
 import bookOpenFill from '@iconify-icons/eva/book-open-fill';
 import roundStreetview from '@iconify-icons/ic/round-streetview';
-import { NavLink as RouterLink, useLocation } from 'react-router-dom';
-import { makeStyles, alpha } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -24,7 +25,7 @@ import {
   Container,
   ListItemText,
   ListItemIcon
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

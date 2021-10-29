@@ -1,19 +1,13 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import Page from '~/components/Page';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import closeFill from '@iconify-icons/eva/close-fill';
+// import closeFill from '@iconify-icons/eva/close-fill';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  Card,
-  Grid,
-  Container,
-  IconButton,
-  CardContent
-} from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Grid, Container, IconButton, CardContent } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------
@@ -26,47 +20,47 @@ const useStyles = makeStyles(theme => ({
 
 function SnackbarView() {
   const classes = useStyles();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const onSnackbarClose = color => {
-    enqueueSnackbar(`This is an ${color}`, {
-      variant: color,
-      action: key => (
-        <IconButton
-          onClick={() => closeSnackbar(key)}
-          size="small"
-          color="inherit"
-        >
-          <Icon icon={closeFill} width="24" height="24" />
-        </IconButton>
-      )
-    });
+    // enqueueSnackbar(`This is an ${color}`, {
+    //   variant: color,
+    //   action: key => (
+    //     <IconButton
+    //       onClick={() => closeSnackbar(key)}
+    //       size="small"
+    //       color="inherit"
+    //     >
+    //       <Icon icon={closeFill} width="24" height="24" />
+    //     </IconButton>
+    //   )
+    // });
   };
 
   const onSnackbarAction = (color, anchor) => {
-    enqueueSnackbar(`This is an ${color}`, {
-      variant: color,
-      anchorOrigin: anchor,
-      action: key => (
-        <>
-          <MButton
-            color={color !== 'inherit' ? 'inherit' : 'info'}
-            onClick={() => {
-              alert(`I belong to snackbar with key ${key}`);
-            }}
-          >
-            Alert
-          </MButton>
-          <MButton
-            color={color !== 'inherit' ? 'inherit' : 'info'}
-            onClick={() => closeSnackbar(key)}
-            size="small"
-          >
-            Dismiss
-          </MButton>
-        </>
-      )
-    });
+    // enqueueSnackbar(`This is an ${color}`, {
+    //   variant: color,
+    //   anchorOrigin: anchor,
+    //   action: key => (
+    //     <>
+    //       <MButton
+    //         color={color !== 'inherit' ? 'inherit' : 'info'}
+    //         onClick={() => {
+    //           alert(`I belong to snackbar with key ${key}`);
+    //         }}
+    //       >
+    //         Alert
+    //       </MButton>
+    //       <MButton
+    //         color={color !== 'inherit' ? 'inherit' : 'info'}
+    //         onClick={() => closeSnackbar(key)}
+    //         size="small"
+    //       >
+    //         Dismiss
+    //       </MButton>
+    //     </>
+    //   )
+    // });
   };
 
   return (
@@ -93,47 +87,47 @@ function SnackbarView() {
                   <MButton
                     variant="text"
                     color="inherit"
-                    onClick={() => enqueueSnackbar('This is an default')}
+                    // onClick={() => enqueueSnackbar('This is an default')}
                   >
                     Default
                   </MButton>
                   <MButton
                     variant="contained"
                     color="info"
-                    onClick={() =>
-                      enqueueSnackbar('This is an info', { variant: 'info' })
-                    }
+                    // onClick={() =>
+                    //   enqueueSnackbar('This is an info', { variant: 'info' })
+                    // }
                   >
                     Info
                   </MButton>
                   <MButton
                     variant="contained"
                     color="success"
-                    onClick={() =>
-                      enqueueSnackbar('This is an success', {
-                        variant: 'success'
-                      })
-                    }
+                    // onClick={() =>
+                    //   enqueueSnackbar('This is an success', {
+                    //     variant: 'success'
+                    //   })
+                    // }
                   >
                     Success
                   </MButton>
                   <MButton
                     variant="contained"
                     color="warning"
-                    onClick={() =>
-                      enqueueSnackbar('This is an warning', {
-                        variant: 'warning'
-                      })
-                    }
+                    // onClick={() =>
+                    //   enqueueSnackbar('This is an warning', {
+                    //     variant: 'warning'
+                    //   })
+                    // }
                   >
                     Warning
                   </MButton>
                   <MButton
                     variant="contained"
                     color="error"
-                    onClick={() =>
-                      enqueueSnackbar('This is an error', { variant: 'error' })
-                    }
+                    // onClick={() =>
+                    //   enqueueSnackbar('This is an error', { variant: 'error' })
+                    // }
                   >
                     Error
                   </MButton>

@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { Icon } from '@iconify/react';
 import attach2Fill from '@iconify-icons/eva/attach-2-fill';
 import roundAddPhotoAlternate from '@iconify-icons/ic/round-add-photo-alternate';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -12,7 +12,7 @@ import {
   TextField,
   IconButton,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

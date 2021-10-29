@@ -3,7 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import Logo from '~/components/Logo';
-import { makeStyles, alpha } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles, createStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 
@@ -13,29 +14,31 @@ const TRANSITION = {
   loop: Infinity
 };
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: theme.palette.background.default
-  },
-  box: {
-    position: 'absolute',
-    borderRadius: '25%'
-  },
-  inner: {
-    width: 100,
-    height: 100,
-    border: `solid 3px ${alpha(theme.palette.primary.dark, 0.24)}`
-  },
-  outside: {
-    width: 120,
-    height: 120,
-    border: `solid 8px ${alpha(theme.palette.primary.dark, 0.24)}`
-  }
-}));
+const useStyles = makeStyles(theme =>
+  createStyles({
+    root: {
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'transparent'
+    },
+    box: {
+      position: 'absolute',
+      borderRadius: '25%'
+    },
+    inner: {
+      width: 100,
+      height: 100,
+      border: `solid 3px ${alpha('#E2703A', 0.24)}`
+    },
+    outside: {
+      width: 120,
+      height: 120,
+      border: `solid 8px ${alpha('#E2703A', 0.24)}`
+    }
+  })
+);
 
 // ----------------------------------------------------------------------
 

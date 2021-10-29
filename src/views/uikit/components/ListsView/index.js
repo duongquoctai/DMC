@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import SendIcon from '@material-ui/icons/Send';
-import WorkIcon from '@material-ui/icons/Work';
-import WifiIcon from '@material-ui/icons/Wifi';
-import InboxIcon from '@material-ui/icons/Inbox';
-import ImageIcon from '@material-ui/icons/Image';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import CommentIcon from '@material-ui/icons/Comment';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-import BluetoothIcon from '@material-ui/icons/Bluetooth';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import SendIcon from '@mui/icons-material/Send';
+import WorkIcon from '@mui/icons-material/Work';
+import WifiIcon from '@mui/icons-material/Wifi';
+import InboxIcon from '@mui/icons-material/Inbox';
+import ImageIcon from '@mui/icons-material/Image';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import CommentIcon from '@mui/icons-material/Comment';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
+import BluetoothIcon from '@mui/icons-material/Bluetooth';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Card,
   Grid,
@@ -35,7 +35,7 @@ import {
   ListSubheader,
   ListItemAvatar,
   ListItemSecondaryAction
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Block from '~/components/Block';
-import AlarmIcon from '@material-ui/icons/Alarm';
-import { Grid, Fab } from '@material-ui/core';
+import AlarmIcon from '@mui/icons-material/Alarm';
+import { Grid, Fab } from '@mui/material';
 import { MFab } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

@@ -14,13 +14,13 @@ import { NavLink as RouterLink } from 'react-router-dom';
 import trash2Fill from '@iconify-icons/eva/trash-2-fill';
 import roundReport from '@iconify-icons/ic/round-report';
 import roundLabelImportant from '@iconify-icons/ic/round-label-important';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   ListItem,
   Typography,
   ListItemText,
   ListItemIcon
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

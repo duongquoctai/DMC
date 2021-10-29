@@ -1,8 +1,8 @@
 import React from 'react';
 import Block from '~/components/Block';
-import AlarmIcon from '@material-ui/icons/Alarm';
-import { Grid, Button } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import AlarmIcon from '@mui/icons-material/Alarm';
+import { Grid, Button } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

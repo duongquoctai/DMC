@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import ConversationItem from './ConversationItem';
-import { makeStyles } from '@material-ui/core/styles';
-import { List } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { List } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

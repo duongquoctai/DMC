@@ -9,7 +9,7 @@ import BadgeStatus from '~/components/BadgeStatus';
 import settingsFill from '@iconify-icons/eva/settings-fill';
 import roundAccountBox from '@iconify-icons/ic/round-account-box';
 import roundPowerSettingsNew from '@iconify-icons/ic/round-power-settings-new';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -22,7 +22,7 @@ import {
   IconButton,
   ListItemIcon,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

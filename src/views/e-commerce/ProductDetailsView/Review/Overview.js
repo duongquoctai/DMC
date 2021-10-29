@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import { Link as ScrollLink } from 'react-scroll';
 import { fShortenNumber } from '~/utils/formatNumber';
 import edit2Fill from '@iconify-icons/eva/edit-2-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -14,7 +14,7 @@ import {
   Button,
   Typography,
   LinearProgress
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

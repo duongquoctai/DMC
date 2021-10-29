@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
-      path: path.resolve(__dirname, '..', './.env.development')
+      path: path.resolve(__dirname, '..', './.env')
     })
   ],
   devServer: {
@@ -16,6 +16,11 @@ module.exports = {
     open: true,
     compress: true,
     hot: true
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   devtool: 'eval-source-map'
 };

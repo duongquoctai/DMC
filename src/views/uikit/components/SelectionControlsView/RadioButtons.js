@@ -6,7 +6,7 @@ import {
   RadioGroup,
   FormControl,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MRadio } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

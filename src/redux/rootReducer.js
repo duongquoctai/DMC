@@ -11,6 +11,7 @@ import blogReducer from './slices/blog';
 import productReducer from './slices/product';
 import userReducer from './slices/user';
 import notificationsReducer from './slices/notifications';
+import authReducer from './slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +30,15 @@ const productPersistConfig = {
   blacklist: ['isLoading', 'error', 'products', 'product', 'filters']
 };
 
+const authPersistConfig = {
+  key: 'auth',
+  storage: storage,
+  keyPrefix: 'redux-',
+  blacklist: ['loginLoading', 'error']
+};
+
 const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
   firebase: firebaseReducer,
   firestore: firestoreReducer,
   theme: darkModeReducer,

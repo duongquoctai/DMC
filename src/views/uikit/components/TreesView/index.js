@@ -2,19 +2,14 @@ import React from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import { TreeView, TreeItem } from '@material-ui/lab';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { TreeView, TreeItem } from '@mui/lab';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useSpring, animated } from 'react-spring/web.cjs';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { alpha, makeStyles, withStyles } from '@material-ui/core/styles';
-import {
-  Card,
-  Grid,
-  Collapse,
-  Container,
-  CardContent
-} from '@material-ui/core';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { alpha } from '@mui/material/styles';
+import { makeStyles, withStyles } from '@mui/styles';
+import { Card, Grid, Collapse, Container, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

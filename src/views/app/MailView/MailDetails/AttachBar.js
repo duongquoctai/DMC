@@ -5,8 +5,9 @@ import { Icon } from '@iconify/react';
 import Scrollbars from '~/components/Scrollbars';
 import arrowCircleDownFill from '@iconify-icons/eva/arrow-circle-down-fill';
 import { getFileType, getFileName, getFileThumb } from '~/utils/getFileFormat';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, IconButton } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Typography, IconButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

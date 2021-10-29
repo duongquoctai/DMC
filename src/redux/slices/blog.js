@@ -1,4 +1,4 @@
-import axios from '~/utils/axios';
+import axios from 'axios';
 import { createSlice } from '@reduxjs/toolkit';
 
 // ----------------------------------------------------------------------
@@ -76,8 +76,8 @@ export function getAllPosts() {
   return async dispatch => {
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.get('/api/blog/posts/all');
-      dispatch(slice.actions.getPostsSuccess(response.data.posts));
+      // const response = await axios.get('/api/blog/posts/all');
+      // dispatch(slice.actions.getPostsSuccess(response.data.posts));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

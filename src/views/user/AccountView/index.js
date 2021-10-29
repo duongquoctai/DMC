@@ -22,8 +22,8 @@ import {
   getAddressBook,
   getNotifications
 } from '~/redux/slices/user';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Tab, Box, Tabs } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Container, Tab, Box, Tabs } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

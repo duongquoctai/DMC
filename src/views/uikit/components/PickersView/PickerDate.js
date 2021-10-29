@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import Block from '~/components/Block';
 import isWeekend from 'date-fns/isWeekend';
-import { TextField } from '@material-ui/core';
+import { TextField } from '@mui/material';
 import {
   DatePicker,
   StaticDatePicker,
   MobileDatePicker,
   DesktopDatePicker
-} from '@material-ui/lab';
+} from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

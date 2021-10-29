@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import NewCreditCardForm from './NewCreditCardForm';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import checkmarkCircle2Fill from '@iconify-icons/eva/checkmark-circle-2-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -15,7 +15,7 @@ import {
   TextField,
   RadioGroup,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

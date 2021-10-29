@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import shieldFill from '@iconify-icons/eva/shield-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Switch, Divider, Typography } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import { makeStyles } from '@mui/styles';
+import { Box, Switch, Divider, Typography } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

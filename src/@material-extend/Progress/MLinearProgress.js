@@ -1,9 +1,10 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { darken, lighten, makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import { LinearProgress } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '~/utils/formatText';
+import { LinearProgress } from '@mui/material';
+import { darken, lighten } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

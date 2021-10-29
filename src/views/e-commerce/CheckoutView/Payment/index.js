@@ -8,9 +8,9 @@ import BillingInfo from './BillingInfo';
 import PaymentMethods from './PaymentMethods';
 import { useFormik, Form, FormikProvider } from 'formik';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Button } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import { makeStyles } from '@mui/styles';
+import { Grid, Button } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

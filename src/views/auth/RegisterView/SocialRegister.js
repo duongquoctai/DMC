@@ -1,12 +1,12 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import googleFill from '@iconify-icons/eva/google-fill';
 import twitterFill from '@iconify-icons/eva/twitter-fill';
 import facebookFill from '@iconify-icons/eva/facebook-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Button } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Grid, Button } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

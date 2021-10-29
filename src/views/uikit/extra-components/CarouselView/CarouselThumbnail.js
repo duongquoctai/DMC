@@ -3,8 +3,9 @@ import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import { IndexArrows } from '~/components/Slider';
 import React, { useState, useRef, useEffect } from 'react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -9,8 +9,8 @@ import CountrySelect from './CountrySelect';
 import MultipleValues from './MultipleValues';
 import ControllableStates from './ControllableStates';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Grid, Container, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Grid, Container, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -9,7 +9,7 @@ import MyAvatar from '~/components/MyAvatar';
 import React, { useState, useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -19,7 +19,7 @@ import {
   CardHeader,
   IconButton,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

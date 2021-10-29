@@ -12,7 +12,8 @@ import {
   ControlNavigation,
   ControlFullscreen
 } from '../controls';
-import { makeStyles, useTheme, alpha } from '@material-ui/core/styles';
+import { useTheme, alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

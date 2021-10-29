@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { fCurrency } from '~/utils/formatNumber';
 import editFill from '@iconify-icons/eva/edit-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -15,7 +15,7 @@ import {
   Typography,
   CardContent,
   InputAdornment
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

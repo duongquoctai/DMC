@@ -7,13 +7,13 @@ import Logo from '~/components/Logo';
 import RegisterForm from './RegisterForm';
 import closeFill from '@iconify-icons/eva/close-fill';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_PAGE } from '~/routes/paths';
 import SocialRegister from './SocialRegister';
 import { Link as RouterLink } from 'react-router-dom';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import { useFirebase, useFirestore } from 'react-redux-firebase';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -21,7 +21,7 @@ import {
   Divider,
   Container,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------
@@ -68,7 +68,7 @@ function RegisterView() {
   const firebase = useFirebase();
   const firestore = useFirestore();
   const isMountedRef = useIsMountedRef();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const RegisterSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -108,14 +108,14 @@ function RegisterView() {
                 displayName: values.firstName + ' ' + values.lastName
               });
           });
-        enqueueSnackbar('Login success', {
-          variant: 'success',
-          action: key => (
-            <MIconButton size="small" onClick={() => closeSnackbar(key)}>
-              <Icon icon={closeFill} />
-            </MIconButton>
-          )
-        });
+        // enqueueSnackbar('Login success', {
+        //   variant: 'success',
+        //   action: key => (
+        //     <MIconButton size="small" onClick={() => closeSnackbar(key)}>
+        //       <Icon icon={closeFill} />
+        //     </MIconButton>
+        //   )
+        // });
         if (isMountedRef.current) {
           setSubmitting(false);
         }

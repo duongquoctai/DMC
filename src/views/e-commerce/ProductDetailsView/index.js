@@ -16,7 +16,8 @@ import roundVerified from '@iconify-icons/ic/round-verified';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import { getProduct, addCart, onGotoStep } from '~/redux/slices/product';
 import roundVerifiedUser from '@iconify-icons/ic/round-verified-user';
-import { alpha, makeStyles } from '@material-ui/core/styles';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Tab,
@@ -26,8 +27,8 @@ import {
   Skeleton,
   Container,
   Typography
-} from '@material-ui/core';
-import { TabContext, TabList, TabPanel } from '@material-ui/lab';
+} from '@mui/material';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 

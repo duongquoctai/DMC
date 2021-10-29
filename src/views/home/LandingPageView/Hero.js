@@ -13,8 +13,8 @@ import {
   varFadeInUp,
   varFadeInRight
 } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, Box, Link, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Button, Box, Link, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

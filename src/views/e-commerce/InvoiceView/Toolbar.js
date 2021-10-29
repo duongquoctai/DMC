@@ -9,9 +9,9 @@ import shareFill from '@iconify-icons/eva/share-fill';
 import { DialogAnimate } from '~/components/Animate';
 import downloadFill from '@iconify-icons/eva/download-fill';
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Tooltip, IconButton, DialogActions } from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+import { makeStyles } from '@mui/styles';
+import { Box, Tooltip, IconButton, DialogActions } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState, useCallback } from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import Markdown from '~/components/Markdown';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 
@@ -35,29 +35,21 @@ ReadMdFile.propTypes = {
 
 function ReadMdFile({ content, className }) {
   const classes = useStyles();
+  const [file, setFile] = useState('');
 
-  /**
-   * !Why template fetching Md content
-   */
+  const getFile = useCallback(async () => {
+    fetch(content)
+      .then(response => response.text())
+      .then(text => {
+        setFile(text);
+      });
+  }, [content]);
 
-  // const [file, setFile] = useState('');
-  // const getFile = useCallback(async () => {
-  //   fetch(content)
-  //     .then(response => {
-  //       return response.text();
-  //     })
-  //     .then(text => {
-  //       setFile(text);
-  //     });
-  // }, [content]);
+  useEffect(() => {
+    getFile();
+  }, [getFile]);
 
-  // useEffect(() => {
-  //   getFile();
-  // }, [getFile]);
-
-  return (
-    <Markdown source={content} className={clsx(classes.root, className)} />
-  );
+  return <Markdown source={file} className={clsx(classes.root, className)} />;
 }
 
 export default ReadMdFile;

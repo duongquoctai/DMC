@@ -6,7 +6,7 @@ import {
   FormGroup,
   FormControl,
   FormControlLabel
-} from '@material-ui/core';
+} from '@mui/material';
 import { MSwitch } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

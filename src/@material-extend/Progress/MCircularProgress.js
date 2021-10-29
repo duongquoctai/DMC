@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { capitalize } from '@material-ui/core/utils';
-import { makeStyles } from '@material-ui/core/styles';
-import { CircularProgress } from '@material-ui/core';
+import { capitalize } from '~/utils/formatText';
+import { makeStyles } from '@mui/styles';
+import { CircularProgress } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

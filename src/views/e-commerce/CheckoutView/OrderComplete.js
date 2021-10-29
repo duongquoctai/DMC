@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import filePdfFilled from '@iconify-icons/ant-design/file-pdf-filled';
 import arrowIosBackFill from '@iconify-icons/eva/arrow-ios-back-fill';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Link,
@@ -12,7 +12,7 @@ import {
   Button,
   Divider,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

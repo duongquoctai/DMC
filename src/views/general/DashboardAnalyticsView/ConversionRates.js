@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import ReactApexChart from 'react-apexcharts';
 import { fNumber } from '~/utils/formatNumber';
 import { ApexChartsOption } from '~/components/Charts/Apexcharts';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card, CardHeader } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, CardHeader } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

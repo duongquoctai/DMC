@@ -1,13 +1,12 @@
+import React, { useEffect } from 'react';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 import NavItem from './NavItem';
 import MenuLists from './config';
 import PropTypes from 'prop-types';
 import Logo from '~/components/Logo';
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Scrollbars from '~/components/Scrollbars';
-import { Link as RouterLink } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import { List, Box, Drawer, Hidden, ListSubheader } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { List, Box, Drawer, Hidden, ListSubheader } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

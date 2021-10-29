@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { GoogleMap, Circle } from '@react-google-maps/api';
 import { capitalCase } from 'change-case';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { TextField } from '@material-ui/core';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { TextField } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

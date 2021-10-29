@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import Block from '~/components/Block';
 import { MCircularProgress } from '~/@material-extend';
 

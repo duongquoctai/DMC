@@ -8,8 +8,9 @@ import { getImgFeed } from '~/utils/getImages';
 import { Link as RouterLink } from 'react-router-dom';
 import { BasicArrows1, CustomPaging } from '~/components/Slider';
 import { MotionContainer, varFadeInRight } from '~/components/Animate';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -5,8 +5,8 @@ import { Icon } from '@iconify/react';
 import plusFill from '@iconify-icons/eva/plus-fill';
 import editFill from '@iconify-icons/eva/edit-fill';
 import trash2Fill from '@iconify-icons/eva/trash-2-fill';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Button, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Button, Typography } from '@mui/material';
 import { MButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

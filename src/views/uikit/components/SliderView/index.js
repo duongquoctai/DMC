@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import VolumeUp from '@material-ui/icons/VolumeUp';
-import VolumeDown from '@material-ui/icons/VolumeDown';
+import VolumeUp from '@mui/icons-material/VolumeUp';
+import VolumeDown from '@mui/icons-material/VolumeDown';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -14,7 +14,7 @@ import {
   Container,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

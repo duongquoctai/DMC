@@ -7,7 +7,7 @@ Two packages to call APIs are [axios](https://www.npmjs.com/package/axios) and [
 #### Example
 
 ```js
-import axios from '~/utils/axios';
+import axios from '~/utils/httpServices';
 
 // ----------------------------------------------------------------------
 

@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Logo from '~/components/Logo';
 import { Link as ScrollLink } from 'react-scroll';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, Container, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Link, Container, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

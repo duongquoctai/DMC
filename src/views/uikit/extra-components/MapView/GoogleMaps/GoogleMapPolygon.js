@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GoogleMap, Polygon } from '@react-google-maps/api';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

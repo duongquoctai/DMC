@@ -25,7 +25,7 @@ import {
   increaseQuantity,
   decreaseQuantity
 } from '~/redux/slices/product';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@mui/styles';
 import {
   Grid,
   Step,
@@ -33,7 +33,7 @@ import {
   Container,
   StepLabel,
   StepConnector
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

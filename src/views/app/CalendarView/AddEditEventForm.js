@@ -4,14 +4,14 @@ import { merge } from 'lodash';
 import PropTypes from 'prop-types';
 import { isBefore } from 'date-fns';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { useDispatch } from 'react-redux';
 import trash2Fill from '@iconify-icons/eva/trash-2-fill';
 import { useFormik, Form, FormikProvider } from 'formik';
 import { PickerSingleColor } from '~/components/ColorUtility';
-import MobileDateTimePicker from '@material-ui/lab/MobileDateTimePicker';
+import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 import { createEvent, updateEvent, deleteEvent } from '~/redux/slices/calendar';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Button,
   Switch,
@@ -22,8 +22,8 @@ import {
   FormHelperText,
   FormControlLabel,
   DialogContent
-} from '@material-ui/core';
-import { LoadingButton } from '@material-ui/lab';
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ AddEditEventForm.propTypes = {
 
 function AddEditEventForm({ event, range, onCancel }) {
   const classes = useStyles();
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const isCreating = !event;
 
@@ -96,10 +96,10 @@ function AddEditEventForm({ event, range, onCancel }) {
         };
         if (event) {
           dispatch(updateEvent(event.id, newEvent));
-          enqueueSnackbar('Update event success', { variant: 'success' });
+          // enqueueSnackbar('Update event success', { variant: 'success' });
         } else {
           dispatch(createEvent(newEvent));
-          enqueueSnackbar('Create event success', { variant: 'success' });
+          // enqueueSnackbar('Create event success', { variant: 'success' });
         }
         resetForm();
         onCancel();
@@ -124,7 +124,7 @@ function AddEditEventForm({ event, range, onCancel }) {
     try {
       onCancel();
       dispatch(deleteEvent(event.id));
-      enqueueSnackbar('Delete event success', { variant: 'success' });
+      // enqueueSnackbar('Delete event success', { variant: 'success' });
     } catch (err) {
       console.error(err);
     }
@@ -220,7 +220,7 @@ function AddEditEventForm({ event, range, onCancel }) {
             type="submit"
             variant="contained"
             pending={isSubmitting}
-            pendingIndicator="Loading..."
+            loadingIndicator="Loading..."
           >
             Add
           </LoadingButton>

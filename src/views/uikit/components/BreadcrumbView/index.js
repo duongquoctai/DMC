@@ -2,12 +2,12 @@ import React from 'react';
 import Page from '~/components/Page';
 import Block from '~/components/Block';
 import { PATH_APP } from '~/routes/paths';
-import HomeIcon from '@material-ui/icons/Home';
-import GrainIcon from '@material-ui/icons/Grain';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
+import HomeIcon from '@mui/icons-material/Home';
+import GrainIcon from '@mui/icons-material/Grain';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
 import MBreadcrumbs from '~/@material-extend/MBreadcrumbs';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Link,
   Card,
@@ -16,7 +16,7 @@ import {
   Typography,
   CardContent,
   Breadcrumbs
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

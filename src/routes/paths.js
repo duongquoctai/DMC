@@ -40,7 +40,12 @@ export const PATH_APP = {
     dashboard: path(ROOTS.app, '/dashboard'),
     ecommerce: path(ROOTS.app, '/dashboard/ecommerce'),
     analytics: path(ROOTS.app, '/dashboard/analytics'),
-    infra: path(ROOTS.app, '/dashboard/infra')
+    overview: path(ROOTS.app, '/dashboard/overview')
+  },
+  export: path(ROOTS.app, '/export'),
+  cdp: {
+    dashboard: path(ROOTS.app, '/cdp/dashboard'),
+    profile: path(ROOTS.app, '/cdp/profile')
   },
   app: {
     mail: {
@@ -154,7 +159,6 @@ export const PATH_DOCS = {
   root: ROOTS.docs,
   introduction: path(ROOTS.docs, '/introduction'),
   started: path(ROOTS.docs, '/getting-started'),
-  webpack: path(ROOTS.docs, '/webpack-migration'),
   // Theme UI
   color: path(ROOTS.docs, '/color'),
   typography: path(ROOTS.docs, '/typography'),

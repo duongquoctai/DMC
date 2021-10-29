@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatDistanceToNowStrict } from 'date-fns';
-import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, Box, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Avatar, Box, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

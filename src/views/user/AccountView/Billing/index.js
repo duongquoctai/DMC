@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import AddressBook from './AddressBook';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import PaymentMethod from './PaymentMethod';
 import fakeRequest from '~/utils/fakeRequest';
 import InvoiceHistory from './InvoiceHistory';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Card, Button, Typography } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, Grid, Card, Button, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ Billing.propTypes = {
 function Billing({ cards, addressBook, invoices }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
 
   const NewCardSchema = Yup.object().shape({
     cardName: Yup.string().required('Name is required'),
@@ -67,7 +67,7 @@ function Billing({ cards, addressBook, invoices }) {
       resetForm();
       setSubmitting(false);
       alert(JSON.stringify(values, null, 2));
-      enqueueSnackbar('Add card success', { variant: 'success' });
+      // enqueueSnackbar('Add card success', { variant: 'success' });
     }
   });
 

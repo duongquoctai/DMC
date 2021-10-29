@@ -19,7 +19,7 @@ export default function Card({ theme }) {
       },
       styleOverrides: {
         root: {
-          padding: 24,
+          // padding: 24,
           paddingBottom: 0
         }
       }

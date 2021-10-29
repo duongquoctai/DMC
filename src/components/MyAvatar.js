@@ -13,7 +13,7 @@ MyAvatar.propTypes = {
 function MyAvatar({ className, ...other }) {
   const { auth, profile } = useSelector(state => state.firebase);
   const displayName = auth.displayName || profile.displayName;
-  const photoURL = auth.photoURL || profile.photoURL;
+  const photoURL = '/static/brand/logo_ftel.png';
 
   return (
     <MAvatar

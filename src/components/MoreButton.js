@@ -5,14 +5,14 @@ import archiveFill from '@iconify-icons/eva/archive-fill';
 import downloadFill from '@iconify-icons/eva/download-fill';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
 import filePdfFilled from '@iconify-icons/ant-design/file-pdf-filled';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Menu,
   MenuItem,
   IconButton,
   ListItemIcon,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

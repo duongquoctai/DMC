@@ -1,7 +1,7 @@
-import clsx from 'clsx';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card } from '@material-ui/core';
+import clsx from 'clsx';
+import { makeStyles } from '@mui/styles';
+import { Box, Card } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

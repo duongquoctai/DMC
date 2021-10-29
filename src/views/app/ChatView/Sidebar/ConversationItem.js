@@ -4,14 +4,14 @@ import { last } from 'lodash';
 import PropTypes from 'prop-types';
 import { formatDistanceToNowStrict } from 'date-fns';
 import BadgeStatus from '~/components/BadgeStatus';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Avatar,
   ListItem,
   ListItemText,
   ListItemAvatar
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

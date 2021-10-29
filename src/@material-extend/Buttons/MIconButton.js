@@ -2,9 +2,10 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 import { ButtonAnimate } from '~/components/Animate';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { capitalize } from '@material-ui/core/utils';
-import { IconButton } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { IconButton } from '@mui/material';
+import capitalize from 'lodash/capitalize';
 
 // ----------------------------------------------------------------------
 

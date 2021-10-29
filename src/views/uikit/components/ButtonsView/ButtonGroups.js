@@ -1,6 +1,6 @@
 import React from 'react';
 import Block from '~/components/Block';
-import { ButtonGroup, Button, Grid } from '@material-ui/core';
+import { ButtonGroup, Button, Grid } from '@mui/material';
 import { MButtonGroup } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

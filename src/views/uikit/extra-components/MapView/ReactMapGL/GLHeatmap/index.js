@@ -10,7 +10,7 @@ import {
   ControlNavigation,
   ControlFullscreen
 } from '../controls';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

@@ -22,8 +22,8 @@ import {
   getFollowers,
   onToggleFollow
 } from '~/redux/slices/user';
-import { makeStyles } from '@material-ui/core/styles';
-import { Tab, Box, Card, Tabs, Container } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Tab, Box, Card, Tabs, Container } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -8,7 +8,7 @@ import fileFill from '@iconify-icons/eva/file-fill';
 import closeFill from '@iconify-icons/eva/close-fill';
 import { motion, AnimatePresence } from 'framer-motion';
 import { varFadeInRight } from '~/components/Animate';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   List,
@@ -19,7 +19,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemSecondaryAction
-} from '@material-ui/core';
+} from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

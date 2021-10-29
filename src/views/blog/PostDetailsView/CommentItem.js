@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { fDate } from '~/utils/formatTime';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Button,
@@ -13,7 +13,7 @@ import {
   Typography,
   ListItemText,
   ListItemAvatar
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

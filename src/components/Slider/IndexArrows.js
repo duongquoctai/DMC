@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import arrowLeftFill from '@iconify-icons/eva/arrow-left-fill';
 import arrowRightFill from '@iconify-icons/eva/arrow-right-fill';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Typography } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

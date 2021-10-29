@@ -14,7 +14,7 @@ import {
   StandardTheme,
   AubergineTheme
 } from './themes';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -23,7 +23,7 @@ import {
   Container,
   CardHeader,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 
 // ----------------------------------------------------------------------
 

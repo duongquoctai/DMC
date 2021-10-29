@@ -7,7 +7,7 @@ import { PATH_APP } from '~/routes/paths';
 import { fCurrency } from '~/utils/formatNumber';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import Scrollbars from '~/components/Scrollbars';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Grid,
@@ -21,7 +21,7 @@ import {
   TableCell,
   Typography,
   TableContainer
-} from '@material-ui/core';
+} from '@mui/material';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

@@ -6,8 +6,8 @@ import Scrollbars from '~/components/Scrollbars';
 import React, { useState, useEffect } from 'react';
 import EmptyContent from '~/components/EmptyContent';
 import { useDispatch, useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Box } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Divider, Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

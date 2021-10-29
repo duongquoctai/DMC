@@ -1,9 +1,9 @@
+import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
-import React, { useRef, useState } from 'react';
 import PopoverMenu from '~/components/PopoverMenu';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, MenuItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

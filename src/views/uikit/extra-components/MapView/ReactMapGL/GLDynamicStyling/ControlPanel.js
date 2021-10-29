@@ -3,8 +3,9 @@ import { fromJS } from 'immutable';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import MAP_STYLE from '../data/map-style-basic-v8.json';
-import { makeStyles, alpha, useTheme } from '@material-ui/core/styles';
-import { Switch } from '@material-ui/core';
+import { useTheme, alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Switch } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

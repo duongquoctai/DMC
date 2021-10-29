@@ -14,8 +14,8 @@ import CurrentDownload from './CurrentDownload';
 import TotalActiveUsers from './TotalActiveUsers';
 import TopInstalledCountries from './TopInstalledCountries';
 import TopRelatedApplications from './TopRelatedApplications';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Container, Grid } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

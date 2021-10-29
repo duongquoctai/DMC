@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, Box, Card, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Button, Box, Card, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

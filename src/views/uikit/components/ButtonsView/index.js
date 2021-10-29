@@ -9,8 +9,8 @@ import OutlinedButtons from './OutlinedButtons';
 import ContainedButtons from './ContainedButtons';
 import FloatingActionButton from './FloatingActionButton';
 import HeaderDashboard from '~/components/HeaderDashboard';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, Container, CardHeader, CardContent } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Card, Container, CardHeader, CardContent } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -7,7 +7,7 @@ import Minimal from './Minimal';
 import Advertisement from './Advertisement';
 import CleanInterfaces from './CleanInterfaces';
 import HugePackElements from './HugePackElements';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { PATH_PAGE } from '~/routes/paths';
 import LoadingScreen from '~/components/LoadingScreen';
-import { isLoaded, isEmpty } from 'react-redux-firebase';
+import { getToken } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -13,13 +13,18 @@ AuthProtect.propTypes = {
 };
 
 function AuthProtect({ children }) {
-  const { auth } = useSelector(state => state.firebase);
+  const { accessToken, loginLoading } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
 
-  if (!isLoaded(auth)) {
+  useEffect(() => {
+    dispatch(getToken());
+  }, []);
+
+  if (loginLoading) {
     return <LoadingScreen />;
   }
 
-  if (isEmpty(auth)) {
+  if (!accessToken) {
     return <Redirect to={PATH_PAGE.auth.login} />;
   }
 

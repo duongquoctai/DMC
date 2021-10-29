@@ -7,7 +7,8 @@ import Scrollbars from '~/components/Scrollbars';
 import appleFilled from '@iconify-icons/ant-design/apple-filled';
 import { fCurrency, fShortenNumber } from '~/utils/formatNumber';
 import windowsFilled from '@iconify-icons/ant-design/windows-filled';
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {
   Box,
   Card,
@@ -15,7 +16,7 @@ import {
   CardHeader,
   Typography,
   CardContent
-} from '@material-ui/core';
+} from '@mui/material';
 import { MLabel } from '~/@material-extend';
 
 // ----------------------------------------------------------------------

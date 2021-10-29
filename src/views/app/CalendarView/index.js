@@ -5,7 +5,7 @@ import '@fullcalendar/timegrid/main.css';
 import Toolbar from './Toolbar';
 import Page from '~/components/Page';
 import { Icon } from '@iconify/react';
-import { useSnackbar } from 'notistack';
+// import { useSnackbar } from 'notistack';
 import { PATH_APP } from '~/routes/paths';
 import listPlugin from '@fullcalendar/list';
 import FullCalendar from '@fullcalendar/react';
@@ -28,8 +28,9 @@ import {
   selectEvent,
   selectRange
 } from '~/redux/slices/calendar';
-import { makeStyles, alpha } from '@material-ui/core/styles';
-import { Box, Card, Tooltip, Container, DialogTitle } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Tooltip, Container, DialogTitle } from '@mui/material';
 import { MFab } from '~/@material-extend';
 
 // ----------------------------------------------------------------------
@@ -238,7 +239,7 @@ function CalendarView() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const calendarRef = useRef(null);
-  const { enqueueSnackbar } = useSnackbar();
+  // const { enqueueSnackbar } = useSnackbar();
   const isMobile = useBreakpoints('down', 'sm');
   const [date, setDate] = useState(new Date());
   const [view, setView] = useState(isMobile ? 'listWeek' : 'dayGridMonth');
@@ -319,7 +320,7 @@ function CalendarView() {
           end: event.end
         })
       );
-      enqueueSnackbar('Update event success', { variant: 'success' });
+      // enqueueSnackbar('Update event success', { variant: 'success' });
     } catch (err) {
       console.error(err);
     }
@@ -334,7 +335,7 @@ function CalendarView() {
           end: event.end
         })
       );
-      enqueueSnackbar('Update event success', { variant: 'success' });
+      // enqueueSnackbar('Update event success', { variant: 'success' });
     } catch (err) {
       console.error(err);
     }

@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import { GoogleMap, Rectangle } from '@react-google-maps/api';
 
 // ----------------------------------------------------------------------

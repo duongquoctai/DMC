@@ -1,9 +1,9 @@
 import React from 'react';
 import { Form, FormikProvider } from 'formik';
-import { LoadingButton } from '@material-ui/lab';
+import { LoadingButton } from '@mui/lab';
 import maxLengthCheck from '~/utils/maxLengthCheck';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, OutlinedInput, FormHelperText } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
+import { Box, OutlinedInput, FormHelperText } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import React, { useState, useRef } from 'react';
 import { IndexArrows } from '~/components/Slider';
 import { varFadeInRight, MotionContainer } from '~/components/Animate';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Box, Card, Button, Typography } from '@material-ui/core';
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { Box, Card, Button, Typography } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

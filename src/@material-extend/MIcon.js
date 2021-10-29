@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ReactSVG } from 'react-svg';
-import { capitalize } from '@material-ui/core/utils';
-import { makeStyles } from '@material-ui/core/styles';
+import { capitalize } from '~/utils/formatText';
+import { makeStyles } from '@mui/styles';
 
 // ----------------------------------------------------------------------
 
