@@ -17,12 +17,18 @@ const DocsRoutes = {
         import('src/views/docs/getting-started/IntroductionView')
       )
     },
-
     {
       exact: true,
       path: PATH_DOCS.started,
       component: lazy(() =>
         import('src/views/docs/getting-started/QuickStartView')
+      )
+    },
+    {
+      exact: true,
+      path: PATH_DOCS.webpackMigration,
+      component: lazy(() =>
+        import('src/views/docs/getting-started/WebpackMigration')
       )
     },
 

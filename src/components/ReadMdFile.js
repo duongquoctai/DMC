@@ -37,12 +37,8 @@ function ReadMdFile({ content, className }) {
   const classes = useStyles();
   const [file, setFile] = useState('');
 
-  const getFile = useCallback(async () => {
-    fetch(content)
-      .then(response => response.text())
-      .then(text => {
-        setFile(text);
-      });
+  const getFile = useCallback(() => {
+    setFile(content);
   }, [content]);
 
   useEffect(() => {

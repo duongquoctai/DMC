@@ -5,9 +5,9 @@ import content from './content.md';
 
 // ----------------------------------------------------------------------
 
-export default function WebpackMigrate() {
+export default function WebpackMigration() {
   return (
-    <Page title="Webpack Migrate">
+    <Page title="Webpack Migration">
       <ReadMdFile content={content} />
     </Page>
   );
