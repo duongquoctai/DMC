@@ -152,10 +152,10 @@ export function getToken() {
     );
     try {
       const response = await authService._getToken();
-      if (response && response.access_token !== 'N/A') {
+      if (response && response.data.access_token !== 'N/A') {
         dispatch(
           slice.actions.loginSuccess({
-            data: response
+            data: response.data
           })
         );
         dispatch(
@@ -164,19 +164,19 @@ export function getToken() {
             status: false
           })
         );
-      } else {
-        if (response && response.access_token === 'N/A') {
-          dispatch(
-            slice.actions.toggleLoading({
-              keyLoading: 'loginLoading',
-              status: false
-            })
-          );
-          dispatch(slice.actions.logout());
-          return;
-        }
-        throw response;
+        return;
       }
+      // if (response && response.access_token === 'N/A') {
+      //   dispatch(
+      //     slice.actions.toggleLoading({
+      //       keyLoading: 'loginLoading',
+      //       status: false
+      //     })
+      //   );
+      //   dispatch(slice.actions.logout());
+      //   return;
+      // }
+      throw response;
     } catch (error) {
       dispatch(slice.actions.hasError({ keyLoading: 'loginLoading', error }));
     }
