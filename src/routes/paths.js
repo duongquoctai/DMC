@@ -159,6 +159,7 @@ export const PATH_DOCS = {
   root: ROOTS.docs,
   introduction: path(ROOTS.docs, '/introduction'),
   started: path(ROOTS.docs, '/getting-started'),
+  webpackMigration: path(ROOTS.docs, '/webpack-migration'),
   // Theme UI
   color: path(ROOTS.docs, '/color'),
   typography: path(ROOTS.docs, '/typography'),

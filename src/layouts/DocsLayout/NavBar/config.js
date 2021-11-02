@@ -9,7 +9,8 @@ export default [
     subheader: 'getting started',
     items: [
       { title: 'introduction', href: PATH_DOCS.introduction },
-      { title: 'quick start', href: PATH_DOCS.started }
+      { title: 'quick start', href: PATH_DOCS.started },
+      { title: 'webpack migration', href: PATH_DOCS.webpackMigration }
     ]
   },
   {

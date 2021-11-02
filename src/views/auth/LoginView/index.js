@@ -3,8 +3,7 @@ import Section from './Section';
 import { useDispatch, useSelector } from 'react-redux';
 import Page from '~/components/Page';
 import Logo from '~/components/Logo';
-import { Icon } from '@iconify/react';
-import { apiConfig } from '~/config';
+import { centralLogout } from '~/redux/slices/auth';
 // import LoginForm from './LoginForm';
 // import SocialLogin from './SocialLogin';
 // import { useSnackbar } from 'notistack';
@@ -123,8 +122,11 @@ function LoginView() {
           <Button
             fullWidth
             size="large"
-            href={`${apiConfig.baseUrl}/auth`}
+            // href={`${apiConfig.baseUrl}/auth`}
             variant="contained"
+            onClick={() => {
+              dispatch(centralLogout());
+            }}
           >
             Login
           </Button>

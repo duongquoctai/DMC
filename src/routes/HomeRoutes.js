@@ -11,7 +11,8 @@ const HomeRoutes = {
     {
       exact: true,
       path: '/',
-      component: () => <Redirect to="/app/dashboard" />
+      component: lazy(() => import('~/views/home/LandingPageView'))
+      // component: () => <Redirect to="/app/dashboard" />
     },
     {
       exact: true,

@@ -153,30 +153,11 @@ export function getToken() {
     try {
       const response = await authService._getToken();
       if (response && response.access_token !== 'N/A') {
-        const { access_token } = response;
-        const responseTokenValidation = await authService._validateToken({
-          token: access_token
-        });
-        if (responseTokenValidation) {
-          const { code, message } = responseTokenValidation;
-          if (code === 200) {
-            dispatch(
-              slice.actions.loginSuccess({
-                data: response
-              })
-            );
-
-            dispatch(
-              slice.actions.toggleLoading({
-                keyLoading: 'loginLoading',
-                status: false
-              })
-            );
-            return;
-          }
-
-          throw message;
-        }
+        dispatch(
+          slice.actions.loginSuccess({
+            data: response
+          })
+        );
         dispatch(
           slice.actions.toggleLoading({
             keyLoading: 'loginLoading',

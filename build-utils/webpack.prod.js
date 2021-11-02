@@ -2,6 +2,8 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const deps = require('../package.json').dependencies;
 
 module.exports = {
   mode: 'production',
@@ -15,6 +17,27 @@ module.exports = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new ModuleFederationPlugin({
+      name: 'insight',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Routes': './src/routes'
+      },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: deps.react
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: deps['react-dom']
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: deps['react-router-dom']
+        }
+      }
     })
   ],
   devtool: 'source-map',
