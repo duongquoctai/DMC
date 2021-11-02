@@ -9,7 +9,7 @@ import MyAvatar from '~/components/MyAvatar';
 // import { useFirebase } from 'react-redux-firebase';
 // import personFill from '@iconify-icons/eva/person-fill';
 // import settingsFill from '@iconify-icons/eva/settings-fill';
-import { sessionLogout } from '~/redux/slices/auth';
+import { CENTRAL_LOGOUT_ENDPOINT } from '~/api/endpoint';
 import PopoverMenu from '~/components/PopoverMenu';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import homeFill from '@iconify-icons/eva/home-fill';
@@ -87,9 +87,8 @@ function Account() {
 
   const handleLogout = async () => {
     try {
-      dispatch(sessionLogout());
+      window.location = CENTRAL_LOGOUT_ENDPOINT;
       if (isMountedRef.current) {
-        history.push('/');
         handleClose();
       }
     } catch (err) {

@@ -5,7 +5,7 @@ function path(root, sublink) {
 }
 
 const ROOTS = {
-  auth: '/auth',
+  auth: '/authen',
   app: '/app',
   docs: '/docs'
 };
