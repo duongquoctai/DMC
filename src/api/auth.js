@@ -2,6 +2,7 @@ import axios from '../utils/httpServices';
 
 import {
   LOGIN_ENDPOINT,
+  LOGOUT_ENDPOINT,
   GET_TOKEN_ENDPOINT,
   CENTRAL_LOGOUT_ENDPOINT,
   VALIDATE_TOKEN_ENDPOINT
@@ -14,6 +15,10 @@ export const authService = {
   _login: data => {
     const endpoint = LOGIN_ENDPOINT;
     return axios.post(endpoint, data);
+  },
+  _logout: () => {
+    const endpoint = LOGOUT_ENDPOINT;
+    return axios.get(endpoint);
   },
   _centralLogout: () => {
     const endpoint = CENTRAL_LOGOUT_ENDPOINT;
