@@ -39,7 +39,7 @@ const slice = createSlice({
       storage.setItem('accessToken', access_token);
     },
 
-    // LOGIN SUCCESS
+    // LOGOUT SUCCESS
     logout(state, action) {
       state.accessToken = null;
       storage.removeItem('redux-auth');
@@ -152,12 +152,17 @@ export function getToken() {
     );
     try {
       const response = await authService._getToken();
-      if (response && response.data.access_token !== 'N/A') {
-        dispatch(
-          slice.actions.loginSuccess({
-            data: response.data
-          })
-        );
+      if (response) {
+        if (response.data.access_token !== 'N/A') {
+          dispatch(
+            slice.actions.loginSuccess({
+              data: response.data
+            })
+          );
+        }
+        if (response.data.access_token === 'N/A') {
+          dispatch(slice.actions.logout());
+        }
         dispatch(
           slice.actions.toggleLoading({
             keyLoading: 'loginLoading',

@@ -2,21 +2,21 @@ import React, { useRef, useState } from 'react';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import { Icon } from '@iconify/react';
-// import { useSnackbar } from 'notistack';
 import { useDispatch } from 'react-redux';
-import { PATH_APP } from '~/routes/paths';
 import MyAvatar from '~/components/MyAvatar';
-import { useFirebase } from 'react-redux-firebase';
+// import { useSnackbar } from 'notistack';
+// import { PATH_APP } from '~/routes/paths';
+// import { useFirebase } from 'react-redux-firebase';
+// import personFill from '@iconify-icons/eva/person-fill';
+// import settingsFill from '@iconify-icons/eva/settings-fill';
+// import { centralLogout } from '~/redux/slices/auth';
 import PopoverMenu from '~/components/PopoverMenu';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import homeFill from '@iconify-icons/eva/home-fill';
-import personFill from '@iconify-icons/eva/person-fill';
-import settingsFill from '@iconify-icons/eva/settings-fill';
 import { alpha } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Button, Box, Divider, MenuItem, Typography } from '@mui/material';
 import { MIconButton } from '~/@material-extend';
-import { centralLogout } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ const MENU_OPTIONS = [
     label: 'Home',
     icon: homeFill,
     linkTo: '/'
-  },
+  }
   // {
   //   label: 'Profile',
   //   icon: personFill,
@@ -87,9 +87,9 @@ function Account() {
 
   const handleLogout = async () => {
     try {
-      dispatch(centralLogout());
+      // dispatch(centralLogout());
       if (isMountedRef.current) {
-        history.push('/');
+        history.push('/logout');
         handleClose();
       }
     } catch (err) {
