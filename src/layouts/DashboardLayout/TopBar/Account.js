@@ -9,7 +9,7 @@ import MyAvatar from '~/components/MyAvatar';
 // import { useFirebase } from 'react-redux-firebase';
 // import personFill from '@iconify-icons/eva/person-fill';
 // import settingsFill from '@iconify-icons/eva/settings-fill';
-// import { centralLogout } from '~/redux/slices/auth';
+import { sessionLogout } from '~/redux/slices/auth';
 import PopoverMenu from '~/components/PopoverMenu';
 import useIsMountedRef from '~/hooks/useIsMountedRef';
 import homeFill from '@iconify-icons/eva/home-fill';
@@ -71,12 +71,12 @@ function Account() {
   const history = useHistory();
   const anchorRef = useRef(null);
   const dispatch = useDispatch();
-  // const firebase = useFirebase();
   const isMountedRef = useIsMountedRef();
-  // const { enqueueSnackbar } = useSnackbar();
   const [isOpen, setOpen] = useState(false);
-  // const { auth, profile } = useSelector(state => state.firebase);
   const displayName = 'Administrator';
+  // const firebase = useFirebase();
+  // const { enqueueSnackbar } = useSnackbar();
+  // const { auth, profile } = useSelector(state => state.firebase);
 
   const handleOpen = () => {
     setOpen(true);
@@ -87,14 +87,14 @@ function Account() {
 
   const handleLogout = async () => {
     try {
-      // dispatch(centralLogout());
+      dispatch(sessionLogout());
       if (isMountedRef.current) {
-        history.push('/logout');
+        history.push('/');
         handleClose();
       }
     } catch (err) {
-      console.error(err);
       // enqueueSnackbar('Unable to logout', { variant: 'error' });
+      console.error(err);
     }
   };
 

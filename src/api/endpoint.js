@@ -8,6 +8,6 @@ export const OVERVIEW_FILTER_ENDPOINT = `${OVERVIEW_ENDPOINT}/filters`;
 
 export const LOGIN_ENDPOINT = '/login';
 export const CENTRAL_LOGOUT_ENDPOINT = `${apiConfig.baseUrl}/centralLogout`;
-export const LOGOUT_ENDPOINT = `${apiConfig.baseUrl}/logout`;
+export const LOGOUT_ENDPOINT = `/logout`;
 export const GET_TOKEN_ENDPOINT = `/getToken`;
 export const VALIDATE_TOKEN_ENDPOINT = `/validateToken`;

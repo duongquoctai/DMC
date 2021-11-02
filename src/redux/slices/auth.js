@@ -109,6 +109,22 @@ export function centralLogout() {
   };
 }
 
+export function sessionLogout() {
+  return async dispatch => {
+    try {
+      const response = await authService._logout();
+      console.log('response', response);
+      if (response.status === 200) {
+        dispatch(slice.actions.logout());
+        return;
+      }
+      throw response;
+    } catch (error) {
+      dispatch(slice.actions.hasError({ error }));
+    }
+  };
+}
+
 export function validateToken({ token }) {
   return async dispatch => {
     dispatch(
