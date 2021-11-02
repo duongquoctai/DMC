@@ -21,12 +21,14 @@ export const authService = {
   },
   _getToken: () => {
     const endpoint = GET_TOKEN_ENDPOINT;
-    return fetch(endpoint).then(response => response.json());
+    return axios.get(endpoint);
   },
   _validateToken: ({ token }) => {
     const endpoint = VALIDATE_TOKEN_ENDPOINT;
-    return fetch(`${endpoint}?acToken=${token}`).then(response =>
-      response.json()
-    );
+    return axios.get(endpoint, {
+      params: {
+        acToken: token
+      }
+    });
   }
 };

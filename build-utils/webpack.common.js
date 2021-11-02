@@ -4,8 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-// const deps = require('../package.json').dependencies;
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
@@ -13,6 +11,7 @@ module.exports = {
     path: paths.appBuild,
     publicPath: '/'
   },
+  target: 'web',
   devServer: {
     contentBase: paths.appBuild
   },
@@ -99,26 +98,5 @@ module.exports = {
         }
       ]
     })
-    // new ModuleFederationPlugin({
-    //   name: 'dmc',
-    //   filename: 'remoteEntry.js',
-    //   exposes: {
-    //     './Routes': './src/routes'
-    //   },
-    //   shared: {
-    //     react: {
-    //       singleton: true,
-    //       requiredVersion: deps.react
-    //     },
-    //     'react-dom': {
-    //       singleton: true,
-    //       requiredVersion: deps['react-dom']
-    //     },
-    //     'react-router-dom': {
-    //       singleton: true,
-    //       requiredVersion: deps['react-router-dom']
-    //     }
-    //   }
-    // })
   ]
 };
