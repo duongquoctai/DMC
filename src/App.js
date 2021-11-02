@@ -42,23 +42,23 @@ function App() {
         <PersistGate loading={<LoadingScreen />} persistor={persistor}>
           <ThemeConfig>
             <LocalizationProvider dateAdapter={MomentUtils}>
-              <FirebaseProvider>
-                <Router history={history}>
-                  <ScrollToTop />
-                  <GoogleAnalytics />
-                  <ToastContainer
-                    position="bottom-right"
-                    autoClose={2000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                  />
-                  {renderRoutes(routes)}
-                </Router>
-              </FirebaseProvider>
+              {/* <FirebaseProvider> */}
+              <Router history={history}>
+                <ScrollToTop />
+                <GoogleAnalytics />
+                <ToastContainer
+                  position="bottom-right"
+                  autoClose={2000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                />
+                {renderRoutes(routes)}
+              </Router>
+              {/* </FirebaseProvider> */}
             </LocalizationProvider>
           </ThemeConfig>
         </PersistGate>
