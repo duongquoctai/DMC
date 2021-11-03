@@ -51,6 +51,10 @@ export default [
           {
             title: 'analytics',
             href: PATH_APP.main.analytics
+          },
+          {
+            title: 'overview',
+            href: PATH_APP.main.overview
           }
         ]
       }

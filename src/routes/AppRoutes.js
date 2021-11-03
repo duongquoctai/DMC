@@ -30,6 +30,11 @@ const AppRoutes = {
     },
     {
       exact: true,
+      path: PATH_APP.main.overview,
+      component: lazy(() => import('src/views/general/DashboardOverview'))
+    },
+    {
+      exact: true,
       path: PATH_APP.root,
       component: () => <Redirect to={PATH_APP.main.root} />
     },
