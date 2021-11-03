@@ -11,3 +11,6 @@
 ###### Nov 02, 2021
 - Update .env Backend endpoint
 - Apply central logout service
+
+###### Nov 03, 2021
+- Build UI Overview

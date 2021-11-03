@@ -12,7 +12,7 @@ const HomeRoutes = {
       exact: true,
       path: '/',
       // component: lazy(() => import('~/views/home/LandingPageView'))
-      component: () => <Redirect to="/app/dashboard" />
+      component: () => <Redirect to="/app/dashboard/overview" />
     },
     {
       exact: true,
