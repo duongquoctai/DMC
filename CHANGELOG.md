@@ -14,3 +14,6 @@
 
 ###### Nov 03, 2021
 - Build UI Overview
+
+###### Nov 08, 2021
+- Update Webpack Migration document
