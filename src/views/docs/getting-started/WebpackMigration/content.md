@@ -12,7 +12,7 @@ Install webpack and needed plugin
 
 ```sh
 cd project-folder
-yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin mini-css-extract-plugin dotenv-webpack clean-webpack-plugin style-loader css-loader raw-loader react-dev-utils process file-loader fs stream-browserify browserify-zlib
+yarn add -D webpack webpack-cli webpack-dev-server webpack-bundle-analyzer html-webpack-plugin mini-css-extract-plugin dotenv-webpack clean-webpack-plugin style-loader css-loader raw-loader react-dev-utils process file-loader fs stream-browserify browserify-zlib @pmmmwh/react-refresh-webpack-plugin
 ```
 
 Install babel
@@ -21,10 +21,6 @@ Install babel
 yarn add -D @babel/core @babel/plugin-syntax-dynamic-import @babel/plugin-transform-runtime @babel/preset-react babel-eslint babel-loader babel-plugin-root-import babel-plugin-transform-imports
 babel-preset-react-app
 ```
-
-Optional, if you using SCSS follow guide below
-
-> I will update this soon 👏
 
 Create folder for webpack configuration
 
@@ -87,18 +83,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const deps = require('../package.json').dependencies;
-const OUT_DIR = path.resolve(__dirname, '..', './dist');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.js'),
   output: {
-    path: OUT_DIR,
+    path: paths.appBuild,
     publicPath: '/'
   },
+  target: 'web',
   devServer: {
-    contentBase: OUT_DIR
+    contentBase: paths.appBuild
   },
   module: {
     rules: [
@@ -153,8 +147,36 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', './src/index.html')
+      template: path.resolve(__dirname, '..', './src/index.html'),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/assets/static',
+          to: 'static'
+        },
+        {
+          from: './src/assets/favicon',
+          to: 'favicon'
+        },
+        {
+          from: './src/assets/fonts',
+          to: 'fonts'
+        },
+        {
+          from: './src/assets/locales',
+          to: 'locales'
+        }
+      ]
+    })
   ]
 };
 ```
@@ -193,16 +215,16 @@ Development configuration in `build-utils/webpack.dev.js`
 
 ```sh
 const path = require('path');
-const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new Dotenv({
-      path: path.resolve(__dirname, '..', './.env.development')
-    })
+      path: path.resolve(__dirname, '..', './.env')
+    }),
+    new ReactRefreshWebpackPlugin()
   ],
   devServer: {
     historyApiFallback: true,
@@ -211,24 +233,66 @@ module.exports = {
     compress: true,
     hot: true
   },
-  devtool: 'eval-source-map'
+  devtool: 'inline-source-map'
 };
 ```
+
+- [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) allow you using env in webpack
+- [@pmmmwh/react-refresh-webpack-plugin](https://www.npmjs.com/package/@pmmmwh/react-refresh-webpack-plugin) helps you to hot-reload project with keeping state
 
 Production configuration in `build-utils/webpack.prod.js`
 
 ```sh
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const deps = require('../package.json').dependencies;
 
 module.exports = {
   mode: 'production',
   plugins: [
     new Dotenv({
-      path: path.resolve(__dirname, '..', './.env.production')
-    })
+      path: path.resolve(__dirname, '..', './.env')
+    }),
+    new CompressionPlugin({
+      filename: '[path][base].gz',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
   ],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'node_vendors',
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all'
+        },
+        svgGroup: {
+          test(module) {
+            // `module.resource` contains the absolute path of the file on disk.
+            // Note the usage of `path.sep` instead of / or \, for cross-platform compatibility.
+            const path = require('path');
+            return (
+              module.resource &&
+              module.resource.endsWith('.svg') &&
+              module.resource.includes(`${path.sep}cacheable_svgs${path.sep}`)
+            );
+          }
+        },
+        defaultVendors: {
+          reuseExistingChunk: true,
+          idHint: 'vendors'
+        }
+      }
+    }
+  }
 };
 ```
 
@@ -252,6 +316,7 @@ module.exports = {
 ```
 
 Update `package.json`
+
 ```sh
   "scripts": {
     "lint": "eslint ./src",
@@ -262,7 +327,9 @@ Update `package.json`
 ```
 
 #### 4.Clean up
+
 Because react-scripts is still using webpack v4, so we need to remove it to avoid conflict webpack version
+
 ```sh
 yarn remove react-scripts
 ```
@@ -272,6 +339,7 @@ yarn remove react-scripts
 Once the installation is done, you can now start your app by running `npm start` or `yarn start`.
 
 Development
+
 ```sh
 yarn start
 ```
@@ -284,6 +352,7 @@ i ｢wdm｣: Compiled successfully.
 ```
 
 Production
+
 ```sh
 npm run build
 ```
@@ -294,4 +363,49 @@ Your app is ready to be deployed. 👏
 
 #### 6.Webpack Module Federation
 
-> I will update this soon 👏
+Before start thì step, you should take an overview about [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/) and [micro-frontend](https://micro-frontends.org/) mindset. Example [here](https://github.com/module-federation/module-federation-examples)
+
+In `build-utils/webpack.prod.js` you config Module Federation like this to share your component
+
+- Import ModuleFederationPlugin from `webpack/lib/container/ModuleFederationPlugin`
+
+```sh
+  const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+```
+
+- Add ModuleFederationPlugin to plugins array
+
+```sh
+  plugins: [
+      ...other plugins
+      new ModuleFederationPlugin({
+        name: 'insight',
+        filename: 'remoteEntry.js',
+        exposes: {
+          './Routes': './src/routes'
+        },
+        shared: {
+          react: {
+            singleton: true,
+            requiredVersion: deps.react
+          },
+          'react-dom': {
+            singleton: true,
+            requiredVersion: deps['react-dom']
+          },
+          'react-router-dom': {
+            singleton: true,
+            requiredVersion: deps['react-router-dom']
+          }
+        }
+      })
+    ],
+```
+
+Plugin overview, more detail [here](https://webpack.js.org/concepts/module-federation/)
+- **name**: Package name 
+- **filename**: the name of bundle when you share it. Example currently your filename is `remoteEntry.js` so you can import to use it like `https://[your-domain]/remoteEntry.js`
+- **exposes**: where defining which component you want to share
+- **shared**: where defining shared libraries
+
+> You will get some bugs but be strong and patience 👏
