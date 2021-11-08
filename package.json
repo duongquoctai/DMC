@@ -127,7 +127,6 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-react": "7.9.0",
-    "@hot-loader/react-dom": "^17.0.1",
     "@iconify-icons/ant-design": "1.0.0",
     "@iconify-icons/eva": "1.0.0",
     "@iconify-icons/vscode-icons": "1.0.2",
