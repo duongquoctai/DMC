@@ -9,7 +9,10 @@ const initialState = {
   loginLoading: false,
   logoutLoading: false,
   accessToken: null,
-  username: null
+  username: null,
+  roles: null,
+  groups: null,
+  siteUrl: null
 };
 
 const slice = createSlice({
@@ -33,9 +36,18 @@ const slice = createSlice({
 
     // LOGIN SUCCESS
     loginSuccess(state, action) {
-      const { access_token, exp, username } = action.payload.data;
+      const {
+        access_token,
+        username,
+        roles,
+        groups,
+        website
+      } = action.payload.data;
       state.accessToken = access_token;
       state.username = username;
+      state.roles = roles;
+      state.groups = groups;
+      state.siteUrl = website;
       storage.setItem('accessToken', access_token);
     },
 
@@ -158,7 +170,7 @@ export function validateToken({ token }) {
   };
 }
 
-export function getToken() {
+export function getUserInfo() {
   return async dispatch => {
     dispatch(
       slice.actions.toggleLoading({
@@ -167,7 +179,7 @@ export function getToken() {
       })
     );
     try {
-      const response = await authService._getToken();
+      const response = await authService._getUserInfo();
       if (response) {
         if (response.data.access_token !== 'N/A') {
           dispatch(
