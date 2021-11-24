@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { PATH_PAGE } from '~/routes/paths';
 import LoadingScreen from '~/components/LoadingScreen';
-import { getToken } from '~/redux/slices/auth';
+import { getUserInfo } from '~/redux/slices/auth';
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ function AuthProtect({ children }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getToken());
+    dispatch(getUserInfo());
   }, []);
 
   if (loginLoading) {

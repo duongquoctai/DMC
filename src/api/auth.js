@@ -3,7 +3,7 @@ import axios from '../utils/httpServices';
 import {
   LOGIN_ENDPOINT,
   LOGOUT_ENDPOINT,
-  GET_TOKEN_ENDPOINT,
+  GET_USER_INFO_ENDPOINT,
   CENTRAL_LOGOUT_ENDPOINT,
   VALIDATE_TOKEN_ENDPOINT
 } from './endpoint';
@@ -24,8 +24,8 @@ export const authService = {
     const endpoint = CENTRAL_LOGOUT_ENDPOINT;
     return fetch(endpoint).then(response => response.json());
   },
-  _getToken: () => {
-    const endpoint = GET_TOKEN_ENDPOINT;
+  _getUserInfo: () => {
+    const endpoint = GET_USER_INFO_ENDPOINT;
     return axios.get(endpoint);
   },
   _validateToken: ({ token }) => {

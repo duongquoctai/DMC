@@ -125,9 +125,6 @@ function LoginView() {
             size="large"
             href={`${apiConfig.baseUrl}/auth`}
             variant="contained"
-            // onClick={() => {
-            //   dispatch(centralLogout());
-            // }}
           >
             Login
           </Button>
