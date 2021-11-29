@@ -22,4 +22,3 @@
 
 ###### Nov 29, 2021
 - Update OpenID endpoint
-- Update API_URL
