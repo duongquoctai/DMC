@@ -22,7 +22,7 @@ export const authService = {
   },
   _centralLogout: () => {
     const endpoint = CENTRAL_LOGOUT_ENDPOINT;
-    return fetch(endpoint).then(response => response.json());
+    return axios.get(endpoint);
   },
   _getUserInfo: () => {
     const endpoint = GET_USER_INFO_ENDPOINT;
