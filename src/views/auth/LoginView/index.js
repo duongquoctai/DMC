@@ -3,12 +3,7 @@ import Section from './Section';
 import { useDispatch, useSelector } from 'react-redux';
 import Page from '~/components/Page';
 import Logo from '~/components/Logo';
-import { centralLogout } from '~/redux/slices/auth';
-// import LoginForm from './LoginForm';
-// import SocialLogin from './SocialLogin';
-// import { useSnackbar } from 'notistack';
 import { PATH_PAGE } from '~/routes/paths';
-// import closeFill from '@iconify-icons/eva/close-fill';
 import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import {
@@ -18,9 +13,10 @@ import {
   Hidden,
   Container,
   Typography,
-  Button
+  Button,
+  Divider
 } from '@mui/material';
-// import { MIconButton } from '~/@material-extend';
+import OpenIDLogin from './OpenIDLogin';
 import { apiConfig } from '~/config';
 
 // ----------------------------------------------------------------------
@@ -104,14 +100,13 @@ function LoginView() {
               Click to the login button this will redirect you to SSO page
             </Typography>
           </Box>
-
-          {/* <SocialLogin firebase={firebase} />
+          <OpenIDLogin />
 
           <Divider className={classes.divider}>
             <Typography variant="body2" color="textSecondary">
               OR
             </Typography>
-          </Divider> */}
+          </Divider>
 
           <Box sx={{ mb: 5 }}>
             <Alert severity="info">
@@ -124,9 +119,9 @@ function LoginView() {
             fullWidth
             size="large"
             href={`${apiConfig.apiUrl}/auth`}
-            variant="contained"
+            variant="outlined"
           >
-            Login
+            Login with Keycloak
           </Button>
 
           <Hidden smUp>
