@@ -123,7 +123,7 @@ function LoginView() {
           <Button
             fullWidth
             size="large"
-            href={`${apiConfig.baseUrl}/auth`}
+            href={`${apiConfig.apiUrl}/auth`}
             variant="contained"
           >
             Login
