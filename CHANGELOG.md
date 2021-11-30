@@ -22,3 +22,6 @@
 
 ###### Nov 29, 2021
 - Update OpenID endpoint
+
+###### Nov 30, 2021
+- Add CSOC authentication endpoint
