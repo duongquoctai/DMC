@@ -1,7 +1,7 @@
 import React from 'react';
-import Page from '~/components/Page';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
 import {
   Container,
   Grid,
@@ -25,6 +25,7 @@ import clusterOutlined from '@iconify-icons/ant-design/cluster-outlined';
 import databaseOutlined from '@iconify-icons/ant-design/database-outlined';
 import desktopOutlined from '@iconify-icons/ant-design/desktop-outlined';
 import shareAltOutlined from '@iconify-icons/ant-design/share-alt-outlined';
+import Page from '~/components/Page';
 
 const path = name => `/static/icons/${name}.svg`;
 
@@ -64,6 +65,7 @@ const useStyles = makeStyles(theme => ({
 function DashboardOverview() {
   const classes = useStyles();
   const theme = useTheme();
+  const { roles, groups } = useSelector(state => state.auth);
 
   return (
     <Page title="Overview" className={classes.root}>

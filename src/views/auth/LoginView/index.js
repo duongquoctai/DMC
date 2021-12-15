@@ -16,6 +16,7 @@ import {
   Button,
   Divider
 } from '@mui/material';
+import { save } from '~/redux/slices/auth';
 import OpenIDLogin from './OpenIDLogin';
 import { apiConfig } from '~/config';
 
@@ -60,10 +61,15 @@ const useStyles = makeStyles(theme => ({
 
 function LoginView() {
   const classes = useStyles();
-  const dispatch = useDispatch();
   const { loginLoading } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
 
   // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  const handleSaveAuthUri = uri => {
+    dispatch(save({ key: 'authUri', value: uri }));
+    localStorage.setItem('authUri', uri);
+  };
 
   return (
     <Page title="DMC | Login" className={classes.root}>
@@ -110,8 +116,8 @@ function LoginView() {
 
           <Box sx={{ mb: 5 }}>
             <Alert severity="info">
-              User : <strong>admin</strong> / password :
-              <strong>&nbsp;hHTRbquOefLOPnVW</strong>
+              User : <strong>testuser</strong> / password :
+              <strong>&nbsp;123123</strong>
             </Alert>
           </Box>
 
@@ -119,6 +125,7 @@ function LoginView() {
             fullWidth
             size="large"
             href={`${apiConfig.apiUrl}/auth`}
+            onClick={() => handleSaveAuthUri(apiConfig.apiUrl)}
             variant="outlined"
           >
             Login with Keycloak

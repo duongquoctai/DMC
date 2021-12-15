@@ -19,7 +19,7 @@ function GuestProtect({ children }) {
   }
 
   if (accessToken) {
-    return <Redirect to={PATH_APP.root} />;
+    return <Redirect to={PATH_APP.main.overview} />;
   }
 
   return children;

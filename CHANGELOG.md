@@ -25,3 +25,6 @@
 
 ###### Nov 30, 2021
 - Add CSOC authentication endpoint
+
+###### Dec 15, 2021
+- Add change endpoint with authentication method
