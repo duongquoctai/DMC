@@ -4,9 +4,13 @@ import axios from 'axios';
 
 // ----------------------------------------------------------------------
 
-const axiosInstance = axios.create({
-  baseURL: apiConfig.apiUrl
-});
+const getLocalUri = () => {
+  const authUri = getLocalStorage('authUri');
+  if (authUri) {
+    return authUri;
+  }
+  return apiConfig.apiUrl;
+};
 
 const getLocalToken = () => {
   const accessToken = getLocalStorage('accessToken');
@@ -15,6 +19,10 @@ const getLocalToken = () => {
   }
   return null;
 };
+
+const axiosInstance = axios.create({
+  baseURL: getLocalUri()
+});
 
 axiosInstance.interceptors.request.use(
   config => {
