@@ -5,23 +5,23 @@ import HomeLayout from '~/layouts/HomeLayout';
 // ----------------------------------------------------------------------
 
 const HomeRoutes = {
-  path: '*',
+  path: '/app',
   layout: HomeLayout,
   routes: [
     {
       exact: true,
-      path: '/',
+      path: '/app/dashboard',
       // component: lazy(() => import('~/views/home/LandingPageView'))
       component: () => <Redirect to="/app/dashboard/overview" />
     },
     {
       exact: true,
-      path: '/components',
-      component: lazy(() => import('~/views/home/ComponentsView'))
-    },
-    {
-      component: () => <Redirect to="/404" />
+      path: '/app/components',
+      component: lazy(() => import('~/components/LoadingScreen'))
     }
+    // {
+    //   component: () => <Redirect to="/404" />
+    // }
   ]
 };
 
