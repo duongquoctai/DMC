@@ -40,3 +40,4 @@
 ###### Mar 21, 2022
 
 - Add change endpoint with authentication method
+- Debug
