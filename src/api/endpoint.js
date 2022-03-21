@@ -10,4 +10,4 @@ export const LOGIN_ENDPOINT = '/login';
 export const CENTRAL_LOGOUT_ENDPOINT = `${apiConfig.apiUrl}/centralLogout`;
 export const LOGOUT_ENDPOINT = `/logout`;
 export const GET_USER_INFO_ENDPOINT = `/getUserInfo`;
-export const VALIDATE_TOKEN_ENDPOINT = `/validateToken`;
+export const VALIDATE_TOKEN_ENDPOINT = `/validateUserToken`;
