@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
-import remoteRoutes from 'app2/routes';
-import App2 from 'app2/App2';
+// import remoteRoutes from 'app2/routes';
+// import App2 from 'app2/App2';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { Router } from 'react-router-dom';
@@ -38,35 +38,31 @@ import 'react-toastify/dist/ReactToastify.css';
 const history = createBrowserHistory();
 
 function App() {
-  console.log(remoteRoutes);
-  const dmcRoutes = [...routes, ...remoteRoutes];
-  console.log('remoteRoutes:', dmcRoutes);
   return (
     <>
-      <App2 />
       <Suspense fallback={<LoadingScreen />}>
         <Provider store={store}>
           <PersistGate loading={<LoadingScreen />} persistor={persistor}>
             <ThemeConfig>
-              <LocalizationProvider dateAdapter={MomentUtils}>
-                <FirebaseProvider>
-                  <Router history={history}>
-                    <ScrollToTop />
-                    <GoogleAnalytics />
-                    <ToastContainer
-                      position="bottom-right"
-                      autoClose={2000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                    />
-                    {renderRoutes(dmcRoutes)}
-                  </Router>
-                </FirebaseProvider>
-              </LocalizationProvider>
+              {/* <LocalizationProvider dateAdapter={MomentUtils}>
+                <FirebaseProvider> */}
+              <Router history={history}>
+                <ScrollToTop />
+                <GoogleAnalytics />
+                <ToastContainer
+                  position="bottom-right"
+                  autoClose={2000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                />
+                {renderRoutes(routes)}
+              </Router>
+              {/* </FirebaseProvider>
+              </LocalizationProvider> */}
             </ThemeConfig>
           </PersistGate>
         </Provider>

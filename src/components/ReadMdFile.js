@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import Markdown from '~/components/Markdown';
 import { makeStyles } from '@mui/styles';
 

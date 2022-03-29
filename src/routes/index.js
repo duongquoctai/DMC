@@ -2,6 +2,7 @@ import NProgress from 'nprogress';
 import { PATH_PAGE } from './paths';
 import AppRoutes from './AppRoutes';
 import HomeRoutes from './HomeRoutes';
+import DataIntegrationRoutes from './DataIntegrationRoutes';
 import DocsRoutes from './DocsRoutes';
 import LoadingScreen from '~/components/LoadingScreen';
 import GuestProtect from '~/components/Auth/GuestProtect';
@@ -91,78 +92,80 @@ export function renderRoutes(routes = []) {
 
 const routes = [
   // Others Routes
-  // {
-  //   exact: true,
-  //   guard: GuestProtect,
-  //   path: PATH_PAGE.auth.login,
-  //   component: lazy(() => import('~/views/auth/LoginView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.auth.loginUnprotected,
-  //   component: lazy(() => import('~/views/auth/LoginView'))
-  // },
-  // {
-  //   exact: true,
-  //   guard: GuestProtect,
-  //   path: PATH_PAGE.auth.register,
-  //   component: lazy(() => import('~/views/auth/RegisterView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.auth.registerUnprotected,
-  //   component: lazy(() => import('~/views/auth/RegisterView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.auth.resetPassword,
-  //   component: lazy(() => import('~/views/auth/ResetPasswordView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.auth.verify,
-  //   component: lazy(() => import('~/views/auth/VerifyCodeView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: '/404',
-  //   component: lazy(() => import('~/views/errors/Page404View'))
-  // },
-  // {
-  //   exact: true,
-  //   path: '/500',
-  //   component: lazy(() => import('~/views/errors/Page500View'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.comingSoon,
-  //   component: lazy(() => import('~/views/pages/ComingSoonView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.maintenance,
-  //   component: lazy(() => import('~/views/pages/MaintenanceView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.pricing,
-  //   component: lazy(() => import('~/views/pages/PricingView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.payment,
-  //   component: lazy(() => import('~/views/pages/PaymentView'))
-  // },
-  // {
-  //   exact: true,
-  //   path: PATH_PAGE.auth.root,
-  //   component: () => <Redirect to={PATH_PAGE.auth.login} />
-  // },
+  {
+    exact: true,
+    guard: GuestProtect,
+    path: PATH_PAGE.auth.login,
+    component: lazy(() => import('~/views/auth/LoginView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.auth.loginUnprotected,
+    component: lazy(() => import('~/views/auth/LoginView'))
+  },
+  {
+    exact: true,
+    guard: GuestProtect,
+    path: PATH_PAGE.auth.register,
+    component: lazy(() => import('~/views/auth/RegisterView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.auth.registerUnprotected,
+    component: lazy(() => import('~/views/auth/RegisterView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.auth.resetPassword,
+    component: lazy(() => import('~/views/auth/ResetPasswordView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.auth.verify,
+    component: lazy(() => import('~/views/auth/VerifyCodeView'))
+  },
+  {
+    exact: true,
+    path: '/404',
+    component: lazy(() => import('~/views/errors/Page404View'))
+  },
+  {
+    exact: true,
+    path: '/500',
+    component: lazy(() => import('~/views/errors/Page500View'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.comingSoon,
+    component: lazy(() => import('~/views/pages/ComingSoonView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.maintenance,
+    component: lazy(() => import('~/views/pages/MaintenanceView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.pricing,
+    component: lazy(() => import('~/views/pages/PricingView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.payment,
+    component: lazy(() => import('~/views/pages/PaymentView'))
+  },
+  {
+    exact: true,
+    path: PATH_PAGE.auth.root,
+    component: () => <Redirect to={PATH_PAGE.auth.login} />
+  },
+  //Data Integration Routes
+  DataIntegrationRoutes,
   // // App Routes
   AppRoutes,
 
   // Docs Routes
-  // DocsRoutes,
+  DocsRoutes,
 
   // Home Routes
   HomeRoutes

@@ -7,7 +7,13 @@ function path(root, sublink) {
 const ROOTS = {
   auth: '/authen',
   app: '/app',
-  docs: '/docs'
+  docs: '/docs',
+  dataIntegration: '/data'
+};
+
+export const PATH_DATA_INTEGRATION = {
+  root: ROOTS.dataIntegration,
+  list: path(ROOTS.dataIntegration, '/list-datablend')
 };
 
 export const PATH_PAGE = {
