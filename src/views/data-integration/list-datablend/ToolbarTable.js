@@ -79,13 +79,17 @@ function ToolbarTable({ numSelected, filterName, onFilterName, className }) {
         <OutlinedInput
           value={filterName}
           onChange={onFilterName}
-          placeholder="Search product..."
+          placeholder="Search datablend..."
           startAdornment={
-            <InputAdornment position="start">
+            <InputAdornment position="end">
               <Box
                 component={Icon}
                 icon={searchFill}
-                sx={{ color: 'text.disabled' }}
+                sx={{
+                  color: 'text.disabled',
+                  marginTop: '5px',
+                  marginRight: '10px'
+                }}
               />
             </InputAdornment>
           }

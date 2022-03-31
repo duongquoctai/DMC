@@ -8,7 +8,7 @@ const ROOTS = {
   auth: '/authen',
   app: '/app',
   docs: '/docs',
-  dataIntegration: '/data'
+  dataIntegration: '/di/data'
 };
 
 export const PATH_DATA_INTEGRATION = {

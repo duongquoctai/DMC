@@ -15,6 +15,9 @@ import SearchNotFound from '~/components/SearchNotFound';
 import HeaderDashboard from '~/components/HeaderDashboard';
 import Scrollbars from '~/components/Scrollbars';
 import moreVerticalFill from '@iconify-icons/eva/more-vertical-fill';
+import homeFill from '@iconify-icons/eva/home-fill';
+// import smilingFaceFill from '@iconify-icons/eva/smiling-face-fill';
+import plusCircleOutline from '@iconify-icons/eva/plus-circle-outline';
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import {
@@ -31,15 +34,19 @@ import {
   TableContainer,
   TablePagination
 } from '@mui/material';
+import clsx from 'clsx';
 import { MLabel } from '~/@material-extend';
+import ModalAddNewDatablend from './components/ModalComponent';
+// import FactoryTwoToneIcon from '@mui/icons-material/FactoryTwoTone';
+// import Icon from '@mui/material/Icon';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Product', alignRight: false },
-  { id: 'createdAt', label: 'Create at', alignRight: false },
-  { id: 'inventoryType', label: 'Status', alignRight: false },
-  { id: 'price', label: 'Price', alignRight: true },
+  { id: 'name', label: 'Name', alignRight: false },
+  // { id: 'createdAt', label: 'Create at', alignRight: false },
+  // { id: 'inventoryType', label: 'Status', alignRight: false },
+  // { id: 'price', label: 'Price', alignRight: true },
   { id: '' }
 ];
 function descendingComparator(a, b, orderBy) {
@@ -77,20 +84,36 @@ function applySortFilter(array, comparator, query) {
 
 const useStyles = makeStyles(theme => ({
   root: {},
-  sortSpan: visuallyHidden
+  sortSpan: visuallyHidden,
+  cartRight: {
+    position: 'fixed',
+    zIndex: 1,
+    right: '0',
+    top: '25%',
+    width: '4.1vw',
+    minWidth: '60px',
+    borderRadius: '8px 0px 0px 8px',
+    transition: '0.5s',
+    backgroundColor: '#fff'
+  }
 }));
 
 function ComponentsView() {
   const classes = useStyles();
   const theme = useTheme();
+
+  //store
   const dispatch = useDispatch();
   const { products } = useSelector(state => state.product);
+
+  //state
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
   const [selected, setSelected] = useState([]);
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [orderBy, setOrderBy] = useState('createdAt');
+  const [openModalAdd, setopenModalAdd] = useState(false);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -154,8 +177,11 @@ function ComponentsView() {
   const isProductNotFound = filteredProducts.length === 0;
 
   return (
-    <Page title="Management | Product List" className={classes.root}>
-      <Container>
+    <Page
+      title="Management | List Datablend"
+      className={clsx(classes.root, 'page-dataIntegration')}
+    >
+      <Container className="container-dataIntegration">
         <HeaderDashboard
           heading="List Datablend"
           links={[
@@ -165,6 +191,23 @@ function ComponentsView() {
             //   { name: 'Product List' }
           ]}
         />
+        <Card className={clsx(classes.root, 'card-right', classes.cartRight)}>
+          <Box
+            sx={{
+              p: 2,
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
+            <IconButton
+              onClick={() => setopenModalAdd(true)}
+              className={classes.button}
+              color="success"
+            >
+              <Icon icon={plusCircleOutline} width={30} height={30} />
+            </IconButton>
+          </Box>
+        </Card>
 
         <Card className={classes.card}>
           <ToolbarTable
@@ -223,7 +266,7 @@ function ComponentsView() {
                                 alignItems: 'center'
                               }}
                             >
-                              <Box
+                              {/* <Box
                                 component="img"
                                 alt={name}
                                 src="/static/images/placeholder.svg"
@@ -235,16 +278,23 @@ function ComponentsView() {
                                   height: 64,
                                   borderRadius: 1.5
                                 }}
-                              />
+                              /> */}
+                              <IconButton
+                                // onClick={() => setOpen(true)}
+                                className={classes.button}
+                                color={open ? 'primary' : 'default'}
+                              >
+                                <Icon icon={homeFill} width={20} height={20} />
+                              </IconButton>
                               <Typography variant="subtitle2" noWrap>
                                 {name}
                               </Typography>
                             </Box>
                           </TableCell>
-                          <TableCell style={{ minWidth: 160 }}>
+                          {/* <TableCell style={{ minWidth: 160 }}>
                             {fDate(createdAt)}
-                          </TableCell>
-                          <TableCell style={{ minWidth: 160 }}>
+                          </TableCell> */}
+                          {/* <TableCell style={{ minWidth: 160 }}>
                             <MLabel
                               variant={
                                 theme.palette.mode === 'light'
@@ -259,10 +309,10 @@ function ComponentsView() {
                             >
                               {sentenceCase(inventoryType)}
                             </MLabel>
-                          </TableCell>
-                          <TableCell align="right">
+                          </TableCell> */}
+                          {/* <TableCell align="right">
                             {fCurrency(price)}
-                          </TableCell>
+                          </TableCell> */}
                           <TableCell align="right">
                             <IconButton className={classes.margin}>
                               <Icon
@@ -307,6 +357,7 @@ function ComponentsView() {
           />
         </Card>
       </Container>
+      <ModalAddNewDatablend open={openModalAdd} setOpen={setopenModalAdd} />
     </Page>
   );
 }

@@ -47,9 +47,9 @@ function App() {
               {/* <LocalizationProvider dateAdapter={MomentUtils}>
                 <FirebaseProvider> */}
               <Router history={history}>
-                <ScrollToTop />
-                <GoogleAnalytics />
-                <ToastContainer
+                {/* <ScrollToTop />
+                <GoogleAnalytics /> */}
+                {/* <ToastContainer
                   position="bottom-right"
                   autoClose={2000}
                   hideProgressBar={false}
@@ -58,7 +58,7 @@ function App() {
                   pauseOnFocusLoss
                   draggable
                   pauseOnHover
-                />
+                /> */}
                 {renderRoutes(routes)}
               </Router>
               {/* </FirebaseProvider>
