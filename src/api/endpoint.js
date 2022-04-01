@@ -11,3 +11,6 @@ export const CENTRAL_LOGOUT_ENDPOINT = `${apiConfig.apiUrl}/centralLogout`;
 export const LOGOUT_ENDPOINT = `/logout`;
 export const GET_USER_INFO_ENDPOINT = `/getUserInfo`;
 export const VALIDATE_TOKEN_ENDPOINT = `/validateToken`;
+
+//project
+export const GETLIST_PROJECT = `${apiConfig.datablendUrl}/projects`;

@@ -6,10 +6,11 @@ import Page from '~/components/Page';
 import ToolbarTable from './ToolbarTable';
 import { sentenceCase } from 'change-case';
 import { PATH_APP } from '~/routes/paths';
-import { fDate } from '~/utils/formatTime';
+import { fDateTime } from '~/utils/formatTime';
 import { fCurrency } from '~/utils/formatNumber';
 import { visuallyHidden } from '@mui/utils';
 import { getProducts } from '~/redux/slices/product';
+import { getProjects } from '~/redux/slices/project';
 import { useDispatch, useSelector } from 'react-redux';
 import SearchNotFound from '~/components/SearchNotFound';
 import HeaderDashboard from '~/components/HeaderDashboard';
@@ -32,18 +33,20 @@ import {
   IconButton,
   Typography,
   TableContainer,
-  TablePagination
+  TablePagination,
+  Button
 } from '@mui/material';
 import clsx from 'clsx';
 import { MLabel } from '~/@material-extend';
 import ModalAddNewDatablend from './components/ModalComponent';
-// import FactoryTwoToneIcon from '@mui/icons-material/FactoryTwoTone';
-// import Icon from '@mui/material/Icon';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', alignRight: false },
+  { id: 'createdTime', label: 'Create Time', alignRight: false },
   // { id: 'createdAt', label: 'Create at', alignRight: false },
   // { id: 'inventoryType', label: 'Status', alignRight: false },
   // { id: 'price', label: 'Price', alignRight: true },
@@ -104,8 +107,7 @@ function ComponentsView() {
 
   //store
   const dispatch = useDispatch();
-  const { products } = useSelector(state => state.product);
-
+  const { projects } = useSelector(state => state.project);
   //state
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState('asc');
@@ -116,8 +118,12 @@ function ComponentsView() {
   const [openModalAdd, setopenModalAdd] = useState(false);
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getProjects());
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, [dispatch]);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -127,7 +133,7 @@ function ComponentsView() {
 
   const handleSelectAllClick = event => {
     if (event.target.checked) {
-      const newSelecteds = products.map(n => n.name);
+      const newSelecteds = projects.map(n => n.name);
       setSelected(newSelecteds);
       return;
     }
@@ -166,24 +172,24 @@ function ComponentsView() {
   };
 
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - products.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - projects.length) : 0;
 
-  const filteredProducts = applySortFilter(
-    products,
+  const filteredProjects = applySortFilter(
+    projects,
     getComparator(order, orderBy),
     filterName
   );
 
-  const isProductNotFound = filteredProducts.length === 0;
+  const isProductNotFound = filteredProjects.length === 0;
 
   return (
     <Page
-      title="Management | List Datablend"
+      title="Management | Datablend Projects"
       className={clsx(classes.root, 'page-dataIntegration')}
     >
       <Container className="container-dataIntegration">
         <HeaderDashboard
-          heading="List Datablend"
+          heading="Datablend Projects"
           links={[
             { name: '', href: PATH_APP.root }
             //   { name: 'Management', href: PATH_APP.management.root },
@@ -224,18 +230,20 @@ function ComponentsView() {
                   classes={classes}
                   orderBy={orderBy}
                   headLabel={TABLE_HEAD}
-                  rowCount={products.length}
+                  rowCount={projects.length}
                   numSelected={selected.length}
                   onRequestSort={handleRequestSort}
                   onSelectAllClick={handleSelectAllClick}
                 />
                 <TableBody>
-                  {filteredProducts
+                  {filteredProjects
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row, index) => {
                       const {
                         id,
                         name,
+                        type,
+                        createdTime,
                         cover,
                         price,
                         createdAt,
@@ -266,19 +274,6 @@ function ComponentsView() {
                                 alignItems: 'center'
                               }}
                             >
-                              {/* <Box
-                                component="img"
-                                alt={name}
-                                src="/static/images/placeholder.svg"
-                                data-src={cover.thumb}
-                                className="lazyload blur-up"
-                                sx={{
-                                  mx: 2,
-                                  width: 64,
-                                  height: 64,
-                                  borderRadius: 1.5
-                                }}
-                              /> */}
                               <IconButton
                                 // onClick={() => setOpen(true)}
                                 className={classes.button}
@@ -291,8 +286,11 @@ function ComponentsView() {
                               </Typography>
                             </Box>
                           </TableCell>
+                          <TableCell style={{ minWidth: 160 }}>
+                            {fDateTime(createdTime)}
+                          </TableCell>
                           {/* <TableCell style={{ minWidth: 160 }}>
-                            {fDate(createdAt)}
+                            {type}
                           </TableCell> */}
                           {/* <TableCell style={{ minWidth: 160 }}>
                             <MLabel
@@ -349,7 +347,7 @@ function ComponentsView() {
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}
             component="div"
-            count={products.length}
+            count={projects.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}
@@ -357,7 +355,23 @@ function ComponentsView() {
           />
         </Card>
       </Container>
-      <ModalAddNewDatablend open={openModalAdd} setOpen={setopenModalAdd} />
+      <ToastContainer />
+      <ModalAddNewDatablend
+        open={openModalAdd}
+        setOpen={setopenModalAdd}
+        keyMessage={key => {
+          console.log('chay vao day', key);
+          toast.success(key, {
+            position: 'top-right',
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined
+          });
+        }}
+      />
     </Page>
   );
 }

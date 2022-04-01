@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ClipLoader from 'react-spinners/ClipLoader';
 import {
   Box,
   Card,
@@ -18,6 +20,8 @@ import {
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import LoadingScreen from '~/components/LoadingScreen';
+import { createProject } from '~/redux/slices/project';
 
 const style = {
   position: 'absolute',
@@ -33,28 +37,40 @@ const style = {
 };
 
 const validationSchema = yup.object({
-  email: yup
-    .string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required'),
-  password: yup
-    .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required')
+  projectName: yup
+    .string('Enter your project name')
+    .required('Project name is required')
 });
 
-export default function ModalAddNewDatablend({ open, setOpen }) {
+export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector(state => state.project);
+  console.log('isLoading', isLoading);
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: ''
+      projectName: ''
+      // email: '',
+      // password: ''
     },
     validationSchema: validationSchema,
     onSubmit: values => {
-      console.log('test data', values);
+      dispatch(createProject(values.projectName));
+      if (isLoading == false) {
+        setTimeout(() => {
+          handleClose();
+          keyMessage('Create Success!');
+        }, 300);
+      }
     }
   });
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    formik.resetForm();
+    setOpen(false);
+  };
+
+  // React.useEffect(() => {
+
+  // }, [isLoading]);
 
   return (
     <Modal
@@ -77,17 +93,19 @@ export default function ModalAddNewDatablend({ open, setOpen }) {
         > */}
         <form onSubmit={formik.handleSubmit}>
           <TextField
-            sx={{ p: 2 }}
+            sx={{ mb: 2 }}
             fullWidth
-            id="email"
-            name="email"
-            label="Email"
-            value={formik.values.email}
+            id="projectName"
+            name="projectName"
+            label="Project name"
+            value={formik.values.projectName}
             onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
+            error={
+              formik.touched.projectName && Boolean(formik.errors.projectName)
+            }
+            helperText={formik.touched.projectName && formik.errors.projectName}
           />
-          <TextField
+          {/* <TextField
             fullWidth
             sx={{ p: 2 }}
             id="password"
@@ -98,12 +116,34 @@ export default function ModalAddNewDatablend({ open, setOpen }) {
             onChange={formik.handleChange}
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
-          />
+          /> */}
           <Button color="primary" variant="contained" fullWidth type="submit">
+            <ClipLoader
+              css={{
+                margin: '2px'
+              }}
+              loading={isLoading}
+              speedMultiplier={1}
+            />
             Submit
           </Button>
         </form>
-        {/* </Box> */}
+        {/* <Button
+          onClick={() => {
+            console.log('chay vao day');
+            toast.success('🦄 Wow so easy!', {
+              position: 'top-right',
+              autoClose: 300,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined
+            });
+          }}
+        >
+          TestToast
+        </Button> */}
       </Box>
     </Modal>
   );

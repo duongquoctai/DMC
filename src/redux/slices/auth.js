@@ -134,7 +134,6 @@ export function sessionLogout() {
   return async dispatch => {
     try {
       const response = await authService._logout();
-      console.log('response', response);
       if (response.status === 200) {
         dispatch(slice.actions.logout());
         return;

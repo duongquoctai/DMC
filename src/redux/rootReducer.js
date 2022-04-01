@@ -12,6 +12,7 @@ import productReducer from './slices/product';
 import userReducer from './slices/user';
 import notificationsReducer from './slices/notifications';
 import authReducer from './slices/auth';
+import projectReducer from './slices/project';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +49,8 @@ const rootReducer = combineReducers({
   blog: blogReducer,
   product: persistReducer(productPersistConfig, productReducer),
   user: userReducer,
-  notifications: notificationsReducer
+  notifications: notificationsReducer,
+  project: projectReducer
 });
 
 export { rootPersistConfig, rootReducer };

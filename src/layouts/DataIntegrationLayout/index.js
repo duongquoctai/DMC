@@ -28,7 +28,7 @@ function DocsLayout({ children }) {
   return (
     <div className={classes.root}>
       <TopBar onOpenNav={() => setOpenNav(true)} />
-      <NavBar onCloseNav={() => setOpenNav(false)} isOpenNav={openNav} />
+      {/* <NavBar onCloseNav={() => setOpenNav(false)} isOpenNav={openNav} /> */}
 
       <Container
         maxWidth="xl"
