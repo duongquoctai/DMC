@@ -39,6 +39,11 @@ const slice = createSlice({
       state.message = 'Create project success!';
     },
 
+    deleteProjectSuccess(state, action) {
+      state.isLoading = false;
+      state.message = 'Delete project success!';
+    },
+
     //  SORT & FILTER PROJECTS
     sortByProjects(state, action) {
       state.sortBy = action.payload;
@@ -78,9 +83,23 @@ export function createProject(data) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await projectService._createProject(data);
-      console.log('response', response);
       if (response.status === 200) {
         dispatch(slice.actions.createProjectSuccess());
+        dispatch(getProjects());
+      }
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function deleteProject(data) {
+  return async dispatch => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await projectService._deleteProject(data);
+      if (response.status === 200) {
+        dispatch(slice.actions.deleteProjectSuccess());
         dispatch(getProjects());
       }
     } catch (error) {

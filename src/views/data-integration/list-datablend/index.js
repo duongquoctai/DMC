@@ -41,6 +41,7 @@ import { MLabel } from '~/@material-extend';
 import ModalAddNewDatablend from './components/ModalComponent';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MoreButton from './components/MoreButton';
 
 // ----------------------------------------------------------------------
 
@@ -97,7 +98,7 @@ const useStyles = makeStyles(theme => ({
     minWidth: '60px',
     borderRadius: '8px 0px 0px 8px',
     transition: '0.5s',
-    backgroundColor: '#fff'
+    backgroundColor: theme.palette.background.default
   }
 }));
 
@@ -199,6 +200,7 @@ function ComponentsView() {
         />
         <Card className={clsx(classes.root, 'card-right', classes.cartRight)}>
           <Box
+            className={classes.box}
             sx={{
               p: 2,
               display: 'flex',
@@ -312,13 +314,28 @@ function ComponentsView() {
                             {fCurrency(price)}
                           </TableCell> */}
                           <TableCell align="right">
-                            <IconButton className={classes.margin}>
+                            {/* <IconButton className={classes.margin}>
                               <Icon
                                 icon={moreVerticalFill}
                                 width={20}
                                 height={20}
                               />
-                            </IconButton>
+                              
+                            </IconButton> */}
+                            <MoreButton
+                              name={name}
+                              keyMessage={key => {
+                                toast.success(key, {
+                                  position: 'top-right',
+                                  autoClose: 1500,
+                                  hideProgressBar: false,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  progress: undefined
+                                });
+                              }}
+                            />
                           </TableCell>
                         </TableRow>
                       );
@@ -360,10 +377,9 @@ function ComponentsView() {
         open={openModalAdd}
         setOpen={setopenModalAdd}
         keyMessage={key => {
-          console.log('chay vao day', key);
           toast.success(key, {
             position: 'top-right',
-            autoClose: 1000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

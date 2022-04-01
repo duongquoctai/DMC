@@ -45,12 +45,9 @@ const validationSchema = yup.object({
 export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
   const dispatch = useDispatch();
   const { isLoading } = useSelector(state => state.project);
-  console.log('isLoading', isLoading);
   const formik = useFormik({
     initialValues: {
       projectName: ''
-      // email: '',
-      // password: ''
     },
     validationSchema: validationSchema,
     onSubmit: values => {
@@ -58,7 +55,7 @@ export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
       if (isLoading == false) {
         setTimeout(() => {
           handleClose();
-          keyMessage('Create Success!');
+          keyMessage('Create Success !');
         }, 300);
       }
     }
@@ -67,10 +64,6 @@ export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
     formik.resetForm();
     setOpen(false);
   };
-
-  // React.useEffect(() => {
-
-  // }, [isLoading]);
 
   return (
     <Modal
@@ -84,13 +77,6 @@ export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
         <Typography id="keep-mounted-modal-title" variant="h5" sx={{ mb: 3 }}>
           Add Datablend
         </Typography>
-        {/* <Box
-          sx={{
-            p: 2,
-            display: 'flex',
-            alignItems: 'center'
-          }}
-        > */}
         <form onSubmit={formik.handleSubmit}>
           <TextField
             sx={{ mb: 2 }}
@@ -105,18 +91,6 @@ export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
             }
             helperText={formik.touched.projectName && formik.errors.projectName}
           />
-          {/* <TextField
-            fullWidth
-            sx={{ p: 2 }}
-            id="password"
-            name="password"
-            label="Password"
-            type="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-          /> */}
           <Button color="primary" variant="contained" fullWidth type="submit">
             <ClipLoader
               css={{
@@ -128,22 +102,6 @@ export default function ModalAddNewDatablend({ open, setOpen, keyMessage }) {
             Submit
           </Button>
         </form>
-        {/* <Button
-          onClick={() => {
-            console.log('chay vao day');
-            toast.success('🦄 Wow so easy!', {
-              position: 'top-right',
-              autoClose: 300,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined
-            });
-          }}
-        >
-          TestToast
-        </Button> */}
       </Box>
     </Modal>
   );

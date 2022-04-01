@@ -13,5 +13,9 @@ export const projectService = {
   _createProject: data => {
     const endpoint = `${GETLIST_PROJECT}/${data}`;
     return axios.post(endpoint, null);
+  },
+  _deleteProject: data => {
+    const endpoint = `${GETLIST_PROJECT}/${data}`;
+    return axios.delete(endpoint, null);
   }
 };
